@@ -33,10 +33,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development
 
+# TODO: When submitting only have one allowed host. development: localhost deployed: heroku
 if development:
-    ALLOWED_HOSTS = ['localhost']
+    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost']
 else:
-    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
+    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost']
 
 
 # Application definition
