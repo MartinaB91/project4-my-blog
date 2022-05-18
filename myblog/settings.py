@@ -16,8 +16,8 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
-
-development = os.environ.get('DEVELOPMENT', False)
+development = True
+# development = os.environ.get('DEVELOPMENT', False)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,12 +33,15 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development
 
+
 # TODO: When submitting only have one allowed host. development: localhost deployed: heroku
 if development:
     ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost']
 else:
     ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost']
 
+# TODO: Search information about why this dosen't work 'https://*' but this do: 'https://*.io'
+CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*.io']
 
 # Application definition
 
@@ -50,13 +53,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'cloudinary_storage',
     'django.contrib.staticfiles',
-    'cloudinary',
-    # django allauth
     'django.contrib.sites',
     'allauth',
     'allauth.account',
-    'allauth.socialaccount',  
-    # custom apps
+    'allauth.socialaccount',
+    'cloudinary',
     'profiles',
     'home',
     'blog',
@@ -101,6 +102,7 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 if development:
+    print('Using sqlite')
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -108,8 +110,9 @@ if development:
         }
     }
 else:
+    print('Using postgres')
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))   
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))   
     }
 
 
