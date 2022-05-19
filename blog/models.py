@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from profiles.models import Profile
+from cloudinary.models import CloudinaryField
 
 
 class Category(models.Model):
@@ -16,6 +17,7 @@ class Category(models.Model):
         blank=True,
         null=True,
         )
+    category_img = CloudinaryField('image', default= '') #  TODO: Add a default picture
 
     def __str__(self):
         return f'{self.name}'
@@ -43,6 +45,7 @@ class Post(models.Model):
         related_name='blog_post_likes',
         blank=True,
         )
+    post_img = CloudinaryField('image', default= '') #  TODO: Add a default picture
 
     class Meta:
         ordering = ['-created_on']
@@ -50,7 +53,7 @@ class Post(models.Model):
     def __str__(self):
         return f'{self.author}: {self.title}'
 
-    
+
 class Comment(models.Model):
     author = models.ForeignKey(
         Profile,
