@@ -8,44 +8,45 @@ class Category(models.Model):
     name = models.CharField(
         max_length=50,
         unique=True,
-        blank=True,
-        null=True,
+        blank=False,
+        null=False,
         )
     slug = models.SlugField(
         max_length=200,
         unique=True,
-        blank=True,
-        null=True,
+        blank=False,
+        null=False,
         )
-    category_img = CloudinaryField('image', default= '') #  TODO: Add a default picture
+    category_img = CloudinaryField('category_image', default= 'default_image') #  TODO: Add a default picture
+    #  https://cloudinary.com/blog/placeholder_images_and_gravatar_integration_with_cloudinary
 
     def __str__(self):
         return f'{self.name}'
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=100, unique=True)
+    title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
-        related_name='blog_post_author',
+        related_name='post_author',
         )
     category = models.ForeignKey(
         Category,
         on_delete=models.CASCADE,
-        related_name='blog_post_category',
+        related_name='post_category',
         )
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
-    status = models.BooleanField(default=False)
+    published = models.BooleanField(default=False)
     likes = models.ManyToManyField(
         Profile,
-        related_name='blog_post_likes',
-        blank=True,
+        related_name='post_likes',
+        default=0,
         )
-    post_img = CloudinaryField('image', default= '') #  TODO: Add a default picture
+    post_img = CloudinaryField('post_image', default='default_image')  # TODO: Add a default picture
 
     class Meta:
         ordering = ['-created_on']
@@ -58,20 +59,20 @@ class Comment(models.Model):
     author = models.ForeignKey(
         Profile,
         on_delete=models.CASCADE,
-        related_name='author_comments',
+        related_name='comments_author',
         )
     blog_post = models.ForeignKey(
         Post,
         on_delete=models.CASCADE,
-        related_name='blog_post_comments',
-        blank=True,
-        null=True,  # TODO: Read more about what to do about
+        related_name='post_comments',
+        blank=False,
+        null=False,  # TODO: Read more about what to do about
         # 'It is impossible to add a non-nullable field'auto_created'auto_created'
         # https://stackoverflow.com/questions/26185687/you-are-trying-to-add-a-non-nullable-field-new-field-to-userprofile-without-a
     )
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.BooleanField(default=False)
+    approved = models.BooleanField(default=False)
 
     class Meta:
         ordering = ['-created_on']
@@ -84,10 +85,10 @@ class Like(models.Model):
     author = models.ForeignKey(
         Profile,
         on_delete=models.CASCADE,
-        related_name='author_likes',
+        related_name='likes_author',
         )
     blog_post = models.ForeignKey(
         Post,
         on_delete=models.CASCADE,
-        related_name='blog_post_likes',
+        related_name='post_likes',
         )
