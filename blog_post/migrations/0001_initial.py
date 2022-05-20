@@ -36,7 +36,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='author_likes', to='profiles.profile')),
-                ('blog_post', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='blog_post_likes', to='blog.blogpost')),
+                ('blog_post', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='blog_post_likes', to='blog_post.blogpost')),
             ],
         ),
         migrations.CreateModel(
@@ -49,7 +49,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='blogpost',
             name='category',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='blog_post_category', to='blog.category'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='blog_post_category', to='blog_post.category'),
         ),
         migrations.AddField(
             model_name='blogpost',

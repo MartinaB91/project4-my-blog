@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         ('profiles', '0001_initial'),
-        ('blog', '0002_remove_category_author_blogcomment_blog_post_and_more'),
+        ('blog_post', '0002_remove_category_author_blogcomment_blog_post_and_more'),
     ]
 
     operations = [

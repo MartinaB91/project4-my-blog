@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
     dependencies = [
         ('profiles', '0003_alter_profile_profile_img'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('blog', '0004_category_category_img_post_post_img'),
+        ('blog_post', '0004_category_category_img_post_post_img'),
     ]
 
     operations = [
@@ -48,7 +48,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='comment',
             name='blog_post',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='post_comments', to='blog.post'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='post_comments', to='blog_post.post'),
         ),
         migrations.AlterField(
             model_name='like',
@@ -58,7 +58,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='like',
             name='blog_post',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='post_likes', to='blog.post'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='post_likes', to='blog_post.post'),
         ),
         migrations.AlterField(
             model_name='post',
@@ -68,7 +68,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='post',
             name='category',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='post_category', to='blog.category'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='post_category', to='blog_post.category'),
         ),
         migrations.AlterField(
             model_name='post',
