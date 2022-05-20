@@ -65,8 +65,8 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/home'
+LOGIN_REDIRECT_URL = '/' #  TODO: Temporary. Change this to personal blog page or profile when created
+LOGOUT_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
