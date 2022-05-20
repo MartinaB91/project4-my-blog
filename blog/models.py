@@ -5,6 +5,9 @@ from cloudinary.models import CloudinaryField
 
 
 class Category(models.Model):
+    """
+    Class used for blog categories.
+    """
     name = models.CharField(
         max_length=50,
         unique=True,
@@ -25,6 +28,9 @@ class Category(models.Model):
 
 
 class Post(models.Model):
+    """
+    Class used for blog posts.
+    """
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
@@ -49,6 +55,9 @@ class Post(models.Model):
     post_img = CloudinaryField('post_image', default='default_image')  # TODO: Add a default picture
 
     class Meta:
+        """
+        Used for sorting posts on created date.
+        """
         ordering = ['-created_on']
 
     def __str__(self):
@@ -56,6 +65,9 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
+    """
+    Class used for blog comments.
+    """
     author = models.ForeignKey(
         Profile,
         on_delete=models.CASCADE,
@@ -75,6 +87,9 @@ class Comment(models.Model):
     approved = models.BooleanField(default=False)
 
     class Meta:
+        """
+        Used for sorting comments on created date.
+        """
         ordering = ['-created_on']
 
     def __str__(self):
@@ -82,6 +97,9 @@ class Comment(models.Model):
 
 
 class Like(models.Model):
+    """
+    Class used for blog likes
+    """
     author = models.ForeignKey(
         Profile,
         on_delete=models.CASCADE,

@@ -4,6 +4,9 @@ from cloudinary.models import CloudinaryField
 
 
 class Profile(models.Model):
+    """
+    Class used for blog profiles.
+    """
     user = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
