@@ -5,7 +5,10 @@ from .models import Category, Post, Comment
 # https://realpython.com/python-django-blog/#step-2-create-the-django-blog-admin
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    """This class is used for controlling what the Admin can see and do with posts"""
+    """
+    This class is used for controlling what the Admin can see,
+    filter, edit and search for in admin posts list
+    """
     model = Post
 
     list_display = (
@@ -44,7 +47,10 @@ class PostAdmin(admin.ModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    """This class is used for controlling what the Admin can see and do with categorys"""
+    """
+    This class is used for controlling what the Admin can see,
+    filter, edit and search for in admin categories list
+    """
     model = Category
 
     list_display = ('name', 'slug')
@@ -54,7 +60,10 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    """This class is used for controlling what the Admin can see and do with comments"""
+    """
+    This class is used for controlling what the Admin can see,
+    filter, edit and search for in admin comments list
+    """
     model = Comment
 
     list_display = (
