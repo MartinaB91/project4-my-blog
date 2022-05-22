@@ -33,6 +33,7 @@ class Post(models.Model):
     """
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=200, unique=True)
+    meta_description = models.CharField(max_length=150, blank=True)
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
@@ -47,6 +48,7 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     published = models.BooleanField(default=False)
+    publish_date = models.DateTimeField(blank=True, null=True)
     likes = models.ManyToManyField(
         Profile,
         related_name='post_likes',
