@@ -23,6 +23,12 @@ class Category(models.Model):
     category_img = CloudinaryField('category_image', default= 'default_image') #  TODO: Add a default picture
     #  https://cloudinary.com/blog/placeholder_images_and_gravatar_integration_with_cloudinary
 
+    class Meta:
+        """
+        Used for changing subcategory from categorys to categories
+        """
+        verbose_name_plural = "categories"
+
     def __str__(self):
         return f'{self.name}'
 
