@@ -1,7 +1,8 @@
 from django.contrib import admin
 from .models import Category, Post, Comment
 
-
+# Inspiration from:
+# https://realpython.com/python-django-blog/#step-2-create-the-django-blog-admin
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     """This class is used for controlling what the Admin can see and do with posts"""
