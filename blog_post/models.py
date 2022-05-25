@@ -62,6 +62,7 @@ class Post(models.Model):
         Profile,
         related_name='post_likes',
         default=0,
+        blank=True
         )
     post_img = CloudinaryField(
         'post_image',
