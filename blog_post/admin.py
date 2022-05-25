@@ -1,6 +1,8 @@
 from django.contrib import admin
 from .models import Category, Post, Comment
 
+admin.site.site_header = 'My Garden Administration'
+
 # Inspiration from:
 # https://realpython.com/python-django-blog/#step-2-create-the-django-blog-admin
 @admin.register(Post)
@@ -12,13 +14,12 @@ class PostAdmin(admin.ModelAdmin):
     model = Post
 
     list_display = (
-        'id',
-        'author',
         'title',
+        'author',
         'category',
         'slug',
-        'published',
         'publish_date',
+        'published',
 
     )
 
@@ -27,14 +28,10 @@ class PostAdmin(admin.ModelAdmin):
         'category',
         'published',
         'publish_date',
+    
     )
 
-    list_editable = (
-        'title',
-        'category',
-        'publish_date',
-        'published',
-    )
+    list_display_links = ('title', 'author', 'category',)
 
     search_fields = (
         'title',
@@ -45,6 +42,8 @@ class PostAdmin(admin.ModelAdmin):
     )
 
     prepopulated_fields = {'slug': ('title',)}
+
+    exclude = ('likes', 'updated_on')
 
 
 
