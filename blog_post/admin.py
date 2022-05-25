@@ -44,6 +44,10 @@ class PostAdmin(admin.ModelAdmin):
         'category',
     )
 
+    prepopulated_fields = {'slug': ('title',)}
+
+
+
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
@@ -56,6 +60,8 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug')
     list_filter = ('name',)
     search_fields = ('name', 'slug')
+    prepopulated_fields = {'slug': ('name',)}
+    
 
 
 @admin.register(Comment)
@@ -71,7 +77,7 @@ class CommentAdmin(admin.ModelAdmin):
         'content',
         'author',
         'created_on',
-        'approved',
+        'status',
 
         )
     
@@ -79,9 +85,9 @@ class CommentAdmin(admin.ModelAdmin):
         'blog_post',
         'author',
         'created_on',
-        'approved',
+        'status',
     )
 
-    list_editable = ('content', 'approved',)
+    list_editable = ('content', 'status',)
     search_fields = ('author', 'created_on',)
 

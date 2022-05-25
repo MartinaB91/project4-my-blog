@@ -20,7 +20,10 @@ class Category(models.Model):
         blank=False,
         null=False,
         )
-    category_img = CloudinaryField('category_image', default= 'default_image') #  TODO: Add a default picture
+    category_img = CloudinaryField(
+        'category_image', 
+        default='default_image',
+        )  #  TODO: Add a default picture
     #  https://cloudinary.com/blog/placeholder_images_and_gravatar_integration_with_cloudinary
 
     class Meta:
@@ -60,7 +63,10 @@ class Post(models.Model):
         related_name='post_likes',
         default=0,
         )
-    post_img = CloudinaryField('post_image', default='default_image')  # TODO: Add a default picture
+    post_img = CloudinaryField(
+        'post_image',
+        default='default_image'
+        )  # TODO: Add a default picture
 
     class Meta:
         """
@@ -76,6 +82,7 @@ class Comment(models.Model):
     """
     Class used for blog comments.
     """
+    APPROVED_CHOICES = [('U','Unhandled',), ('A','Approve',), ('D','Deny',)]
     author = models.ForeignKey(
         Profile,
         on_delete=models.CASCADE,
@@ -92,7 +99,11 @@ class Comment(models.Model):
     )
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(default=False)
+    status = models.CharField(
+        max_length=9,
+        default='Unhandled',
+        choices=APPROVED_CHOICES,
+        )
 
     class Meta:
         """
