@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block content %}
-<h1>Hidden by navbar</h1>
-<h1>Home page</h1>
+    <h1>Hidden by navbar</h1>
+    <h1>Home page</h1>
 
 {% for post in object_list %}
-    <a href="{% url 'blog_post' post.slug %}"><h2>{{post.title}}</h2></a>
+    <a href="{% url 'blog_post' post.slug %}">
+        <h2>{{post.title}}</h2></a>
     <h3>{{post.author}} | {{post.category}}</h3>
 {% endfor %}
 
 {% endblock %}
+

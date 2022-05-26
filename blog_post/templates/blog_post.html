@@ -1,8 +1,23 @@
 {% extends 'base.html' %}
 
+
+
 {% block content %}
-<h1>{{post.title}}</h1>
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+    <div class="col">
+        <h1 class="display-3">{{post.title}}</h1>
+    </div>
+    <div>
+        <img class="img-fluid" id="temporary-defalt-pic" src="../../static/media/temporary_default.jpeg" alt="Smile emoojis">
+    </div>
+</div>
+<div class="row"></div>
+
 <p>{{post.author}}</p>
-<h1>{{post.title}}</h1>
-<p>{{post.author}}</p>
+
+<a href="{% url 'index' %}" class="btn btn-outline-secondary">Back</a>
 {% endblock %}
