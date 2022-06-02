@@ -9,8 +9,6 @@
 <article id=" blog-post-article">
     <div class="row">
         <h1 class="text-center display-3 text-capitalize">{{post.title}}</h1>
-        <img class="img-fluid rounded" id="temporary-defalt-pic" src="../../static/media/temporary_default.jpeg"
-            alt="Smile emoojis">
     </div>
     <div class="row">
         <div class="col">
@@ -27,6 +25,10 @@
             <p class="text-lg-start text-md-start">{{post.category}}</p>
         </div>
     </div>
+    <div>
+        <img class="img-fluid rounded" id="temporary-defalt-pic" src="../../static/media/temporary_default.jpeg"
+            alt="Smile emoojis">
+    </div>
     <article id="blog-post-body">
         <div class="row">
             <p> {{post.content}} </p>
@@ -38,7 +40,8 @@
         </div>
         <div class="col-1">
             {# Temporary numb #}
-            <p class="text-end">0 <button class="btn" id="btn-likes" type="button"><i class="fas fa-comment-alt"></i></button></p>
+            <p class="text-end">0 <button class="btn" id="btn-likes" type="button"><i
+                        class="fas fa-comment-alt"></i></button></p>
         </div>
         <div class="col-1 text-start">
             {# Temporary numb #}
