@@ -3,7 +3,6 @@ from django.views.generic import ListView
 from blog_post.models import Post
 
 
-
 class HomeView(ListView):
     """ 
      Used for showing posts on homepage
