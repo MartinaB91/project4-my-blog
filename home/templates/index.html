@@ -44,11 +44,11 @@
             <p class="text-end">0 <button class="btn" id="btn-comments-list" type="button"><i class="fas fa-comment-alt"></i></button></p>
         </div>
     <!--  -->
-        <div class="col-1 text-start">
-            {# Temporary numb #}
-            <p>{{post.likes.count}}<button class="btn" id="btn-likes-list" type="submit" value="{{post.slug}}"><i class="fas fa-heart"></i></button></p>
-        </div>
-        <!--  -->
+    <div class="col-1 text-start">
+        {# Temporary numb #}
+        <p>{{post.likes.count}}<button class="btn" id="btn-likes" type="submit" value="{{post.slug}}"><i class="fas fa-heart"></i></button></p>
+    </div>
+    <!--  -->
     </div>
 </article>
 <a href="{% url 'index' %}" class="btn btn-outline-secondary">Back</a>

@@ -43,10 +43,20 @@
             <p class="text-end">0 <button class="btn" id="btn-comments" type="button"><i class="fas fa-comment-alt"></i></button></p>
         </div>
     <!--  -->
+    <form action="{% url 'post_likes' post.slug %}" method="POST">
+        {% csrf_token %}
+        {% if liked %}
         <div class="col-1 text-start">
             {# Temporary numb #}
-            <p>{{post.likes.count}}<button class="btn" id="btn-likes" type="submit" value="{{post.slug}}"><i class="fas fa-heart"></i></button></p>
+            <p>{{post.number_of_likes}}<button class="btn" id="btn-likes-list" name="post_id" type="submit" value="{{post.id}}"><i class="fas fa-heart"></i></button></p>
         </div>
+        {% else %}
+        <div class="col-1 text-start">
+            {# Temporary numb #}
+            <p>{{post.number_of_likes}}<button class="btn" id="btn-likes-list" name="post_id" type="submit" value="{{post.id}}"><i class="far fa-heart"></i></button></p>
+        </div>
+        {% endif %}
+    </form>
         <!--  -->
     </div>
 
