@@ -43,7 +43,7 @@ class PostAdmin(admin.ModelAdmin):
 
     prepopulated_fields = {'slug': ('title',)}
 
-    exclude = ('likes', 'updated_on')
+    exclude = ('updated_on',)
 
 
 
