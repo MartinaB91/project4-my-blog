@@ -21,7 +21,7 @@ class Category(models.Model):
         null=False,
         )
     category_img = CloudinaryField(
-        'category_image', 
+        'category_image',
         default='default_image',
         )  #  TODO: Add a default picture
     #  https://cloudinary.com/blog/placeholder_images_and_gravatar_integration_with_cloudinary
@@ -40,6 +40,7 @@ class Post(models.Model):
     """
     Class used for blog posts.
     """
+    PUBLISH_STATUS = ((0, 'Draft'), (1, 'Publish'))
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=200, unique=True)
     meta_description = models.CharField(max_length=150, blank=True)
@@ -56,7 +57,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
-    published = models.BooleanField(default=False)
+    published = models.IntegerField(choices=PUBLISH_STATUS, default=0)
     publish_date = models.DateTimeField(blank=True, null=True)
     likes = models.ManyToManyField(
         Profile,
@@ -77,7 +78,7 @@ class Post(models.Model):
 
     def __str__(self):
         return f'{self.author}: {self.title}'
-
+  
 
 class Comment(models.Model):
     """
@@ -130,3 +131,4 @@ class Like(models.Model):
         on_delete=models.CASCADE,
         related_name='post_likes',
         )
+  
