@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 
 {% block content %}
@@ -8,7 +9,7 @@
 <br>
 <article id=" blog-post-article">
     <div class="row">
-        <h1 class="text-center display-3 text-capitalize">{{post.title}}</h1>
+        <a href="{% url 'blog_post' post.slug %}"><h1 class="text-center display-3 text-capitalize">{{post.title}}</h1></a>
     </div>
     <div class="row">
         <div class="col">
