@@ -5,10 +5,8 @@
     <h1>Hidden by navbar</h1>
     <h1>Home page</h1>
 
-
-   
 {% for post in object_list %}
-{% include 'blog_post.html' %} 
+    {% include 'blog_post.html' %} 
 {% endfor %}
 {% endblock %}
 
