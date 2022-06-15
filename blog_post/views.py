@@ -6,32 +6,6 @@ from django.views import generic
 from .models import Post, Like
 
 
-# class BlogPostList(generic.ListView):  # TODO: Maybe remove later on, maybe doing the same thing as HomeView
-#     model = Post
-#     template_name = 'index.html'
-#     queryset = Post.objects.filter(published=1).order_by('-created_on')
-
-# class BlogPostList(generic.DetailView):
-
-#     def get(self, request, slug, *args, **kwargs):
-#         template_name = 'index.html'
-#         queryset = Post.objects.filter(published=1).order_by('-created_on')
-
-#         post = get_object_or_404(queryset, slug=slug)
-#         liked = False
-#         if post.likes.filter(id=request.user.id).exists():
-#             liked = True
-#         return render(
-#             request,
-#             "index.html",
-#             {
-#                 'post': post,
-#                 'liked': liked,
-#             },
-#         )
-
-    
-
 class BlogPostDetail(generic.DetailView):
 
     def get(self, request, slug, *args, **kwargs):
