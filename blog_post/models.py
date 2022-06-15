@@ -62,9 +62,10 @@ class Post(models.Model):
     likes = models.ManyToManyField(
         Profile,
         related_name='post_likes',
-        default=0,
+        default=[0],
         blank=True
         )
+    number_of_likes = models.BigIntegerField(default='0')
     post_img = CloudinaryField(
         'post_image',
         default='default_image'
@@ -79,8 +80,8 @@ class Post(models.Model):
     def __str__(self):
         return f'{self.author}: {self.title}'
 
-    def number_of_likes(self):
-        return self.likes.count()
+    # def number_of_likes(self):
+    #     return self.likes.count()
   
 
 class Comment(models.Model):
@@ -134,4 +135,5 @@ class Like(models.Model):
         on_delete=models.CASCADE,
         related_name='post_likes',
         )
+
   
