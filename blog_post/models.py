@@ -88,7 +88,7 @@ class Comment(models.Model):
     """
     Class used for blog comments.
     """
-    APPROVED_CHOICES = [('U','Unhandled',), ('A','Approve',), ('D','Deny',)]
+    APPROVED_CHOICES = [('U', 'Unhandled',), ('A', 'Approve',), ('D', 'Deny',)]
     author = models.ForeignKey(
         Profile,
         on_delete=models.CASCADE,
@@ -119,6 +119,9 @@ class Comment(models.Model):
 
     def __str__(self):
         return f'{self.author}: {self.content}'
+
+    def number_of_comments(self):
+        return self.likes.count()
 
 
 class Like(models.Model):
