@@ -35,25 +35,25 @@ class BlogPostList(ListView):
         return context
 
 
-class BlogPostDetailHome(generic.DetailView):
+# class BlogPostDetailHome(generic.DetailView):
 
-    def get(self, request, slug, *args, **kwargs):
-        template_name = 'index.html'
-        queryset = Post.objects.filter(published=1).order_by('-created_on')
+#     def get(self, request, slug, *args, **kwargs):
+#         template_name = 'index.html'
+#         queryset = Post.objects.filter(published=1).order_by('-created_on')
 
-        post = get_object_or_404(queryset, slug=slug)
-        liked = False
-        if post.likes.filter(id=request.user.id).exists():
-            liked = True
+#         post = get_object_or_404(queryset, slug=slug)
+#         liked = False
+#         if post.likes.filter(id=request.user.id).exists():
+#             liked = True
 
-        return render(
-            request,
-            "index.html",
-            {
-                'post': post,
-                'liked': liked,
-            },
-        )
+#         return render(
+#             request,
+#             "index.html",
+#             {
+#                 'post': post,
+#                 'liked': liked,
+#             },
+#         )
 
 def like_post_home(request, slug):
     user = request.user
