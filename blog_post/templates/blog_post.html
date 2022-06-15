@@ -9,7 +9,9 @@
 <br>
 <article id=" blog-post-article">
     <div class="row">
-        <a href="{% url 'blog_post' post.slug %}"><h1 class="text-center display-3 text-capitalize">{{post.title}}</h1></a>
+        <a href="{% url 'blog_post' post.slug %}">
+            <h1 class="text-center display-3 text-capitalize">{{post.title}}</h1>
+        </a>
     </div>
     <div class="row">
         <div class="col">
@@ -36,36 +38,70 @@
         </div>
     </article>
     <div class="row">
-        <div class="col-10 text-end">
+        <div class="col-8 text-end">
             <button class="btn" id="btn-make-comment" data-bs-toggle="button" autocomplete="off">Comment</button>
         </div>
-        <div class="col-1">
+        <div class="col-2">
             {# Temporary numb #}
-            <p class="text-end">0 <button class="btn" id="btn-comments" type="button"><i class="fas fa-comment-alt"></i></button></p>
+            <p class="text-end">0 <button class="btn" id="btn-comments" type="button"><i
+                        class="fas fa-comment-alt"></i></button></p>
         </div>
-    <!--  -->
-    <form action="{% url 'post_likes' post.slug %}" method="POST">
         {% csrf_token %}
-        {% if liked %}
-        <div class="col-1 text-start">
-            {# Temporary numb #}
-            <p>{{post.number_of_likes}}<button class="btn" id="btn-likes-list" name="post_id" type="submit" value="{{post.id}}"><i class="fas fa-heart"></i></button></p>
+        <!-- {% if request.user.is_authenticated %} -->
+        <div>
+            <span>{{post.number_of_likes}}</span>
+
+            <button class="btn btn_likes" id="btn-like" name="{% url 'post_likes' post.slug %}" type="submit"
+                value="{{post.id}}"><i id="btn-i" class="far fa-heart btn-icon"></i></button>
+
+            {% if liked %}
+            <script>
+                var element = document.getElementById("btn-i");
+                element.classList.add("fas");
+                element.classList.remove("far");
+            </script>
+            {% endif%}
+
         </div>
-        {% else %}
-        <div class="col-1 text-start">
-            {# Temporary numb #}
-            <p>{{post.number_of_likes}}<button class="btn" id="btn-likes-list" name="post_id" type="submit" value="{{post.id}}"><i class="far fa-heart"></i></button></p>
-        </div>
-        {% endif %}
-    </form>
-        <!--  -->
+        <!-- {% endif %} -->
     </div>
 
 </article>
 <a href="{% url 'index' %}" class="btn btn-outline-secondary">Back</a>
 
+<script>
+    $('.btn_likes').click(function (e) {
+        // Prevent execution of click for every button in class
+        e.stopPropagation();
+        e.stopImmediatePropagation();
 
+        let btn = $(this).children().first();
+        let span = $(this).siblings('span').first(); // The span has the like-icon
+        $.ajax({
+            method: "POST",
+            url: $(this).attr('name'),
+            data: {
+                'post_id': $(this).attr('value'),
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+            },
+            success: function (response) {
+                if (btn.hasClass('far')) {
+                    btn.removeClass('far');
+                    btn.addClass('fas');
+                    span.text(response);
+                } else {
+                    btn.removeClass('fas');
+                    btn.addClass('far');
+                    span.text(response);
+                }
+            },
+            error: function (rs) {
+                alert(rs.responseText);
+            }
 
+        });
+        return false;
 
-
+    });
+</script>
 {% endblock %}
