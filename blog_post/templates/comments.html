@@ -2,10 +2,13 @@
 <h3>Comments</h3>
 {% if not post.post_comments.all %}
     <p>This post has no comments</p>
+    <!-- Todo: Add link to comment form  -->
     {% else %}
         {% for comment in post.post_comments.all %}
-            <p>{{comment.author}}</p>
-            <p>{{comment.created_on}}</p>
+        <div>
+            <p>{{comment.author}} | {{comment.created_on}} </p>
             <p>{{comment.content}}</p>
+        </div>
         {% endfor %}
     {% endif %}
+
