@@ -43,13 +43,10 @@
             <p class="text-end">0 <button class="btn" id="btn-comments" type="button"><i class="fas fa-comment-alt"></i></button></p>
         </div>
         {% csrf_token %}
-        <!-- Ska kolla om knappen är likad vid omladdning' -->
         <!-- {% if request.user.is_authenticated %} -->
         <div>
             <span>{{post.number_of_likes}}</span>
-
             <button class="btn btn_likes" id="btn-like" name="{% url 'post_likes' post.slug %}" type="submit" value="{{post.id}}"><i id="btn-i" class="far fa-heart btn-icon"></i></button>
-            <h1>IsLiked:{{liked}}.</h1>
             {% if liked %}
             <script>
                 var element = document.getElementById("btn-i");
@@ -63,7 +60,7 @@
     </div>
     
 </article>
-<a href="{% url 'index' %}" class="btn btn-outline-secondary">Back</a>
+
 {% endfor %}
 <script>
     $('.btn_likes').click(function(e){
