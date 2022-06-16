@@ -1,4 +1,3 @@
-<hr>
 <h3>Comments</h3>
 {% if not post.post_comments.all %}
     <p>This post has no comments</p>
@@ -11,4 +10,13 @@
         </div>
         {% endfor %}
     {% endif %}
+    <div class="form-group">
+        <form method="POST">
+        {% csrf_token %}
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Write your comment here..."></textarea>
+        <p class="text-center">
+            <button type="submit" class="btn btn-outline-secondary">Leave Comment</button>
+        </p>
+        </form>
+    </div>
 
