@@ -36,6 +36,7 @@
     </article>
     <div class="comment-and-like-section">
         <div class="row">
+            <hr>
             <div class="col-8 text-end">
                 <button class="btn" id="btn-make-comment" data-bs-toggle="button" autocomplete="off">Comment</button>
             </div>
@@ -49,6 +50,7 @@
                 <span>{{post.number_of_likes}}</span>
                 <button class="btn btn_likes" id="btn-like" name="{% url 'post_likes' post.slug %}" type="submit" value="{{post.id}}"><i id="btn-i" class="far fa-heart btn-icon"></i></button>
             </div>
+            <hr>
             <!-- {% endif %} -->
         </div>
         <div id="comments-wrapper" class="collapse">

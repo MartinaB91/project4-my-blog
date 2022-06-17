@@ -39,8 +39,10 @@
     </article>
     <div class="comment-and-like-section">
         <div class="row">
+            <hr>
             <div class="col-8 text-end">
-                <button class="btn" id="btn-make-comment" data-bs-toggle="button" autocomplete="off">Comment</button>
+                <!-- <button class="btn" href="#" id="btn-make-comment" data-bs-toggle="button" autocomplete="off">Comment</button> -->
+                <a href="#">Comment</a>
             </div>
             <div class="col-2">
                 {# Temporary numb #}
@@ -49,24 +51,19 @@
             </div>
             {% csrf_token %}
             <!-- {% if request.user.is_authenticated %} -->
-            <div>
+            <div class="col-2">
                 <span>{{post.number_of_likes}}</span>
                 <button class="btn btn_likes" id="btn-like" name="{% url 'post_likes' post.slug %}" type="submit"
                     value="{{post.id}}"><i id="btn-i" class="far fa-heart btn-icon"></i></button>
-                {% if liked %}
-                <script>
-                    var element = document.getElementById("btn-i");
-                    element.classList.add("fas");
-                    element.classList.remove("far");
-                </script>
-                {% endif%}
             </div>
+            <hr>
             <!-- {% endif %} -->
         </div>
         <div id="comments-wrapper" class="collapse">
             {% include 'comments.html'%}
         </div>
     </div>
+        
 
 </article>
 <a href="{% url 'index' %}" class="btn btn-outline-secondary">Back</a>
