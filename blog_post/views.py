@@ -1,17 +1,17 @@
 from datetime import datetime
-from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 from django.http import HttpResponse
-from django.views.generic import DetailView, ListView
+from django.views.generic import DetailView, ListView, View, CreateView
 from django.views import generic
 from .models import Post, Like, Comment
-from .forms import CommentForm
+from .forms import PostForm
+from django.template.defaultfilters import slugify
 
 
 class BlogPostDetail(generic.DetailView):
-
+    template_name = 'blog_post.html'
     def get(self, request, slug, *args, **kwargs):
-        template_name = 'blog_post.html'
         queryset = Post.objects.filter(published=1).order_by('-created_on')
         post = get_object_or_404(queryset, slug=slug)
 
@@ -45,4 +45,23 @@ def like_post(request, slug):
             post_obj.save()
 
     return HttpResponse(post_obj.number_of_likes)
-  
+
+
+class CreatePost(generic.CreateView):
+    model = Post
+    template_name = 'create_post.html'
+    fields = 'title', 'category', 'author', 'content', 'post_img', 'meta_description',
+
+    def post(self, request):
+        if request.method == "POST":
+            form = PostForm(request.POST)
+            if form.is_valid():
+                new_post = form.save(commit=False)
+                new_post.user = request.user
+                new_post.slug = slugify(new_post.title)
+                new_post.save()
+        form = PostForm()
+        return render(request, "create_post.html", {"form": form})
+
+                
+
