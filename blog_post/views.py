@@ -61,7 +61,7 @@ class CreatePost(generic.CreateView):
                 new_post.slug = slugify(new_post.title)
                 new_post.save()
         form = PostForm()
-        return render(request, "create_post.html", {"form": form})
+        return redirect('index')
         
 
 class CreateComment(generic.CreateView):
