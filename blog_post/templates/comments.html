@@ -1,22 +1,50 @@
 <h3>Comments</h3>
 {% if not post.post_comments.all %}
-    <p>This post has no comments</p>
-    <!-- Todo: Add link to comment form  -->
-    {% else %}
-        {% for comment in post.post_comments.all %}
-        <div>
-            <p>{{comment.author}} | {{comment.created_on}} </p>
-            <p>{{comment.content}}</p>
+<p>This post has no comments</p>
+<!-- Todo: Add link to comment form  -->
+{% else %}
+{% for comment in post.post_comments.all %}
+<div>
+    <p><strong>{{comment.author}}</strong> | {{comment.created_on}} </p>
+    <p>{{comment.content}}</p>
+</div>
+{% endfor %}
+{% endif %}
+
+<form id="comment-form" class="comment-form" name="{% url 'create_comment' post.slug %}">
+    <div class="row">
+        <textarea class="form-control" placeholder="Leave your comment here..." id="content" name="content"></textarea>
+        <div class="text-center">
+            <button class="btn btn-outline-secondary btn-comment">Leave Comment</button>
         </div>
-        {% endfor %}
-    {% endif %}
-    <div class="form-group">
-        <form method="POST">
-        {% csrf_token %}
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Write your comment here..."></textarea>
-        <p class="text-center">
-            <button type="submit" class="btn btn-outline-secondary">Leave Comment</button>
-        </p>
-        </form>
     </div>
 
+</form>
+
+{# Handling comments without page refresh #}
+{% block scripts %}
+<script>
+    // Inspiration from: 
+    // https://dev.to/thepylot/how-to-send-django-form-with-ajax-4bpo
+    $(document).on('submit', '.comment-form', function (e) {
+        // Prevent execution of click for every button in class
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        let textBoxContent = $(this).children().first().children().first(); // Get comment texarea 
+
+        $.ajax({
+            method: 'POST',
+            url: $(this).attr('name'),
+            data: {
+                'content': textBoxContent.val(),
+                'csrfmiddlewaretoken': '{{ csrf_token }}',
+            },
+            success: function (response) {
+                textBoxContent.val('');
+                textBoxContent.attr("placeholder", "Thank you! Your comment will soon be reviewed.");
+            }
+        });
+        return false;
+    });
+</script>
+{% endblock scripts %}
