@@ -80,8 +80,6 @@ class Post(models.Model):
     def __str__(self):
         return f'{self.author}: {self.title}'
 
-    # def number_of_likes(self):
-    #     return self.likes.count()
   
 
 class Comment(models.Model):
@@ -116,12 +114,11 @@ class Comment(models.Model):
         Used for sorting comments on created date.
         """
         ordering = ['-created_on']
+        
 
     def __str__(self):
-        return f'{self.author}: {self.content}'
+        return f'{self.author}: {self.title}'
 
-    def number_of_comments(self):
-        return self.likes.count()
 
 
 class Like(models.Model):
