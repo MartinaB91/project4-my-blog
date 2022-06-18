@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.views.generic import DetailView, ListView, View, CreateView
 from django.views import generic
 from .models import Post, Like, Comment
-from .forms import PostForm
+from .forms import PostForm, CommentForm
 from django.template.defaultfilters import slugify
 
 
@@ -62,6 +62,27 @@ class CreatePost(generic.CreateView):
                 new_post.save()
         form = PostForm()
         return render(request, "create_post.html", {"form": form})
+
+class CreateComment(generic.CreateView):
+    model = Comment
+    template_name = 'comments.html'
+    fields = 'content',
+
+    def post(self, request, slug):
+        if request.method == "POST":
+
+            queryset = Post.objects.filter(published=1).order_by('-created_on')
+            post_obj = get_object_or_404(queryset, slug=slug)
+            
+            form = CommentForm(request.POST)
+            if form.is_valid():
+                new_comment = form.save(commit=False)
+                new_comment.blog_post = post_obj
+                new_comment.author = request.user.profile
+                new_comment.slug = slug
+                new_comment.save()
+        form = CommentForm() 
+        return HttpResponse('Comment saved')  
 
                 
 
