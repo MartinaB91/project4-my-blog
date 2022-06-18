@@ -24,36 +24,15 @@ class BlogPostList(ListView):
  
     def get_context_data(self, **kwargs):
         queryset = Post.objects.filter(published=1).order_by('-created_on')
-        for p in queryset: # Loop through all posts 
+        for post in queryset:  # Loop through all published posts 
             liked = False  
-            if p.likes.filter(id=self.request.user.id).exists():  # If user has liked, set True
+            if post.likes.filter(id=self.request.user.id).exists():  # If user has liked, set True. Todo: this dosen't work
                 liked = True
 
-        context = super().get_context_data(**kwargs) ## Can remove?
+        context = super().get_context_data(**kwargs)
         context['liked'] = liked
         
         return context
-
-
-# class BlogPostDetailHome(generic.DetailView):
-
-#     def get(self, request, slug, *args, **kwargs):
-#         template_name = 'index.html'
-#         queryset = Post.objects.filter(published=1).order_by('-created_on')
-
-#         post = get_object_or_404(queryset, slug=slug)
-#         liked = False
-#         if post.likes.filter(id=request.user.id).exists():
-#             liked = True
-
-#         return render(
-#             request,
-#             "index.html",
-#             {
-#                 'post': post,
-#                 'liked': liked,
-#             },
-#         )
 
 def like_post_home(request, slug):
     user = request.user
