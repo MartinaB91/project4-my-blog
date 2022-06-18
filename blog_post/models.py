@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from profiles.models import Profile
 from cloudinary.models import CloudinaryField
+from django.urls import reverse
 
 
 class Category(models.Model):
@@ -79,6 +80,9 @@ class Post(models.Model):
 
     def __str__(self):
         return f'{self.author}: {self.title}'
+
+    def get_absolute_url(self):
+        return reverse('index')
 
   
 
