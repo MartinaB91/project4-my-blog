@@ -9,6 +9,10 @@
 
 }
 
+#content-wrapper {
+    margin-top: 10rem
+}
+
 #temporary-defalt-pic-list {
     max-width: 70%;
 }

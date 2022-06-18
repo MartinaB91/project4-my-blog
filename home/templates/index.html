@@ -2,18 +2,16 @@
 {% load static %}
 
 {% block content %}
-<h1>Hidden by navbar</h1>
-<h1>Home page</h1>
 
 {% for post in object_list %}
-<article id=" blog-post-article">
+<article id="blog-post-article">
     <div class="row">
         <a href="{% url 'blog_post' post.slug %}">
             <h1 class="text-center display-3 text-capitalize">{{post.title}}</h1>
         </a>
         <!-- Todo: Style buttons -->
         <a href="{% url 'update_post' post.slug %}" class="btn btn-success">Edit</a>
-        <a  class="btn btn-danger">Delete</a>
+        <a  href="{% url 'delete_post' post.slug %}" class="btn btn-danger">Delete</a>
     </div>
     <div class="row">
         <div class="col">
