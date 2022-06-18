@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.views.generic import DetailView, ListView, View, CreateView, UpdateView
 from django.views import generic
 from .models import Post, Like, Comment
-from .forms import PostForm, CommentForm
+from .forms import PostForm, CommentForm, UpdateForm
 from django.template.defaultfilters import slugify
 
 
@@ -49,8 +49,9 @@ def like_post(request, slug):
 
 class CreatePost(generic.CreateView):
     model = Post
+    form_class = PostForm
     template_name = 'create_post.html'
-    fields = 'title', 'category', 'author', 'content', 'post_img', 'meta_description',
+    # fields = 'title', 'category', 'author', 'content', 'post_img', 'meta_description',
 
     def post(self, request):
         if request.method == "POST":
@@ -65,8 +66,9 @@ class CreatePost(generic.CreateView):
 
 class CreateComment(generic.CreateView):
     model = Comment
+    form_class = CommentForm
     template_name = 'comments.html'
-    fields = 'content',
+    # fields = 'content',
 
     def post(self, request, slug):
         if request.method == "POST":
@@ -87,9 +89,9 @@ class CreateComment(generic.CreateView):
 
 class UpdatePost(generic.UpdateView):
     model = Post
+    form_class = UpdateForm
     template_name = 'update_post.html'
-    fields = ['title', 'category', 'author', 'content', 'post_img', 'meta_description',]
-
+    
 
 
 
