@@ -1,7 +1,7 @@
+{% block content %}
 <h3>Comments</h3>
 {% if not post.post_comments.all %}
 <p>This post has no comments</p>
-<!-- Todo: Add link to comment form  -->
 {% else %}
 {% for comment in post.post_comments.all %}
 <div>
@@ -11,6 +11,8 @@
 {% endfor %}
 {% endif %}
 
+{# Only users that are signed in can see comment form #}
+{% if request.user.is_authenticated %}
 <form id="comment-form" class="comment-form" name="{% url 'create_comment' post.slug %}">
     <div class="row">
         <textarea class="form-control" placeholder="Leave your comment here..." id="content" name="content"></textarea>
@@ -18,8 +20,12 @@
             <button class="btn btn-outline-secondary btn-comment">Leave Comment</button>
         </div>
     </div>
+{% else %}
+<p class="text-center"><strong>Sign in to leave a comment</strong></p>
+{% endif %}
 
 </form>
+{% endblock %}
 
 {# Handling comments without page refresh #}
 {% block scripts %}

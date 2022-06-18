@@ -40,24 +40,25 @@
     <div class="comment-and-like-section">
         <div class="row">
             <hr>
-            <div class="col-8 text-end">
-                <!-- <button class="btn" href="#" id="btn-make-comment" data-bs-toggle="button" autocomplete="off">Comment</button> -->
+            <!-- <div class="col-8 text-end">
                 <a href="#">Comment</a>
-            </div>
-            <div class="col-2">
-                {# Temporary numb #}
-                <p class="text-end">{{post.post_comments.count}}<button class="btn btn-comments" type="button"><i
-                            class="far fa-comment-alt"></i></button></p>
+            </div> -->
+            <div class="col-10">
+                <p class="text-end">{{post.post_comments.count}}
+                    <button class="btn btn-comments" type="button"><i class="far fa-comment-alt"></i></button>
+                </p>
             </div>
             {% csrf_token %}
-            <!-- {% if request.user.is_authenticated %} -->
             <div class="col-2">
                 <span>{{post.number_of_likes}}</span>
+                {% if request.user.is_authenticated %}
                 <button class="btn btn_likes" id="btn-like" name="{% url 'post_likes' post.slug %}" type="submit"
                     value="{{post.id}}"><i id="btn-i" class="far fa-heart btn-icon"></i></button>
+                {% else %}
+                <button class="btn" id="btn-like" onclick="alertMsgVisitorLikes()"><i id="btn-i" class="far fa-heart btn-icon"></i></button>
+                {% endif %} 
             </div>
             <hr>
-            <!-- {% endif %} -->
         </div>
         <div id="comments-wrapper" class="collapse">
             {% include 'comments.html'%}
@@ -71,6 +72,11 @@
 {# Handling likes without page refresh #}
 {% block scripts %}
 <script>
+// Temporary alert if user tries to like before signed in
+function alertMsgVisitorLikes() {
+  alert("You need to sign in before you can like this post!");
+}
+
     $('.btn_likes').click(function (e) {
         // Prevent execution of click for every button in class
         e.stopPropagation();
