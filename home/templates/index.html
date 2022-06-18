@@ -10,8 +10,11 @@
             <h1 class="text-center display-3 text-capitalize">{{post.title}}</h1>
         </a>
         <!-- Todo: Style buttons -->
+        {# Only the author can change or delete post #}
+        {% if user.is_authenticated and user == post.author %}
         <a href="{% url 'update_post' post.slug %}" class="btn btn-success">Edit</a>
         <a  href="{% url 'delete_post' post.slug %}" class="btn btn-danger">Delete</a>
+        {% endif %}
     </div>
     <div class="row">
         <div class="col">
