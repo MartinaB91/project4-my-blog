@@ -1,8 +1,8 @@
 from datetime import datetime
 from django.shortcuts import render, get_object_or_404, redirect
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.http import HttpResponse
-from django.views.generic import DetailView, ListView, View, CreateView, UpdateView
+from django.views.generic import DetailView, ListView, View, CreateView, UpdateView, DeleteView
 from django.views import generic
 from .models import Post, Like, Comment
 from .forms import PostForm, CommentForm, UpdateForm
@@ -51,7 +51,6 @@ class CreatePost(generic.CreateView):
     model = Post
     form_class = PostForm
     template_name = 'create_post.html'
-    # fields = 'title', 'category', 'author', 'content', 'post_img', 'meta_description',
 
     def post(self, request):
         if request.method == "POST":
@@ -63,12 +62,12 @@ class CreatePost(generic.CreateView):
                 new_post.save()
         form = PostForm()
         return render(request, "create_post.html", {"form": form})
+        
 
 class CreateComment(generic.CreateView):
     model = Comment
     form_class = CommentForm
     template_name = 'comments.html'
-    # fields = 'content',
 
     def post(self, request, slug):
         if request.method == "POST":
@@ -93,7 +92,7 @@ class UpdatePost(generic.UpdateView):
     template_name = 'update_post.html'
     
 
-
-
-                
-
+class DeletePost(generic.DeleteView):
+    model = Post
+    template_name = 'delete_post.html'
+    success_url = reverse_lazy('index')

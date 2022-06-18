@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Delete Blogpost</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <p>Do you wan't to delete blogpost: <strong>{{post.title}}</strong></p>
+    <button class= "btn-outline-secondary" type="submit">Delete Post</button>
+</form>
+{% endblock %}
