@@ -1,6 +1,75 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Hidden by navbar</h1>
-<h1>My blog page</h1>
+{% for post in object_list %}
+{% if user.is_authenticated and user == post.author %}
+<article id="blog-post-article">
+    <div class="row">
+        <a href="{% url 'blog_post' post.slug %}">
+            <h1 class="text-center display-3 text-capitalize">{{post.title}}</h1>
+        </a>
+        <!-- Todo: Style buttons -->
+        {# Only the author can change or delete post #}
+        {% if user.is_authenticated and user == post.author %}
+        <a href="{% url 'update_post' post.slug %}" class="btn btn-success">Edit</a>
+        <a  href="{% url 'delete_post' post.slug %}" class="btn btn-danger">Delete</a>
+        {% endif %}
+    </div>
+    <div class="row">
+        <div class="col">
+            {# Align text right on large/medium screens #}
+            <p class="text-lg-end text-md-end">{{post.author}}</p>
+        </div>
+        <div class="col">
+            {# Align text center on large/medium screens #}
+            <p class="text-lg-center text-md-center">{{post.created_on}}</p>
+        </div>
+        {# On small screens category is displayed on new row #}
+        <div class="col-sm">
+            {# Align text left on large/medium screens #}
+            <p class="text-lg-start text-md-start">{{post.category}}</p>
+        </div>
+    </div>
+    <div>
+        <img class="img-fluid rounded" id="temporary-defalt-pic" src="../../static/media/temporary_default.jpeg"
+            alt="Smile emoojis">
+    </div>
+    <article id="blog-post-body">
+        <div class="row">
+            <p> {{post.content}} </p>
+        </div>
+    </article>
+    <div class="comment-and-like-section">
+        <div class="row">
+            <hr>
+            <!-- <div class="col-8 text-end">
+                <button class="btn" id="btn-make-comment" data-bs-toggle="button" autocomplete="off">Comment</button>
+            </div> -->
+            <div class="col-10">
+                <p class="text-end">{{post.post_comments.count}}
+                    <button class="btn btn-comments" type="button"><i class="far fa-comment-alt"></i></button>
+                </p>
+            </div>
+            {% csrf_token %}
+            <div class="col-2">
+                <span>{{post.number_of_likes}}</span>
+                {% if request.user.is_authenticated %}
+                <button class="btn btn_likes" id="btn-like" name="{% url 'post_likes' post.slug %}" type="submit"
+                    value="{{post.id}}"><i id="btn-i" class="far fa-heart btn-icon"></i></button>
+                {% else %}
+                <button class="btn" id="btn-like" onclick="alertMsgVisitorLikes()"><i id="btn-i"
+                        class="far fa-heart btn-icon"></i></button>
+                {% endif %}
+            </div>
+            <hr>
+        </div>
+        <div id="comments-wrapper" class="collapse">
+            {% include 'comments.html'%}
+        </div>
+    </div>
+
+</article>
+{% endif %}
+{% endfor %}
+    
 {% endblock %}

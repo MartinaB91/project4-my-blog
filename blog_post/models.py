@@ -121,7 +121,7 @@ class Comment(models.Model):
         
 
     def __str__(self):
-        return f'{self.author}: {self.title}'
+        return f'{self.author}: {self.blog_post}'
 
 
 
