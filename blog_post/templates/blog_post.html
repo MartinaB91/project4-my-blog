@@ -68,13 +68,15 @@
 </article>
 <a href="{% url 'index' %}" class="btn btn-outline-secondary">Back</a>
 
+{# Handling likes without page refresh #}
+{% block scripts %}
 <script>
     $('.btn_likes').click(function (e) {
         // Prevent execution of click for every button in class
         e.stopPropagation();
         e.stopImmediatePropagation();
 
-        let btn = $(this).children().first();
+        let btn = $(this).children().first(); 
         let span = $(this).siblings('span').first(); // The span has the like-icon
         $.ajax({
             method: "POST",
@@ -103,4 +105,5 @@
 
     });
 </script>
+{% endblock scripts %}
 {% endblock %}
