@@ -2,7 +2,7 @@ from datetime import datetime
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 from django.http import HttpResponse
-from django.views.generic import DetailView, ListView, View, CreateView
+from django.views.generic import DetailView, ListView, View, CreateView, UpdateView
 from django.views import generic
 from .models import Post, Like, Comment
 from .forms import PostForm, CommentForm
@@ -83,6 +83,15 @@ class CreateComment(generic.CreateView):
                 new_comment.save()
         form = CommentForm() 
         return HttpResponse('Comment saved')  
+
+
+class UpdatePost(generic.UpdateView):
+    model = Post
+    template_name = 'update_post.html'
+    fields = ['title', 'category', 'author', 'content', 'post_img', 'meta_description',]
+
+
+
 
                 
 
