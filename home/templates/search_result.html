@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    {% if search %}
+    <h2><strong>Searched for:</strong> {{search}}</h2> 
+        {% for post in posts %}
+            <a href="{% url 'blog_post' post.slug %}">{{post.title}}</a>
+            <br>
+        {% endfor %}
+        {% for category in categories %}
+        <a href="{% url 'post_by_category' category.slug %}">{{category.name}}</a>
+        <br>
+        {% endfor %}
+    {% else %}
+        <h1>What do you wan't to find?</h1>
+    {% endif %}
+{% endblock %}

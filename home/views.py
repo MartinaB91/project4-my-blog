@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
-from django.views.generic import ListView, DetailView
-from blog_post.models import Post, Category
+from django.views.generic import ListView, DetailView, View
+from blog_post.models import Post, Category, User
 from django.views import generic
 from django.http import HttpResponse
+from django.db.models import Q
 
 # class HomeView(ListView):
 #     """ 
@@ -72,5 +73,20 @@ class CategoryPostList(generic.ListView):
             'categories': categories,
             'selected_category': selected_category
         }
-
         return queryset
+
+# Inspiration from:
+# https://stackoverflow.com/questions/739776/how-do-i-do-an-or-filter-in-a-django-query
+class SearchResult(View):
+    def get(self, request):
+        if request.method == 'GET':
+            search = request.GET['search']
+            # Filter on if post title or content contains text from search box
+            posts = Post.objects.filter(Q(title__contains=search, published=1) | Q(content__contains=search, published=1))
+            categories = Category.objects.filter(Q(name__contains=search))
+
+            return render(request, 'search_result.html', {'search':search, 'posts': posts, 'categories': categories},)
+        else: 
+            return render(request, 'search_result.html', {})
+
+
