@@ -1,0 +1,15 @@
+{% block categories %}
+
+<h2>Categories</h2>
+{% for category in index.categories %}
+    <a href="{% url 'post_by_category' category.slug %}">
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{category.name}}{{category.title}}</h5>
+          <a href="{% url 'post_by_category' category.slug %}" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+</a>
+{% endfor %}
+{% endblock %}
