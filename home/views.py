@@ -10,29 +10,27 @@ from django.http import HttpResponse
 #      """
 #     model = Post
 #     template_name = 'index.html'
-#     queryset = Post.objects.filter(published=1).order_by('-created_on')
 
-class BlogPostList(ListView):
+
+class BlogPostList(generic.ListView):
     """ 
      Used for showing posts on homepage
      """
-     
     model = Post
     template_name = 'index.html'
-    queryset = Post.objects.filter(published=1).order_by('-created_on')
+    context_object_name = 'index'
+    
+    def get_queryset(self):
+        all_published_posts = Post.objects.filter(published=1).order_by('-created_on')
+        categories = Category.objects.all()
 
- 
-    def get_context_data(self, **kwargs):
-        queryset = Post.objects.filter(published=1).order_by('-created_on')
-        for post in queryset:  # Loop through all published posts 
-            liked = False  
-            if post.likes.filter(id=self.request.user.id).exists():  # If user has liked, set True. Todo: this dosen't work
-                liked = True
+        queryset = {
+            'all_published_posts': all_published_posts,
+            'categories': categories,
+        }
 
-        context = super().get_context_data(**kwargs)
-        context['liked'] = liked
-        
-        return context
+        return queryset
+   
 
 def like_post_home(request, slug):
     user = request.user
