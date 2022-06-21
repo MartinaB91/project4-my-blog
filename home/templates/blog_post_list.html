@@ -1,28 +1,30 @@
 {% block content %}
-<article id="blog-post-article">
+<article class="mx-auto blog-post-article">
     <div class="row">
-        <a href="{% url 'blog_post' post.slug %}">
-            <h1 class="text-center display-3 text-capitalize blog-post-header">{{post.title}}</h1>
-        </a>
-        {# Only the author can change or delete post #}
-        {% if user.is_authenticated and user == post.author %}
         <span class="text-end">
+            {# Only the author can change or delete post #}
+            {% if user.is_authenticated and user == post.author %}
             <a href="{% url 'update_post' post.slug %}" class="btn btn-success">Edit</a>
             <a  href="{% url 'delete_post' post.slug %}" class="btn btn-danger">Delete</a>
+            {% endif %}
         </span>
-        {% endif %}
+        <span class="text-center">
+            <a href="{% url 'blog_post' post.slug %}" class="blog-post-header">
+                <h1 class="display-3 text-capitalize blog-post-header">{{post.title}}</h1>
+            </a>
+        </span>
     </div>
     <div class="row">
-        <div class="col-5 g-0">
+        <div class="col-4 g-0">
             {# Align text right on large/medium screens #}
-            <p class="text-lg-end text-md-end">{{post.author}} |</p>
+            <p class="text-lg-end text-md-end">{{post.author}}</p>
         </div>
-        <div class="col-2 g-0">
+        <div class="col-4 g-0">
             {# Align text center on large/medium screens #}
-            <p class="text-lg-center text-md-center">{{post.created_on}} |</p>
+            <p class="text-lg-center text-md-center">| {{post.created_on}} |</p>
         </div>
         {# On small screens category is displayed on new row #}
-        <div class="col-5 g-0">
+        <div class="col-4 g-0">
             {# Align text left on large/medium screens #}
             <p class="text-lg-start text-md-start">{{post.category}}</p>
         </div>
@@ -33,15 +35,12 @@
     </div>
     <article id="blog-post-body">
         <div class="row">
-            <p> {{post.content}} </p>
+            <p class="blog-post-content"> {{post.content}} </p>
         </div>
     </article>
+    <hr>
     <div class="comment-and-like-section">
         <div class="row">
-            <!-- <div class="col-8 text-end">
-                <button class="btn" id="btn-make-comment" data-bs-toggle="button" autocomplete="off">Comment</button>
-            </div> -->
-            <hr>
             <div class="col-10">
                 <p class="text-end">{{post.post_comments.count}}
                     <button class="btn btn-comments" type="button"><i class="far fa-comment-alt"></i></button>
@@ -58,12 +57,10 @@
                         class="far fa-heart btn-icon"></i></button>
                 {% endif %}
             </div>
-            <hr>
         </div>
         <div id="comments-wrapper" class="collapse">
             {% include 'comments.html'%}
         </div>
     </div>
-
 </article>
 {% endblock %}
