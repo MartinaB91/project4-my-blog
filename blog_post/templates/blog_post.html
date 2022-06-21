@@ -8,18 +8,25 @@
         <a href="{% url 'blog_post' post.slug %}">
             <h1 class="text-center display-3 text-capitalize">{{post.title}}</h1>
         </a>
+        {# Only the author can change or delete post #}
+        {% if user.is_authenticated and user == post.author %}
+        <span class="text-end">
+            <a href="{% url 'update_post' post.slug %}" class="btn btn-success">Edit</a>
+            <a  href="{% url 'delete_post' post.slug %}" class="btn btn-danger">Delete</a>
+        </span>
+        {% endif %}
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col-5 g-0">
             {# Align text right on large/medium screens #}
-            <p class="text-lg-end text-md-end">{{post.author}}</p>
+            <p class="text-lg-end text-md-end">{{post.author}} |</p>
         </div>
-        <div class="col">
+        <div class="col-2 g-0">
             {# Align text center on large/medium screens #}
-            <p class="text-lg-center text-md-center">{{post.created_on}}</p>
+            <p class="text-lg-center text-md-center">{{post.created_on}} |</p>
         </div>
         {# On small screens category is displayed on new row #}
-        <div class="col-sm">
+        <div class="col-5 g-0">
             {# Align text left on large/medium screens #}
             <p class="text-lg-start text-md-start">{{post.category}}</p>
         </div>
