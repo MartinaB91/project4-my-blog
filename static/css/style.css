@@ -1,9 +1,4 @@
 /* General styling */
-
-body {
-    background-color: lightgrey;
-}
-
 a {
     text-decoration: none; 
     text-align: center;
@@ -29,7 +24,6 @@ a {
 }
 
 /* Styling for blog post */
-
 .blog-post-header {
     display: inline-block;
 }
@@ -51,7 +45,20 @@ a {
     padding: 5% 3% 5% 3%;
 }
 
+/* Styling category section */
+#category-header {
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 3%;
+}
 
+#category-wrapper {
+    height: auto;
+    margin-bottom: 10%;
+}
 
+.category-row {
+    margin-right: 5%;
+}
 
 
