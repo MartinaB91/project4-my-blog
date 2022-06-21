@@ -1,3 +1,10 @@
+/* General styling */
+
+a {
+    text-decoration: none; 
+    text-align: center;
+}
+
 /* Styling for Navbar  */
 #textbox-search {
     box-shadow: none;
@@ -15,4 +22,10 @@
 
 #temporary-defalt-pic-list {
     max-width: 70%;
+}
+
+/* Styling for blog post */
+
+.blog-post-header {
+    display: inline-block;
 }
