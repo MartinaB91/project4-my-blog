@@ -4,19 +4,40 @@ a {
     text-align: center;
 }
 
+video {
+    object-fit: cover;
+    width: 100%;
+    height: 40rem;
+}
+
+.video-wrapper {
+    position: relative;
+}
+.video-header {
+    font-size: 10rem;
+    position: absolute;
+    margin-top: -30%;
+    margin-left: 3%;
+}
+
+/* Styling blog post list section */
+#blog-post-list-header {
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 3%;
+}
+
 /* Styling for Navbar  */
 #textbox-search {
     box-shadow: none;
-
 }
 
 #btn-search  {
     box-shadow: none;
-
 }
 
 #content-wrapper {
-    margin-top: 10rem
+    margin-top: 8rem
 }
 
 #temporary-defalt-pic-list {
