@@ -5,11 +5,16 @@ $(document).ready(function(){
       
       if ($("#textbox-search").hasClass('collapse')){
         $("#textbox-search").removeClass('collapse');
-     
-
-      }
+           }
       else {
-        $("#btn-search").prop("type", "submit");
+        // If textbox is empty while visible, hide on next click
+        if ($("#textbox-search").val() == ""){
+          $("#textbox-search").addClass('collapse');
+
+        } else {
+          $("#btn-search").prop("type", "submit");
+
+        }
       }
       
     });
