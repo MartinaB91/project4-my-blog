@@ -2,10 +2,7 @@
 {% load static %}
 
 {% block content %}
-    {% for post in posts_by_category.all_published_posts %}
-        <!-- Compare if string is equal (in lower case) -->
-        {% if post.category|lower == posts_by_category.selected_category|lower %}
+    {% for post in post_list %}
             {% include 'blog_post_list.html' %}
-        {% endif %}
     {% endfor %}
 {% endblock %}

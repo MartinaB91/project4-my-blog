@@ -12,7 +12,6 @@ from django.db.models import Q
 #     model = Post
 #     template_name = 'index.html'
 
-
 class BlogPostList(generic.ListView):
     """ 
      Used for showing posts on homepage
@@ -25,14 +24,21 @@ class BlogPostList(generic.ListView):
         all_published_posts = Post.objects.filter(published=1).order_by('-created_on')
         categories = Category.objects.all()
 
+        posts_with_like_status = []
+        for post in all_published_posts:
+            liked = False
+            if post.likes.filter(id=self.request.user.id).exists():
+                liked = True
+            posts_with_like_status.append({'post': post, 'liked': liked})
+
         queryset = {
+            # 'posts_with_like_status': posts_with_like_status,
             'all_published_posts': all_published_posts,
             'categories': categories,
-        }
+            }
 
         return queryset
-   
-
+        
 def like_post_home(request, slug):
     user = request.user
     if request.method == 'POST':
@@ -52,29 +58,30 @@ def like_post_home(request, slug):
     return HttpResponse(post_obj.number_of_likes)
 
 class CategoryPostList(generic.ListView):
-    """ 
-     Used for sorting out selected category on page for a specifik category.
-     """
     model = Post
     template_name = 'posts_by_category.html'
     context_object_name = 'posts_by_category'
+
+    def get(self, request, slug, *args, **kwargs):
+        category = get_object_or_404(Category, slug=slug)
+        queryset = Post.objects.filter(published=1, category=category).order_by('-created_on')
+        
+        context = {
+            'post_list': queryset,
+            'category': category
+            }
+
+        return render(
+            request,
+            'posts_by_category.html',
+            context
+        )
+
+class CategoryList(generic.ListView):
+    model = Category
+    queryset = Category.objects.all()
+    template_name = 'index.html'
     
-    def get_queryset(self):
-        all_published_posts = Post.objects.filter(published=1).order_by('-created_on')
-        categories = Category.objects.all()
-
-        # Todo: Try to do better, split string on '/', category is second from last index.
-        wsgiRequestSplitted = str(self.request).split('/')  
-        # 'un-slugify' the string, in template acutal title is used so we replace '-' with ' '
-        selected_category = wsgiRequestSplitted[len(wsgiRequestSplitted)-2].replace('-', ' ')
-
-        queryset = {
-            'all_published_posts': all_published_posts,
-            'categories': categories,
-            'selected_category': selected_category
-        }
-        return queryset
-
 # Inspiration from:
 # https://stackoverflow.com/questions/739776/how-do-i-do-an-or-filter-in-a-django-query
 class SearchResult(View):
