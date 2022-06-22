@@ -1,23 +1,19 @@
-<div class="video-wrapper" style="background: yellow;">
+{# Video header section #}
+<div class="video-wrapper">
 <video autoplay loop muted>
-    <source src="../../static/media/production ID_4412729.mp4" type="video/mp4" />
+    <source src="../../static/media/header_video.mp4" type="video/mp4"/> 
     Your browser does not support the video tag.
 </video>
 <h1 class="video-header">My <br> Garden</h1>
 </div>
+
 {% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
-<!-- {% for like in index.posts_with_like_status %}
-
-        <h1>{{like}}</h1>
-        <h3>nästa</h3>
-
-
-{% endfor %} -->
 
 <h1 id="blog-post-list-header">Latest Posts</h1>
+{# all_published_posts #}
 {% for post in index.all_published_posts %}
     {% include 'blog_post_list.html' %}
 {% endfor %}

@@ -1,5 +1,7 @@
 {% load static %}
 
+{% block video %}
+{% endblock %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,10 +21,10 @@
   
     <title>My Garden</title>
 </head>
-<body>
+<body class="bg-light">
     <header>
       {# Navbar #}
-      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-white bg-white" id="navbar">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">My Garden</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
