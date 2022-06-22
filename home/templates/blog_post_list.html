@@ -47,11 +47,16 @@
                 </p>
             </div>
             {% csrf_token %}
-            <div class="col-2">
+            <div class="col-2 text-center">
                 <span>{{post.number_of_likes}}</span>
                 {% if request.user.is_authenticated %}
-                <button class="btn btn_likes" id="btn-like" name="{% url 'post_likes' post.slug %}" type="submit"
+                    {% if liked %}
+                    <button class="btn btn_likes" id="btn-like" name="{% url 'post_likes' post.slug %}" type="submit"
+                    value="{{post.id}}"><i id="btn-i" class="fas fa-heart btn-icon"></i></button>
+                    {% else %}
+                    <button class="btn btn_likes" id="btn-like" name="{% url 'post_likes' post.slug %}" type="submit"
                     value="{{post.id}}"><i id="btn-i" class="far fa-heart btn-icon"></i></button>
+                    {% endif %}
                 {% else %}
                 <button class="btn" id="btn-like" onclick="alertMsgVisitorLikes()"><i id="btn-i"
                         class="far fa-heart btn-icon"></i></button>
