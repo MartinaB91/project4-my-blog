@@ -5,7 +5,7 @@
 <p>This post has no comments</p>
 {% else %}
 {% for comment in post.post_comments.all %}
-<div>
+<div class="shadow-sm p-3 mb-5 bg-body rounded">
     <p><strong>{{comment.author}}</strong> | {{comment.created_on}} </p>
     <p>{{comment.content}}</p>
 </div>
