@@ -2,12 +2,12 @@
 {% block categories %}
 <div id="category-wrapper" class="max-auto">
   <h1 id="category-header">Categories</h1>
-  <div class="row g-0">
+  <div class="row g-2">
   {% for category in index.categories %}
-  <div class="col-lg-4 col-md-6 col-sm-12 shadow p-3 mb-5 bg-body rounded category-card-wrapper" >
+  <div class="col-lg-4 col-md-6 col-sm-12 category-card-wrapper" >
     <a href="{% url 'post_by_category' category.slug %}">
-      <div class="card">
-        <img src="../../static/media/temporary_default.jpeg" alt="...">
+      <div class="card shadow p-3 mb-5 bg-body rounded">
+        <img src="../../static/media/temporary_default.jpeg" class="bg-body rounded" alt="...">
         <div class="card-img-overlay">
           <h3 class="card-title category-header">{{category.name}}{{category.title}}</h3>
         </div>
