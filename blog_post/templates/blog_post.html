@@ -3,7 +3,7 @@
 
 
 {% block content %}
-<article id=" blog-post-article">
+<article class=" blog-post-detail shadow-sm p-3 mb-5 bg-body rounded">
     <div class="row">
         <a href="{% url 'blog_post' post.slug %}">
             <h1 class="text-center display-3 text-capitalize">{{post.title}}</h1>
@@ -19,16 +19,16 @@
     <div class="row">
         <div class="col-5 g-0">
             {# Align text right on large/medium screens #}
-            <p class="text-lg-end text-md-end">{{post.author}} |</p>
+            <p class="text-lg-end text-md-end fw-bold post-author">{{post.author}}</p>
         </div>
         <div class="col-2 g-0">
             {# Align text center on large/medium screens #}
-            <p class="text-lg-center text-md-center">{{post.created_on}} |</p>
+            <p class="text-lg-center text-md-center">| {{post.created_on}} |</p>
         </div>
         {# On small screens category is displayed on new row #}
         <div class="col-5 g-0">
             {# Align text left on large/medium screens #}
-            <p class="text-lg-start text-md-start">{{post.category}}</p>
+            <p class="text-lg-start text-md-start fw-bold">{{post.category}}</p>
         </div>
     </div>
     <div>
@@ -37,7 +37,7 @@
     </div>
     <article id="blog-post-body">
         <div class="row">
-            <p> {{post.content}} </p>
+            <p class="blog-post-content"> {{post.content}} </p>
         </div>
     </article>
     <div class="comment-and-like-section">
@@ -69,10 +69,8 @@
             {% include 'comments.html'%}
         </div>
     </div>
-        
-
 </article>
-<a href="{% url 'index' %}" class="btn btn-outline-secondary">Back</a>
+<a href="{% url 'index' %}" class="btn btn-outline-secondary mb-5">Back</a>
 
 {# Handling likes without page refresh #}
 {% block scripts %}
