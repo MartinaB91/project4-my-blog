@@ -2,6 +2,7 @@
 a {
     text-decoration: none; 
     text-align: center;
+    color: black;
 }
 
 video {
@@ -13,11 +14,19 @@ video {
 .video-wrapper {
     position: relative;
 }
-.video-header {
-    font-size: 10rem;
+
+#video-text-wrapper {
     position: absolute;
     margin-top: -30%;
     margin-left: 3%;
+
+}
+.video-header {
+    font-size: 10rem;
+}
+
+#btn-i {
+    color: #db377e;
 }
 
 /* Styling blog post list section */
@@ -37,7 +46,7 @@ video {
 }
 
 #content-wrapper {
-    margin-top: 8rem
+    margin-top: 5rem
 }
 
 #temporary-defalt-pic-list {
@@ -49,13 +58,24 @@ video {
     display: inline-block;
 }
 
-.blog-post-article {
+.blog-post-list {
     width: 70%;
     margin-bottom: 5%;
     padding-top: 2%;
     padding-left: 5%;
     padding-right: 5%;
     background-color: white;
+}
+
+.blog-post-detail {
+    margin-bottom: 5%;
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.post-author {
+    color: #db377e;
+
 }
 
 .btn-comment {
