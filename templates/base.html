@@ -39,6 +39,7 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
             </li>
+            {% if request.user.is_authenticated %}
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
@@ -50,9 +51,10 @@
                 <li>
                   <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="{% url 'settings' %}">Settings</a></li>
+                <li><a class="dropdown-item" href="{% url 'settings' user.profile.id %}">Settings</a></li>
               </ul>
             </li>
+            {% endif %}
           </ul>
           <form class="d-flex" method="GET" action="{% url 'search' %}">
             <input class="form-control me-2 collapse" id="textbox-search" type="search" placeholder="Search" aria-label="Search" name="search">
