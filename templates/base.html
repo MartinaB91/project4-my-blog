@@ -59,7 +59,11 @@
             <button class="btn" id="btn-search" type="button"><i class="fas fa-search"></i></button>
           </form>
           <ul>
+            {% if request.user.is_authenticated %}
+              <a class="btn btn-secondary" href="{% url 'account_logout' %}">Sign out</a>
+            {% else %}
               <a class="btn btn-secondary" href="{% url 'account_login' %}">Sign up</a>
+            {% endif %}
           </ul>
         </div>
       </div>
