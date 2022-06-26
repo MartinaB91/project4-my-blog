@@ -1,10 +1,13 @@
 {# Video header section #}
 <div class="video-wrapper">
-<video autoplay loop muted>
+    <video autoplay loop muted>
     <source src="../../static/media/header_video.mp4" type="video/mp4"/> 
     Your browser does not support the video tag.
-</video>
-<h1 class="video-header">My <br> Garden</h1>
+    </video>
+    <div id="video-text-wrapper">
+        <h1 class="video-header">My <br> Garden</h1>
+        <p class="h2">“Flowers are like friends; they bring color to your world.” - Unknown</p>
+    </div>
 </div>
 
 {% extends 'base.html' %}
