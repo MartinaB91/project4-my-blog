@@ -8,6 +8,7 @@ from .models import Post, Like, Comment
 from .forms import PostForm, CommentForm, UpdateForm
 from django.template.defaultfilters import slugify
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 
 class BlogPostDetail(generic.DetailView):
@@ -48,7 +49,7 @@ def like_post(request, slug):
     return HttpResponse(post_obj.number_of_likes)
 
 
-class CreatePost(generic.CreateView, SuccessMessageMixin):
+class CreatePost(LoginRequiredMixin, generic.CreateView, SuccessMessageMixin):
     model = Post
     form_class = PostForm
     template_name = 'create_post.html'
@@ -58,7 +59,7 @@ class CreatePost(generic.CreateView, SuccessMessageMixin):
             form = PostForm(request.POST)
             if form.is_valid():
                 new_post = form.save(commit=False)
-                new_post.user = request.user
+                new_post.author = self.request.user
                 new_post.slug = slugify(new_post.title)
                 new_post.save()
                 messages.success(self.request, 'Your post has been successfully created and will be published after review!')
