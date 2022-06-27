@@ -1,12 +1,10 @@
 from django.shortcuts import render
 from blog_post.models import Post
 from django.views.generic import ListView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-# def my_blog(request):
-#     return render(request, 'my_blog.html')
-
-class MyBlogPostList(ListView):
+class MyBlogPostList(LoginRequiredMixin, ListView):
     """ 
      Used for showing  users posts on "my blog page"
      """

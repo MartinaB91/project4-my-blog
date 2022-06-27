@@ -89,7 +89,7 @@ class CreateComment(generic.CreateView):
         return HttpResponse('Comment saved')  
 
 
-class UpdatePost(generic.UpdateView, SuccessMessageMixin):
+class UpdatePost(LoginRequiredMixin, generic.UpdateView, SuccessMessageMixin):
     model = Post
     form_class = UpdateForm
     template_name = 'update_post.html'
@@ -101,7 +101,7 @@ class UpdatePost(generic.UpdateView, SuccessMessageMixin):
         return reverse_lazy('index')
     
 
-class DeletePost(generic.DeleteView, SuccessMessageMixin):
+class DeletePost(LoginRequiredMixin, generic.DeleteView, SuccessMessageMixin):
     model = Post
     template_name = 'delete_post.html'
     #success_url = reverse_lazy('index')
