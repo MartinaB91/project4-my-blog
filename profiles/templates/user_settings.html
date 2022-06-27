@@ -4,7 +4,7 @@
 
 {% block content %}
 
-
+{# alert messages section #}
 {% if messages %}
 <div>
     {% for message in messages %}
@@ -15,6 +15,7 @@
 </div>
 {% endif %}
 
+{# User settings section #}
 <div id="settings-wrapper">
     <h1 id="settings-header">Settings</h1>
     <a href="{% url 'account_change_password' %}" class="btn btn-secondary">Change Password</a>
