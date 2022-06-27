@@ -15,18 +15,29 @@
 
 {% block content %}
 
+{# alert messages section #}
+{% if messages %}
+<div>
+    {% for message in messages %}
+        <div class="alert alert-success" role="alert">
+            <p class="text-center">{{ message }}</p>
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+
 <h1 id="blog-post-list-header">Latest Posts</h1>
 {# all_published_posts #}
 {% for post in index.all_published_posts %}
     {% include 'blog_post_list.html' %}
 {% endfor %}
 
+
 <div id="category-wrapper">
     {% include 'categories.html' %}
 </div>
 
 <script>
-    function alertMsgVisitorLikes() {
 
     $('.btn_likes').click(function (e) {
         // Prevent execution of click for every button in class

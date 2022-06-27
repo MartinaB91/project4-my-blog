@@ -7,7 +7,8 @@ from django.views import generic
 from .models import Post, Like, Comment
 from .forms import PostForm, CommentForm, UpdateForm
 from django.template.defaultfilters import slugify
-
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib import messages
 
 class BlogPostDetail(generic.DetailView):
     template_name = 'blog_post.html'
@@ -47,7 +48,7 @@ def like_post(request, slug):
     return HttpResponse(post_obj.number_of_likes)
 
 
-class CreatePost(generic.CreateView):
+class CreatePost(generic.CreateView, SuccessMessageMixin):
     model = Post
     form_class = PostForm
     template_name = 'create_post.html'
@@ -60,9 +61,10 @@ class CreatePost(generic.CreateView):
                 new_post.user = request.user
                 new_post.slug = slugify(new_post.title)
                 new_post.save()
+                messages.success(self.request, 'Your post has been successfully created and will be published after review!')
         form = PostForm()
-        return redirect('index')
-        
+        return redirect('create_post')
+  
 
 class CreateComment(generic.CreateView):
     model = Comment
@@ -86,13 +88,24 @@ class CreateComment(generic.CreateView):
         return HttpResponse('Comment saved')  
 
 
-class UpdatePost(generic.UpdateView):
+class UpdatePost(generic.UpdateView, SuccessMessageMixin):
     model = Post
     form_class = UpdateForm
     template_name = 'update_post.html'
+    success_message = 'Your post has been succsessfully updated!'
+
+    def get_success_url(self):
+        messageString = 'Your post has been updated!' 
+        messages.success(self.request, messageString)
+        return reverse_lazy('index')
     
 
-class DeletePost(generic.DeleteView):
+class DeletePost(generic.DeleteView, SuccessMessageMixin):
     model = Post
     template_name = 'delete_post.html'
-    success_url = reverse_lazy('index')
+    #success_url = reverse_lazy('index')
+    # success_message = 'Your post has been deleted!'
+
+    def get_success_url(self):
+        messages.success(self.request, 'Your post has been deleted!')
+        return reverse_lazy('index')

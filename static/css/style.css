@@ -102,4 +102,11 @@ video {
     margin-right: 5%;
 }
 
+/* Styling settings page */
+#settings-header {
+    text-decoration: underline;
+    
+}
+
+
 
