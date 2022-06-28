@@ -6,7 +6,7 @@
 <div class="row g-2">
     {% for post in object_list %}
     {% if user.is_authenticated and user == post.author %}
-    <div class="col-lg-6 col-md-4 col-sm-12">
+    <div class="col-lg-6 col-md-6 col-sm-12">
         <article class="mx-auto shadow-sm p-3 mb-5 bg-body rounded">
             <div class="row">
                 <span class="text-lg-end text-md-center text-sm-center">
@@ -28,42 +28,41 @@
                 </span>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-5 col-sm-6 g-0" style="background-color: red">
+                <div class="col-lg-4 col-md-5 col-sm-5 g-0">
                     {# Align text right on large/medium screens #}
-                    <p class="text-lg-end text-md-end text-sm-center fw-bold post-author">{{post.author}}</p>
+                    <p class="text-lg-end text-md-end text-sm-end fw-bold post-author">{{post.author}}</p>
                 </div>
-                <div class="col-lg-4 col-md-7 col-sm-6 g-0" style="background-color: yellow">
+                <div class="col-lg-4 col-md-7 col-sm-7 g-0">
                     {# Align text center on large/medium screens #}
                     <p class="text-lg-center text-md-center">| {{post.created_on}} |</p>
                 </div>
                 {# On small screens category is displayed on new row #}
-                <div class="col-lg-4 col-md-12 col-sm-12 g-0" style="background-color: blue">
+                <div class="col-lg-4 col-md-12 col-sm-12 g-0">
                     {# Align text left on large/medium screens #}
                     <p class="text-lg-start text-md-center text-sm-center text- fw-bold">{{post.category}}</p>
                 </div>
             </div>
+            <details class="post-details">
+                <summary class="post-detail-summary">Show More</summary>
             <div>
                 <img class="img-fluid rounded" id="temporary-defalt-pic" src="../../static/media/temporary_default.jpeg"
                     alt="Smile emoojis">
             </div>
-            <details class="post-details">
-                <summary class="post-detail-summary"></summary>
                 <article id="blog-post-body">
                     <div class="row">
                         <p class="blog-post-content"> {{post.content}} </p>
                         <hr>
                     </div>
                 </article>
-            </details>
             <div class="comment-and-like-section">
                 <div class="row">
-                    <div class="col-lg-10 col-md-7 col-sm-8">
+                    <div class="col-lg-10 col-md-9 col-sm-9">
                         <p class="text-end">{{post.post_comments.count}}
                             <button class="btn btn-comments" type="button"><i class="far fa-comment-alt"></i></button>
                         </p>
                     </div>
                     {% csrf_token %}
-                    <div class="col-lg-2 col-md-5 col-sm-4 text-center">
+                    <div class="col-lg-2 col-md-3 col-sm-3 text-center">
                         <span>{{post.number_of_likes}}</span>
                         {% if request.user.is_authenticated %}
                         {% if liked %}
@@ -88,6 +87,7 @@
     </div>
     {% endif %}
     {% endfor %}
+</details>
 </div>
 
 {% endblock %}
