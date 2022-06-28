@@ -29,14 +29,11 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-5 col-sm-5 g-0">
-                    {# Align text right on large/medium screens #}
                     <p class="text-lg-end text-md-end text-sm-end fw-bold post-author">{{post.author}}</p>
                 </div>
                 <div class="col-lg-4 col-md-7 col-sm-7 g-0">
-                    {# Align text center on large/medium screens #}
                     <p class="text-lg-center text-md-center">| {{post.created_on}} |</p>
                 </div>
-                {# On small screens category is displayed on new row #}
                 <div class="col-lg-4 col-md-12 col-sm-12 g-0">
                     {# Align text left on large/medium screens #}
                     <p class="text-lg-start text-md-center text-sm-center text- fw-bold">{{post.category}}</p>
@@ -45,8 +42,11 @@
             <details class="post-details">
                 <summary class="post-detail-summary">Show More</summary>
             <div>
-                <img class="img-fluid rounded" id="temporary-defalt-pic" src="../../static/media/temporary_default.jpeg"
-                    alt="Smile emoojis">
+                {% if 'default_image' in post.post_img.url %}
+                <img src="../../static/media/temporary_default.jpeg" class="bg-body rounded" alt="..." width="100%" >
+                {% else %}
+                <img src=" {{ post.post_img.url }}" width="100%">
+                {% endif %}
             </div>
                 <article id="blog-post-body">
                     <div class="row">
