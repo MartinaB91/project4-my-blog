@@ -91,6 +91,7 @@ video {
     text-align: center;
     text-decoration: underline;
     margin-bottom: 3%;
+    
 }
 
 #category-wrapper {
@@ -98,10 +99,21 @@ video {
     margin-bottom: 10%;
 }
 
+
 .category-row {
     margin-right: 5%;
 }
 
+.card-title {
+    color: white;
+    font-size: 3.5rem;
+}
+
+.category-img {
+    opacity: 0.7;
+    height: 22rem;
+    object-fit: cover;
+}
 /* Styling settings page */
 #settings-header {
     text-decoration: underline;

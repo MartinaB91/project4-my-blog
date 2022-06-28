@@ -8,12 +8,12 @@
     <a href="{% url 'post_by_category' category.slug %}">
       <div class="card shadow p-3 mb-5 bg-body rounded">
                 {% if 'default_image' in category.category_img.url %}
-                <img src="../../static/media/temporary_default.jpeg" class="bg-body rounded" alt="...">
+                <img src="../../static/media/temporary_default.jpeg" class="bg-body rounded category-img" alt="...">
                 {% else %}
-                <img src=" {{ category.category_img.url }}" width="100%">
+                <img src=" {{ category.category_img.url }}" class="category-img" width="100%">
                 {% endif %}
         <div class="card-img-overlay">
-          <h3 class="card-title category-header">{{category.name}}{{category.title}}</h3>
+          <h1 class="card-title mt-5">{{category.name}}{{category.title}}</h1>
         </div>
       </div>
     </a>
