@@ -15,18 +15,18 @@
         </span>
     </div>
     <div class="row">
-        <div class="col-4 g-0">
+        <div class="col-lg-5 col-md-5 col-sm-5 g-0">
             {# Align text right on large/medium screens #}
-            <p class="text-lg-end text-md-end fw-bold post-author">{{post.author}}</p>
+            <p class="text-lg-end text-md-end text-sm-end fw-bold post-author">{{post.author}}</p>
         </div>
-        <div class="col-4 g-0">
+        <div class="col-lg-3 col-md-7 col-sm-7 g-0">
             {# Align text center on large/medium screens #}
             <p class="text-lg-center text-md-center">| {{post.created_on}} |</p>
         </div>
         {# On small screens category is displayed on new row #}
-        <div class="col-4 g-0">
+        <div class="col-lg-4 col-md-12 col-sm-12 g-0">
             {# Align text left on large/medium screens #}
-            <p class="text-lg-start text-md-start fw-bold">{{post.category}}</p>
+            <p class="text-lg-start text-md-center text-sm-center text- fw-bold">{{post.category}}</p>
         </div>
     </div>
     <div>
