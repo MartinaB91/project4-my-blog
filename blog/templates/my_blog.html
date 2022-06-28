@@ -2,6 +2,7 @@
 
 {% block content %}
 <h1>My Posts</h1>
+
 <div class="row g-2">
     {% for post in object_list %}
     {% if user.is_authenticated and user == post.author %}
@@ -16,9 +17,14 @@
                     {% endif %}
                 </span>
                 <span class="text-center">
-                    <a href="{% url 'blog_post' post.slug %}" class="blog-post-header">
+                    {% if post.published == 1%}
+                        <a href="{% url 'blog_post' post.slug %}" class="blog-post-header">
+                            <h1 class="display-3 text-capitalize blog-post-header">{{post.title}}</h1>
+                            <h3>Published</h3>
+                        </a>
+                    {% else %}
                         <h1 class="display-3 text-capitalize blog-post-header">{{post.title}}</h1>
-                    </a>
+                    {% endif %}
                 </span>
             </div>
             <div class="row">
