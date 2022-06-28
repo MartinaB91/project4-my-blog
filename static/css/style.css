@@ -1,6 +1,6 @@
 /* General styling */
 h1 {
-    font-family: 'Covered By Your Grace', cursive
+    font-family: 'Amatic SC', cursive;
 
 }
 
@@ -39,15 +39,6 @@ video {
     font-size: 10rem;
 }
 
-/* Styling navbar section */
-.navbar-brand {
-    color: #db377e;
-    font-weight: bold;
-}
-
-.nav-link {
-    color:black;
-}
 
 /* Styling blog post list section */
 #blog-post-list-header {
@@ -70,6 +61,15 @@ video {
 
 #temporary-defalt-pic-list {
     max-width: 70%;
+}
+
+.navbar-brand {
+    color: #db377e;
+    font-weight: bold;
+}
+
+.nav-link {
+    color:black;
 }
 
 /* Styling for blog post */
@@ -138,5 +138,15 @@ video {
     list-style: none;
   }
 
+  /* Styling my blog post page */
+
+  .my-posts-header {
+    text-align: center;
+  }
+
+  /* Styling create post  */
+  .create-post-header {
+    text-align: center;
+  }
 
 
