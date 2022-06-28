@@ -1,4 +1,13 @@
 /* General styling */
+h1 {
+    font-family: 'Covered By Your Grace', cursive
+
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
 a {
     text-decoration: none; 
     text-align: center;
