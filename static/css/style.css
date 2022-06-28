@@ -1,6 +1,7 @@
 /* General styling */
 h1 {
     font-family: 'Amatic SC', cursive;
+    font-size: 6rem;
 
 }
 
@@ -39,6 +40,9 @@ video {
     font-size: 10rem;
 }
 
+#text-friends {
+    color: #db377e;
+}
 
 /* Styling blog post list section */
 #blog-post-list-header {
@@ -64,7 +68,6 @@ video {
 }
 
 .navbar-brand {
-    color: #db377e;
     font-weight: bold;
 }
 
