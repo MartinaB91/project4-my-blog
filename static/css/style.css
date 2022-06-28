@@ -14,6 +14,11 @@ a {
     color: black;
 }
 
+#btn-i {
+    color: #db377e;
+}
+
+/* Styling video section  */
 video {
     object-fit: cover;
     width: 100%;
@@ -26,7 +31,7 @@ video {
 
 #video-text-wrapper {
     position: absolute;
-    margin-top: -30%;
+    margin-top: -32%;
     margin-left: 3%;
 
 }
@@ -34,14 +39,19 @@ video {
     font-size: 10rem;
 }
 
-#btn-i {
+/* Styling navbar section */
+.navbar-brand {
     color: #db377e;
+    font-weight: bold;
+}
+
+.nav-link {
+    color:black;
 }
 
 /* Styling blog post list section */
 #blog-post-list-header {
     text-align: center;
-    text-decoration: underline;
     margin-bottom: 3%;
 }
 
@@ -98,7 +108,6 @@ video {
 /* Styling category section */
 #category-header {
     text-align: center;
-    text-decoration: underline;
     margin-bottom: 3%;
     
 }
@@ -124,10 +133,6 @@ video {
     object-fit: cover;
 }
 /* Styling settings page */
-#settings-header {
-    text-decoration: underline;
-    
-}
 
 .post-detail-summary {
     list-style: none;
