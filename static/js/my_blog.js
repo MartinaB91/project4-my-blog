@@ -1,4 +1,4 @@
-
+// Changes innertext on summary tag when user open and close blog post content
 $(document).ready(function () {
 
 $('details').click(function () {
