@@ -6,13 +6,6 @@ from django.http import HttpResponse
 from django.db.models import Q
 
 
-# class HomeView(ListView):
-#     """ 
-#      Used for showing posts on homepage
-#      """
-#     model = Post
-#     template_name = 'index.html'
-
 class BlogPostList(ListView):
     """ 
      Used for showing posts and categories on homepage
@@ -62,6 +55,9 @@ def like_post_home(request, slug):
     return HttpResponse(post_obj.number_of_likes)
 
 class CategoryPostList(generic.ListView):
+    """
+    Used for showing posts that belongs to the same category
+    """
     model = Post
     template_name = 'posts_by_category.html'
     context_object_name = 'posts_by_category'
@@ -84,6 +80,9 @@ class CategoryPostList(generic.ListView):
 # Inspiration from:
 # https://stackoverflow.com/questions/739776/how-do-i-do-an-or-filter-in-a-django-query
 class SearchResult(View):
+    """
+    Used for searching on titles, content and categories on site
+    """
     def get(self, request):
         if request.method == 'GET':
             search = request.GET['search']
