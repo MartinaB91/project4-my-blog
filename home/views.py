@@ -76,6 +76,7 @@ class CategoryPostList(generic.ListView):
             'posts_by_category.html',
             context
         )
+
     
 # Inspiration from:
 # https://stackoverflow.com/questions/739776/how-do-i-do-an-or-filter-in-a-django-query
