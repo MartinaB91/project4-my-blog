@@ -5,6 +5,7 @@ from django.views import generic
 from django.http import HttpResponse
 from django.db.models import Q
 
+
 # class HomeView(ListView):
 #     """ 
 #      Used for showing posts on homepage
@@ -12,31 +13,37 @@ from django.db.models import Q
 #     model = Post
 #     template_name = 'index.html'
 
-class BlogPostList(generic.ListView):
+class BlogPostList(ListView):
     """ 
-     Used for showing posts on homepage
+     Used for showing posts and categories on homepage
      """
     model = Post
     template_name = 'index.html'
     context_object_name = 'index'
-    
+    paginate_by = 4
+
+    # Inspiration from:
+    # https://stackoverflow.com/questions/61022964/how-do-i-access-the-context-data-in-the-template
+    def get_context_data(self, **kwargs):
+        context = super(BlogPostList, self).get_context_data(**kwargs)
+        context['category'] = Category.objects.all()
+
+        data = super().get_context_data(**kwargs)
+
+
+        # posts_with_like_status = []
+        # for post in all_published_posts:
+        #     liked = False
+        #     if post.likes.filter(id=self.request.user.id).exists():
+        #         liked = True
+        # posts_with_like_status.append({'post': post, 'liked': liked})
+        # context['posts_with_like_status'] = posts_with_like_status
+
+        return context
+
     def get_queryset(self):
         all_published_posts = Post.objects.filter(published=1).order_by('-created_on')
-        categories = Category.objects.all()
-
-        posts_with_like_status = []
-        for post in all_published_posts:
-            liked = False
-            if post.likes.filter(id=self.request.user.id).exists():
-                liked = True
-            posts_with_like_status.append({'post': post, 'liked': liked})
-
-        queryset = {
-            # 'posts_with_like_status': posts_with_like_status,
-            'all_published_posts': all_published_posts,
-            'categories': categories,
-            }
-
+        queryset = all_published_posts 
         return queryset
         
 def like_post_home(request, slug):
@@ -76,11 +83,6 @@ class CategoryPostList(generic.ListView):
             'posts_by_category.html',
             context
         )
-
-class CategoryList(generic.ListView):
-    model = Category
-    queryset = Category.objects.all()
-    template_name = 'index.html'
     
 # Inspiration from:
 # https://stackoverflow.com/questions/739776/how-do-i-do-an-or-filter-in-a-django-query

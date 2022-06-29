@@ -28,11 +28,14 @@
 
 <h1 id="blog-post-list-header">Latest Posts</h1>
 {# all_published_posts #}
-{% for post in index.all_published_posts %}
-    {% include 'blog_post_list.html' %}
+
+ {% for post in page_obj %}
+   {% include 'blog_post_list.html' %}
 {% endfor %}
 
+{% include 'pagination.html' %}
 
+{# category section #}
 <div id="category-wrapper">
     {% include 'categories.html' %}
 </div>
