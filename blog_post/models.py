@@ -67,6 +67,7 @@ class Post(models.Model):
         blank=True
         )
     number_of_likes = models.BigIntegerField(default='0')
+    liked = models.BooleanField(default=False)
     post_img = CloudinaryField(
         'post_image',
         default='default_image'
