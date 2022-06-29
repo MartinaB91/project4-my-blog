@@ -13,7 +13,7 @@ class BlogPostList(ListView):
     model = Post
     template_name = 'index.html'
     context_object_name = 'index'
-    paginate_by = 4
+    paginate_by = 1
 
     # Inspiration from:
     # https://stackoverflow.com/questions/61022964/how-do-i-access-the-context-data-in-the-template

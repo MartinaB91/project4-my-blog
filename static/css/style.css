@@ -153,4 +153,8 @@ video {
     text-align: center;
   }
 
+/* Styling paginator */
 
+.page-link {
+    color: black;
+}
