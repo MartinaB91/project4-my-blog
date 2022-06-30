@@ -148,7 +148,7 @@ video {
     object-fit: cover;
 }
 
-#mail-text {
+.link-text {
     color: #dc758f;
 }
 /* Styling settings page */
@@ -172,4 +172,23 @@ video {
 
 .page-link {
     color: black;
+}
+
+/* Styling search page */
+.search-result-post-title {
+    font-size: 1.5rem;
+}
+
+.search-result-post-category {
+    font-weight: bold;
+}
+
+.search-result-post-author {
+    font-weight: bold;
+}
+
+.search-result-category {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #dc758f;
 }
