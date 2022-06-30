@@ -3,10 +3,10 @@
 {% block content %}
 <h1 class="my-posts-header mb-3">My Posts</h1>
 <div class="row g-2">
-    <h1>Published</h1>
+    <h1>Not Published</h1>
     {% for post in object_list %}
     {% if user.is_authenticated and user == post.author %}
-        {% if post.published == 1%}
+        {% if post.published == 0%}
             {% include 'my_blog_post.html' %}
         {% endif %}
     {% endif %}
@@ -14,12 +14,13 @@
 </div>
 
 <div class="row g-2">
-    <h1>Not Published</h1>
+    <h1>Published</h1>
     {% for post in object_list %}
     {% if user.is_authenticated and user == post.author %}
-        {% if post.published == 0 %}
+        {% if post.published == 1 %}
             {% include 'my_blog_post.html' %}
         {% endif %}
+        {% else %}
     {% endif %}
     {% endfor %}
 </div>
