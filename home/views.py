@@ -82,13 +82,17 @@ class CategoryPostList(generic.ListView):
 # https://stackoverflow.com/questions/739776/how-do-i-do-an-or-filter-in-a-django-query
 class SearchResult(View):
     """
-    Used for searching on titles, content and categories on site
+    Used for searching on post titles, content,
+    category, and author or categories on site
     """
     def get(self, request):
         if request.method == 'GET':
             search = request.GET['search']
             # Filter on if post title or content contains text from search box
-            posts = Post.objects.filter(Q(title__contains=search, published=1) | Q(content__contains=search, published=1))
+            posts = Post.objects.filter(Q(title__contains=search, published=1) 
+            | Q(content__contains=search, published=1) 
+            | Q(category__name__contains=search, published=1)
+            | Q(author__username__contains=search, published=1))
             categories = Category.objects.filter(Q(name__contains=search))
 
             return render(request, 'search_result.html', {'search':search, 'posts': posts, 'categories': categories},)
