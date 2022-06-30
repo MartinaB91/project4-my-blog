@@ -16,8 +16,9 @@ a {
 }
 
 #btn-i {
-    color: #db377e;
+    color: #dc758f;
 }
+
 
 /* Styling video section  */
 video {
@@ -41,7 +42,7 @@ video {
 }
 
 #text-friends {
-    color: #db377e;
+    color: #dc758f;
     font-weight: bold;
 }
 
@@ -97,7 +98,7 @@ video {
     padding-right: 5%;
 }
 .post-author {
-    color: #db377e;
+    color: #dc758f;
 
 }
 
@@ -109,6 +110,15 @@ video {
     padding: 5% 3% 5% 3%;
 }
 
+.btn-delete {
+    background-color: #830a48;
+    color: white;
+}
+
+.btn-edit {
+    background-color: #8aaa79;
+    color: white;
+}
 /* Styling category section */
 #category-header {
     text-align: center;

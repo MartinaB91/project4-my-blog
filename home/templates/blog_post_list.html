@@ -4,8 +4,8 @@
         <span class="text-end">
             {# Only the author can change or delete post #}
             {% if user.is_authenticated and user == post.author %}
-            <a href="{% url 'update_post' post.slug %}" class="btn btn-success">Edit</a>
-            <a  href="{% url 'delete_post' post.slug %}" class="btn btn-danger">Delete</a>
+            <a href="{% url 'update_post' post.slug %}" class="btn btn-edit" id="btn-test">Edit</a>
+            <a  href="{% url 'delete_post' post.slug %}" class="btn btn-delete">Delete</a>
             {% endif %}
         </span>
         <span class="text-center">

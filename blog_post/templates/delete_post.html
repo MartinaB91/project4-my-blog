@@ -6,6 +6,6 @@
 <form method="POST">
     {% csrf_token %}
     <p>Do you wan't to delete blogpost: <strong>{{post.title}}</strong></p>
-    <button class= "btn btn-danger" type="submit">Delete Post</button>
+    <button class= "btn btn-delete" type="submit">Delete Post</button>
 </form>
 {% endblock %}
