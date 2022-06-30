@@ -12,20 +12,20 @@ When you visit My Garden you will first see a page with all the latest posts and
 
 [#37](https://github.com/MartinaB91/project4-my-blog/issues/37) Epic: Ability to CRUD blog posts as Blogger:
 -   [#38](https://github.com/MartinaB91/project4-my-blog/issues?38) As a **Blogger** I want to **create posts** so that I can **fill my blog with content that I like**
--   [#25](https://github.com/MartinaB91/project4-my-blog/issues/25) As a **Admin/User/Visitor** I want to **search for posts** so that I can **find the topics that I wan't to read about faster**.
+-   [#25](https://github.com/MartinaB91/project4-my-blog/issues/25) As a **Admin/Blogger/Visitor** I want to **search for posts** so that I can **find the topics that I wan't to read about faster**.
 -	[#39](https://github.com/MartinaB91/project4-my-blog/issues/39) As **Blogger** I want to **update my posts** so that I can **make corrections if needed**.
 -	[#29](https://github.com/MartinaB91/project4-my-blog/issues/29) As a **Blogger** I want to **delete posts I have posted** so that **my blog only contains the content I selected**.
 
 [#6](https://github.com/MartinaB91/project4-my-blog/issues/6) Epic: Ability to CRUD blog posts as Admin
 -   [#23](https://github.com/MartinaB91/project4-my-blog/issues/23) As a **Admin** I want to **create posts** so that I can **give** the bloggers useful information.
--   [#25](https://github.com/MartinaB91/project4-my-blog/issues/25) As a **Admin/User/Visitor** I want to **search for posts** so that I can **find the topics that I wan't to reed about faster**.
+-   [#25](https://github.com/MartinaB91/project4-my-blog/issues/25) As a **Admin/Blogger/Visitor** I want to **search for posts** so that I can **find the topics that I wan't to reed about faster**.
 -   [#26](https://github.com/MartinaB91/project4-my-blog/issues/26) As **Admin** I want to **update posts** so that I can **change the content in bloggers posts when needed**.
 -   [#27](https://github.com/MartinaB91/project4-my-blog/issues/27) As a **Admin** I want to **delete posts** so that **the blog only contains the content I selected**.
 -   [#45](https://github.com/MartinaB91/project4-my-blog/issues/45) As a **Admin** I want to **review all posts before they are published** so that I can **verify that no inappropriate content is published**.
 
 [#7](https://github.com/MartinaB91/project4-my-blog/issues/7) Epic: Display blog post properties timestamp & category
 -   [#24](https://github.com/MartinaB91/project4-my-blog/issues/24) As a **Admin/Blogger/Visitor** I want to **see which time and date the post was posted** so that I can **follow the posts timeline**.
--   [#22](https://github.com/MartinaB91/project4-my-blog/issues/22) As a **User/Admin/Visitor** I want to **to see which category the post is posted in** so that I can **publish/view other posts in the same category**.
+-   [#22](https://github.com/MartinaB91/project4-my-blog/issues/22) As a **Blogger/Admin/Visitor** I want to **to see which category the post is posted in** so that I can **publish/view other posts in the same category**.
 -   [#36](https://github.com/MartinaB91/project4-my-blog/issues/36) As a **Admin** I want to **be able to create blog categories** so that **the users can better organize their posts and the visitors easier can find content of interest**.
 
 [#5](https://github.com/MartinaB91/project4-my-blog/issues/5) Epic: Implement functionality for comment and like
@@ -48,6 +48,7 @@ When you visit My Garden you will first see a page with all the latest posts and
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/css)
 
 ### Frameworks and libraries
+- [Bootstrap (5.0)](https://getbootstrap.com/) - Used for styling and make site responsive
 - [Django (4.0.4) ](https://www.djangoproject.com/) - Used for core functionality 
 - [Django Allauth (0.50.0)](https://django-allauth.readthedocs.io/en/latest/installation.html) - Used for authentication and registration
 - [JQuery](https://jquery.com/) - Used for making user interaction more lively 
@@ -59,6 +60,7 @@ When you visit My Garden you will first see a page with all the latest posts and
 - [PostgreSQL](https://www.postgresql.org/) - Used as production database
 
 ### Storage
+- [Cloudinary](https://cloudinary.com/) - Used for storing pictures
 
 ### Other tools
 - [Gunicorn (20.1.0)](https://gunicorn.org/)
@@ -66,6 +68,7 @@ When you visit My Garden you will first see a page with all the latest posts and
 - [Heroku](https://id.heroku.com/login) - Used to deploy app
 - [GitHub Issues](https://github.com/features/issues) - Used for project planning 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Used for debugging
+- [Coolors](https://coolors.co/) - Used for choosing colors
 
 ## Features
 ## Design 
