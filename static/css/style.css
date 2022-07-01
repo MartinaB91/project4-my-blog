@@ -168,6 +168,11 @@ video {
     text-align: center;
   }
 
+/* Styling update post */
+.post-author {
+    text-align: center;
+}
+
 /* Styling paginator */
 
 .page-link {
