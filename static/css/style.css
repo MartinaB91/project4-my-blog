@@ -19,6 +19,10 @@ a {
     color: #dc758f;
 }
 
+#content-wrapper {
+    margin-top: 5rem
+}
+
 
 /* Styling video section  */
 video {
@@ -59,10 +63,6 @@ video {
 
 #btn-search  {
     box-shadow: none;
-}
-
-#content-wrapper {
-    margin-top: 5rem
 }
 
 #temporary-defalt-pic-list {
@@ -203,3 +203,80 @@ video {
     font-size: 1.5rem;
     color: #dc758f;
 }
+
+/* Media queries index page */
+/* For devices from 575px  and down */
+
+@media screen and (max-width: 575px) {
+
+/* General styling */
+#content-wrapper {
+    margin-top: 2rem
+}
+
+    /* Styling video section  */
+video {
+    height: 20rem;
+}
+
+#video-text-wrapper {
+    position: absolute;
+    margin-top: -55%;
+    margin-left: 3%;
+}
+
+.video-header {
+    font-size: 5rem;
+}
+
+/* Styling blog post list section */
+#blog-post-list-header {
+    margin-bottom: 3%;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+
+}
+
+/* Media queries index page */
+/* For devices from 767px  and down to 575px */
+@media screen and (max-width: 767px) {
+    #content-wrapper {
+        margin-top: 2rem
+    }
+    
+    #video-text-wrapper {
+        margin-top: -55%;
+    }
+
+}
+
+/* Media queries index page */
+/* For devices from 991px  and down to 767px */
+@media screen and (max-width: 991px) {
+    #content-wrapper {
+        margin-top: 2rem
+    }
+
+    video {
+        height: 35rem;
+    }
+    
+    #video-text-wrapper {
+        margin-top: -60%;
+    }
+
+}
+
+/* For removing navbar toggler icon border */
+/* From: https://stackoverflow.com/questions/50668594/remove-border-color-for-navbar-toggler-hamburger-icon-in-bootstrap-using-css */
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: 2px;
+    box-shadow: none;
+}
+
