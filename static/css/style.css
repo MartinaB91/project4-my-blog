@@ -173,6 +173,12 @@ video {
     text-align: center;
 }
 
+/* Styling delete post */
+.delete-post-title {
+    font-size: 1.2rem;
+    color: #dc758f;
+}
+
 /* Styling paginator */
 
 .page-link {
