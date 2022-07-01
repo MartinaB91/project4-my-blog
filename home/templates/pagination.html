@@ -2,6 +2,7 @@
 Inspiration from: https://docs.djangoproject.com/en/4.0/topics/pagination/
 Inspiration from: https://www.youtube.com/watch?v=wY_BNsxCEi4
 {% endcomment %}
+{% block content %}
 <nav>
     <ul class="pagination">
         {% if page_obj.has_previous %}
@@ -25,3 +26,4 @@ Inspiration from: https://www.youtube.com/watch?v=wY_BNsxCEi4
         {% endif %}
     </ul>
 </nav>
+{% endblock %}

@@ -13,7 +13,7 @@ class BlogPostList(ListView):
     model = Post
     template_name = 'index.html'
     context_object_name = 'index'
-    paginate_by = 1
+    paginate_by = 4
 
     # Inspiration from:
     # https://stackoverflow.com/questions/61022964/how-do-i-access-the-context-data-in-the-template
@@ -60,14 +60,19 @@ class CategoryPostList(generic.ListView):
     """
     model = Post
     template_name = 'posts_by_category.html'
-    context_object_name = 'posts_by_category'
+    context_object_name = 'posts_by_category'   
 
     def get(self, request, slug, *args, **kwargs):
         category = get_object_or_404(Category, slug=slug)
-        queryset = Post.objects.filter(published=1, category=category).order_by('-created_on')
-        
+        all_published_posts = Post.objects.filter(published=1, category=category).order_by('-created_on')
+
+        for post in all_published_posts:
+            post.liked = False
+            if post.likes.filter(id=self.request.user.id).exists():
+                post.liked = True
+
         context = {
-            'post_list': queryset,
+            'post_list': all_published_posts,
             'category': category
             }
 
