@@ -8,7 +8,9 @@
         <form method="POST">
             {% csrf_token %}
             <p class="delete-post-text">Do you wan't to delete <strong><span class="delete-post-title">{{post.title}}</span> ?</strong></p>
-            <button class="btn btn-delete" type="submit">Delete Post</button>
+            <div class="d-grid d-lg-block m-4">
+                <button class="btn btn-delete" type="submit">Delete Post</button>
+            </div>
         </form>
     </div>
 </div>
