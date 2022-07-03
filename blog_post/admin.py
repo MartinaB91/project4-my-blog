@@ -31,7 +31,7 @@ class PostAdmin(admin.ModelAdmin):
     
     )
 
-    list_display_links = ('title', 'author', 'category',)
+    list_display_links = ('title',)
 
     search_fields = (
         'title',
