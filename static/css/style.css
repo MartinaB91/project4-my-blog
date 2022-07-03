@@ -230,6 +230,9 @@ video {
     text-align: center;
 }
 
+#signin-header {
+    text-align: center;
+}
 
 /* Media queries index page */
 /* For devices from 575px  and down */
@@ -331,6 +334,11 @@ video {
 
 .delete-post-text {
     text-align: center;
+}
+
+/* Styling allauth template signin */
+#signin-wrapper {
+    padding: 2%;
 }
 
 }
