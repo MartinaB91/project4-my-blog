@@ -230,6 +230,7 @@ video {
     text-align: center;
 }
 
+
 /* Media queries index page */
 /* For devices from 575px  and down */
 @media screen and (max-width: 575px) {
@@ -331,7 +332,6 @@ video {
 .delete-post-text {
     text-align: center;
 }
-
 
 }
 
