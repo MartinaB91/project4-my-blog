@@ -24,7 +24,6 @@
         </div>
         {# On small and medium screens category is displayed on new row #}
         <div class="col-lg-5 col-md-12 col-sm-12 g-0">
-            {# Align text left on large/medium screens #}
             <p class="text-center text-lg-start text-md-center text-sm-center fw-bold">{{post.category}}</p>
         </div>
     </div>
@@ -43,13 +42,13 @@
     <div class="comment-and-like-section">
         <div class="row">
             <hr>
-            <div class="col-10">
+            <div class="col-9 col-md-10 col-lg-10">
                 <p class="text-end">{{post.post_comments.count}}
                     <button class="btn btn-comments" type="button"><i class="far fa-comment-alt"></i></button>
                 </p>
             </div>
             {% csrf_token %}
-            <div class="col-2">
+            <div class="col-3 col-md-2 col-lg-2 text-center">
                 <span>{{post.number_of_likes}}</span>
                 {% if request.user.is_authenticated %}
                     {% if liked %}
@@ -70,7 +69,9 @@
         </div>
     </div>
 </article>
-<a href="{% url 'index' %}" class="btn btn-secondary mb-5">Back</a>
+<div class="d-grid d-lg-block m-4">
+    <a href="{% url 'index' %}" class="btn btn-secondary mb-5">Back</a>
+</div>
 
 {# Handling likes without page refresh #}
 {% block scripts %}
