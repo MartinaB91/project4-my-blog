@@ -164,6 +164,7 @@ video {
     list-style: none;
   }
 
+
   /* Styling my blog post page */
   .my-posts-header {
     text-align: center;
@@ -215,6 +216,10 @@ video {
     font-weight: bold;
     font-size: 1.5rem;
     color: #dc758f;
+}
+
+.settings-header {
+    text-align: center;
 }
 
 /* Media queries index page */
@@ -281,6 +286,10 @@ video {
 .post-status-header {
     font-size: 3rem;
     margin-left: 4%;
+}
+
+#settings-wrapper {
+    padding: 2%;
 }
 
 

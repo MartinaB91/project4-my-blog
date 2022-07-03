@@ -17,15 +17,17 @@
 
 {# User settings section #}
 <div class="row justify-content-center">
-    <div class="col-lg-8 col-md-10 col-sm-12">
+    <div class="col-lg-8 col-md-12 col-sm-12">
         <div id="settings-wrapper">
-            <h1 id="settings-header">Settings</h1>
+            <h1 class="settings-header">Settings</h1>
 
 
             <form method="POST">
                 {% csrf_token %}
                 {{ form |crispy}}
+                <div class="d-grid d-lg-block mb-2">
                 <button class="btn btn-edit mb-2 mt-3" type="submit">Save Settings</button>
+                </div>
             </form>
             <a href="{% url 'account_change_password' %}">Change Password?</a>
 
