@@ -3,7 +3,7 @@
     <div class="col-lg-6 col-md-6 col-sm-12">
         <article class="mx-auto shadow-sm p-3 mb-5 bg-body rounded">
             <div class="row">
-                <span class="text-lg-end text-md-center text-sm-center">
+                <span class="text-end text-lg-end text-md-center text-sm-center">
                     {# Only the author can change or delete post #}
                     {% if user.is_authenticated and user == post.author %}
                     <a href="{% url 'update_post' post.slug %}" class="btn btn-edit">Edit</a>
@@ -17,15 +17,13 @@
                 </span>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-5 col-sm-5 g-0">
-                    <p class="text-lg-end text-md-end text-sm-end fw-bold post-author">{{post.author}}</p>
+                <div class="col-lg-7 col-md-12 col-sm-12 g-0">
+                    <p class="text-center text-lg-end"><span class="fw-bold post-author">{{post.author}}</span>|{{post.created_on}} |</p>
                 </div>
-                <div class="col-lg-4 col-md-7 col-sm-7 g-0">
-                    <p class="text-lg-center text-md-center">| {{post.created_on}} |</p>
-                </div>
-                <div class="col-lg-4 col-md-12 col-sm-12 g-0">
+                {# On small and medium screens category is displayed on new row #}
+                <div class="col-lg-5 col-md-12 col-sm-12 g-0">
                     {# Align text left on large/medium screens #}
-                    <p class="text-lg-start text-md-center text-sm-center text- fw-bold">{{post.category}}</p>
+                    <p class="text-center text-lg-start text-md-center text-sm-center fw-bold">{{post.category}}</p>
                 </div>
             </div>
             <details class="post-details">
