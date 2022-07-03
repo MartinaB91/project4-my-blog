@@ -104,7 +104,7 @@ video {
 }
 
 .btn-comment {
-    margin: 2% 2%;
+    margin-top: 2%
 }
 
 .blog-post-content {
@@ -119,6 +119,10 @@ video {
 .btn-edit {
     background-color: #8aaa79;
     color: white;
+}
+
+.comments-header {
+    font-weight: bold;
 }
 /* Styling category section */
 #category-header {
@@ -206,7 +210,6 @@ video {
 
 /* Media queries index page */
 /* For devices from 575px  and down */
-
 @media screen and (max-width: 575px) {
 
 /* General styling */
@@ -214,7 +217,7 @@ video {
     margin-top: 2rem
 }
 
-    /* Styling video section  */
+/* Styling video section  */
 video {
     height: 20rem;
 }
@@ -238,25 +241,50 @@ video {
     text-align: center;
 }
 
+/* Blog list page */
+#blog-post-list-header {
+    font-size: 4rem;
+}
+
+.blog-post-list {
+    width: 100%;
+    margin-bottom: 4%;
+}
+
+.container {
+    padding-left: 0%;
+    padding-right: 0%;
+
+}
 
 }
 
 /* Media queries index page */
 /* For devices from 767px  and down to 575px */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) and (min-width: 576px)  {
+/* General styling */
     #content-wrapper {
         margin-top: 2rem
     }
+
+/* Styling video section  */
+    video {
+        height: 33rem;
+    }
     
     #video-text-wrapper {
-        margin-top: -55%;
+        margin-top: -68%;
     }
 
 }
 
-/* Media queries index page */
+/* Blog post list page */
+.blog-post-list {
+    width: 100%;
+}
+
 /* For devices from 991px  and down to 767px */
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 991px) and (min-width: 768px)  {
     #content-wrapper {
         margin-top: 2rem
     }
@@ -266,7 +294,15 @@ video {
     }
     
     #video-text-wrapper {
-        margin-top: -60%;
+        margin-top: -62%;
+    }
+
+}
+
+/* For devices from 1200px  and down to 991px */
+@media screen and (max-width: 1200px) and (min-width: 992px)  {
+    #video-text-wrapper {
+        margin-top: -50%;
     }
 
 }
