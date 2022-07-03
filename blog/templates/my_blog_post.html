@@ -3,7 +3,7 @@
     <div class="col-lg-6 col-md-6 col-sm-12">
         <article class="mx-auto shadow-sm p-3 mb-5 bg-body rounded">
             <div class="row">
-                <span class="text-end text-lg-end text-md-center text-sm-center">
+                <span class="text-end mb-2">
                     {# Only the author can change or delete post #}
                     {% if user.is_authenticated and user == post.author %}
                     <a href="{% url 'update_post' post.slug %}" class="btn btn-edit">Edit</a>
@@ -27,7 +27,7 @@
                 </div>
             </div>
             <details class="post-details">
-                <summary class="post-detail-summary">Show More</summary>
+                <summary class="post-detail-summary mb-2">Show More</summary>
             <div>
                 {% if 'default_image' in post.post_img.url %}
                 <img src="../../static/media/temporary_default.jpeg" class="bg-body rounded" alt="..." width="100%" >
@@ -43,13 +43,13 @@
                 </article>
             <div class="comment-and-like-section">
                 <div class="row">
-                    <div class="col-lg-10 col-md-9 col-sm-9">
+                    <div class="col-9 col-md-10 col-lg-10">
                         <p class="text-end">{{post.post_comments.count}}
                             <button class="btn btn-comments" type="button"><i class="far fa-comment-alt"></i></button>
                         </p>
                     </div>
                     {% csrf_token %}
-                    <div class="col-lg-2 col-md-3 col-sm-3 text-center">
+                    <div class="col-3 col-md-2 col-lg-2 text-center">
                         <span>{{post.number_of_likes}}</span>
                         {% if request.user.is_authenticated %}
                         {% if post.liked %}
