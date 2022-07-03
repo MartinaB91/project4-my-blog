@@ -7,7 +7,7 @@
 
         <form method="POST">
             {% csrf_token %}
-            <p>Do you wan't to delete <strong><span class="delete-post-text">{{post.title}}</span> ?</strong></p>
+            <p class="delete-post-text">Do you wan't to delete <strong><span class="delete-post-title">{{post.title}}</span> ?</strong></p>
             <button class="btn btn-delete" type="submit">Delete Post</button>
         </form>
     </div>

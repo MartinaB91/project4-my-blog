@@ -193,7 +193,7 @@ video {
 }
 
 /* Styling delete post */
-.delete-post-text {
+.delete-post-title {
     font-size: 1.2rem;
     color: #dc758f;
 }
@@ -321,6 +321,15 @@ video {
 
 .update-post-wrapper {
     padding: 2%;
+}
+
+/* Styling delete post page */
+.delete-post-header {
+    font-size: 4rem;
+}
+
+.delete-post-text {
+    text-align: center;
 }
 
 
