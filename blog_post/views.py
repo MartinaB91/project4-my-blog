@@ -104,8 +104,6 @@ class UpdatePost(LoginRequiredMixin, generic.UpdateView, SuccessMessageMixin):
 class DeletePost(LoginRequiredMixin, generic.DeleteView, SuccessMessageMixin):
     model = Post
     template_name = 'delete_post.html'
-    #success_url = reverse_lazy('index')
-    # success_message = 'Your post has been deleted!'
 
     def get_success_url(self):
         messages.success(self.request, 'Your post has been deleted!')
