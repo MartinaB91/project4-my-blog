@@ -3,11 +3,11 @@
 {% block content %}
 <div class="row justify-content-center">
     <div class="col-lg-8 col-md-10 col-sm-12">
-        <h1>Delete Blogpost</h1>
+        <h1 class="delete-post-header">Delete Blogpost</h1>
 
         <form method="POST">
             {% csrf_token %}
-            <p>Do you wan't to delete <strong><span class="delete-post-title">{{post.title}}</span> ?</strong></p>
+            <p>Do you wan't to delete <strong><span class="delete-post-text">{{post.title}}</span> ?</strong></p>
             <button class="btn btn-delete" type="submit">Delete Post</button>
         </form>
     </div>
