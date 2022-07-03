@@ -8,9 +8,9 @@
   {% for category in category %}
   <div class="col-lg-4 col-md-6 col-sm-12 category-card-wrapper" >
     <a href="{% url 'post_by_category' category.slug %}">
-      <div class="card shadow p-3 mb-5 bg-body rounded">
+      <div class="card shadow p-3 mb-md-3 mb-lg-4 bg-body rounded">
                 {% if 'default_image' in category.category_img.url %}
-                <img src="../../static/media/temporary_default.jpeg" class="bg-body rounded category-img" alt="...">
+                <img src="../../static/media/temporary_default.jpeg" class="bg-body rounded category-img" alt="default picture smiling emojis">
                 {% else %}
                 <img src=" {{ category.category_img.url }}" class="category-img" width="100%">
                 {% endif %}
@@ -21,7 +21,7 @@
     </a>
   </div>
   {% endfor %}
-  <p class="text-center">Want to suggest a category? Please contact us on <a href="#" class="link-text">mygarden@mygarden.com</a></p>
+  <p class="text-center suggest-category-text">Want to suggest a category? Please contact us on <a href="#" class="link-text">mygarden@mygarden.com</a></p>
 </div>
 
   {% endblock %}

@@ -156,13 +156,11 @@ video {
     color: #dc758f;
 }
 /* Styling settings page */
-
 .post-detail-summary {
     list-style: none;
   }
 
   /* Styling my blog post page */
-
   .my-posts-header {
     text-align: center;
   }
@@ -184,7 +182,6 @@ video {
 }
 
 /* Styling paginator */
-
 .page-link {
     color: black;
 }
@@ -254,8 +251,17 @@ video {
 .container {
     padding-left: 0%;
     padding-right: 0%;
-
 }
+
+/* category section */
+#category-header {
+    font-size: 4rem;
+}
+
+.suggest-category-text {
+    margin-top: 5%;
+}
+
 
 }
 
@@ -285,16 +291,23 @@ video {
 
 /* For devices from 991px  and down to 767px */
 @media screen and (max-width: 991px) and (min-width: 768px)  {
+/* General styling */
     #content-wrapper {
         margin-top: 2rem
     }
 
+/* Video section */
     video {
         height: 35rem;
     }
     
     #video-text-wrapper {
         margin-top: -62%;
+    }
+
+/* Category section */
+    .suggest-category-text {
+        margin-top: 3%;
     }
 
 }
