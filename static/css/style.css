@@ -231,12 +231,8 @@ video {
 }
 
 /* Allauth templates styling */
-#login-header, #signup-header, #password-reset-header {
+#login-header, #signup-header, #password-reset-header, #password-change-header, #password-reset-done-header {
     text-align: center;
-}
-
-#reset-password-wrapper {
-    padding: 2%;
 }
 
     
@@ -354,8 +350,12 @@ video {
     padding: 2%;
 }
 
-#login-header, #signup-header, #password-reset-header {
+#login-header, #signup-header, #password-reset-header, #password-change-header #password-reset-done-header {
     font-size: 4rem;
+}
+
+#reset-password-wrapper, #password-change-wrapper {
+    padding: 2%;
 }
 
 }
