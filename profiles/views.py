@@ -24,8 +24,7 @@ class SettingsView(LoginRequiredMixin, UpdateView, SuccessMessageMixin):
         context = super(SettingsView, self).get_context_data(**kwargs)
         user = self.request.user.profile
         context['SettingsForm'] = Profile(
-            {'user': user.user,
-            'first_name': user.first_name, 
+            {'first_name': user.first_name, 
             'last_name':  user.last_name,
             'profile_img': user.profile_img,
             })
