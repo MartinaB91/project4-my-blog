@@ -188,6 +188,10 @@ video {
     text-align: center;
 }
 
+.edit-header {
+    text-align: center;
+}
+
 /* Styling delete post */
 .delete-post-title {
     font-size: 1.2rem;
@@ -306,6 +310,15 @@ video {
     padding: 2%;
 }
 
+/* Styling update post */
+.edit-header {
+    font-size: 4rem;
+}
+
+.update-post-wrapper {
+    padding: 2%;
+}
+
 
 }
 
@@ -353,6 +366,7 @@ video {
     .suggest-category-text {
         margin-top: 3%;
     }
+
 
 }
 
