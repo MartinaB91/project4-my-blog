@@ -11,10 +11,10 @@ class ProfileAdmin(admin.ModelAdmin):
     model = Profile
 
     list_display = (
-        'id',
         'user',
         'first_name',
         'last_name',
+        'profile_email',
     )
 
     list_filter = (
@@ -23,11 +23,7 @@ class ProfileAdmin(admin.ModelAdmin):
         'last_name',
     )
 
-    list_editable = (
-        'user',
-        'first_name',
-        'last_name',
-    )
+    list_display_links = ('user',)
 
     search_fields = (
         'user',
