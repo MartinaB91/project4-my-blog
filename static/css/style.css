@@ -5,6 +5,10 @@ h1 {
 
 }
 
+h2 {
+    font-family: 'Amatic SC', cursive;
+}
+
 body {
     font-family: 'Lato', sans-serif;
 }
@@ -165,6 +169,14 @@ video {
     text-align: center;
   }
 
+  .post-detail-summary {
+    font-weight: bold;
+  }
+
+  .post-status-header {
+    font-size: 3rem;
+  }
+
   /* Styling create post  */
   .create-post-header {
     text-align: center;
@@ -260,6 +272,15 @@ video {
 
 .suggest-category-text {
     margin-top: 5%;
+}
+
+.my-posts-header {
+    font-size: 4rem;
+}
+
+.post-status-header {
+    font-size: 3rem;
+    margin-left: 4%;
 }
 
 
