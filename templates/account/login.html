@@ -10,8 +10,8 @@
 {% block content %}
 <div class="row justify-content-center">
   <div class="col-lg-8 col-md-12 col-sm-12 ">
-    <div id="signin-wrapper">
-<h1 id="signin-header">{% trans "Sign In" %}</h1>
+    <div id="login-wrapper">
+<h1 id="login-header">{% trans "Sign In" %}</h1>
 {% get_providers as socialaccount_providers %}
 
 {% if socialaccount_providers %}
@@ -43,7 +43,7 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
   <div class="d-grid d-lg-block">
-    <button class="primaryAction btn btn-secondary mb-2" type="submit">{% trans "Sign In" %}</button>
+    <button class="primaryAction btn btn-secondary m-2" type="submit">{% trans "Sign In" %}</button>
   </div>
   <br>
   <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
