@@ -288,7 +288,21 @@ video {
     margin-left: 4%;
 }
 
+/* Settings page */
 #settings-wrapper {
+    padding: 2%;
+}
+
+.settings-header {
+    font-size: 4rem;
+}
+
+/* Create post page */
+.create-post-header {
+    font-size: 4rem;
+}
+
+.create-post-wrapper {
     padding: 2%;
 }
 
