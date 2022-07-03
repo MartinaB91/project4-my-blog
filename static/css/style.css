@@ -60,6 +60,7 @@ video {
     margin-bottom: 3%;
 }
 
+
 /* Styling for Navbar  */
 #textbox-search {
     box-shadow: none;
@@ -67,10 +68,6 @@ video {
 
 #btn-search  {
     box-shadow: none;
-}
-
-#temporary-defalt-pic-list {
-    max-width: 70%;
 }
 
 .navbar-brand {
