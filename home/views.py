@@ -93,11 +93,12 @@ class SearchResult(View):
     def get(self, request):
         if request.method == 'GET':
             search = request.GET['search']
-            # Filter on if post title or content contains text from search box
+            # Filter on if post title,content or author contains text from search box
             posts = Post.objects.filter(Q(title__contains=search, published=1) 
             | Q(content__contains=search, published=1) 
             | Q(category__name__contains=search, published=1)
             | Q(author__username__contains=search, published=1))
+            # Filter on if categories contains text from search box
             categories = Category.objects.filter(Q(name__contains=search))
 
             return render(request, 'search_result.html', {'search':search, 'posts': posts, 'categories': categories},)
