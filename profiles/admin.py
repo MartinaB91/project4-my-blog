@@ -14,7 +14,7 @@ class ProfileAdmin(admin.ModelAdmin):
         'user',
         'first_name',
         'last_name',
-        'profile_email',
+        'email',
     )
 
     list_filter = (
