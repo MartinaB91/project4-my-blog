@@ -74,9 +74,10 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = (
         'blog_post',
         'content',
-        'author',
+         'status',
+          'author',
         'created_on',
-        'status',
+       
 
         )
     
