@@ -24,8 +24,7 @@ class Category(models.Model):
     category_img = CloudinaryField(
         'category_image',
         default='default_image',
-        )  #  TODO: Add a default picture
-    #  https://cloudinary.com/blog/placeholder_images_and_gravatar_integration_with_cloudinary
+        )
 
     class Meta:
         """
@@ -71,7 +70,7 @@ class Post(models.Model):
     post_img = CloudinaryField(
         'post_image',
         default='default_image'
-        )  # TODO: Add a default picture
+        ) 
 
     class Meta:
         """
@@ -102,9 +101,7 @@ class Comment(models.Model):
         on_delete=models.CASCADE,
         related_name='post_comments',
         blank=False,
-        null=False,  # TODO: Read more about what to do about
-        # 'It is impossible to add a non-nullable field'auto_created'auto_created'
-        # https://stackoverflow.com/questions/26185687/you-are-trying-to-add-a-non-nullable-field-new-field-to-userprofile-without-a
+        null=False,
     )
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
