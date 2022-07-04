@@ -1,15 +1,15 @@
 {% block content %}
 <h3 class="comments-header">Comments</h3>
-{% if not post.post_comments.all %}
-<p class="mb-10">This post has no comments</p>
-{% else %}
+
 {% for comment in post.post_comments.all %}
 <div class="shadow-sm p-3 mb-5 bg-body rounded">
     <p><strong>{{comment.author}}</strong> | {{comment.created_on}} </p>
     <p>{{comment.content}}</p>
 </div>
+{% empty %}
+    <p class="mb-10">This post has no comments</p>
 {% endfor %}
-{% endif %}
+
 
 {# Only users that are signed in can see comment form #}
 {% if request.user.is_authenticated %}
