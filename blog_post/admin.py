@@ -82,10 +82,9 @@ class CommentAdmin(admin.ModelAdmin):
         )
     
     list_filter = (
-        'blog_post',
+        'status',
         'author',
         'created_on',
-        'status',
     )
 
     list_editable = ('content', 'status',)
