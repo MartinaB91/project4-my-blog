@@ -51,6 +51,7 @@ When you visit My Garden you will first see a page with all the latest posts and
 - [Bootstrap (5.0)](https://getbootstrap.com/) - Used for styling and make site responsive
 - [Django (4.0.4) ](https://www.djangoproject.com/) - Used for core functionality 
 - [Django Allauth (0.50.0)](https://django-allauth.readthedocs.io/en/latest/installation.html) - Used for authentication and registration
+- [Crispy Bootstrap5 (0.6)](https://pypi.org/project/crispy-bootstrap5/) - Used for make forms look nicer
 - [JQuery](https://jquery.com/) - Used for making user interaction more lively 
 - [Font Awesome](https://fontawesome.com/) - Used for adding icons to website
 - [Google Fonts](https://fonts.google.com/) - Used for fonts
@@ -73,6 +74,13 @@ When you visit My Garden you will first see a page with all the latest posts and
 ## Features
 ## Design 
 ### Color scheme
+<img src="readme-images/color-scheme.PNG">
+
+- Green(#8aaa79): Used for edit buttons.
+- Dark red(#830a48 ): Used for delete buttons.
+- Secondary(Bootstrap): Used for all other buttons
+- Pink(#dc758f): Used for text in quotes, author name in blog posts and for some links. 
+
 ### Typography
 ### Wireframes
 ### Flowcharts 
