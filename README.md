@@ -82,10 +82,32 @@ When you visit My Garden you will first see a page with all the latest posts and
 - Pink(#dc758f): Used for text in quotes, author name in blog posts and for some links. 
 
 ### Typography
+
+<img src="readme-images/amatic-SC.PNG">
+
+- Amatic SC: Used for H1 and H2 headers
+
+<img src="readme-images/lato.PNG">
+
+- Lato: Used for all other text
 ### Wireframes
 ### Flowcharts 
 ## Testing
 ## Deployment
+
 ## Credits
 ### Code
+- [api.jquery.com](https://api.jquery.com/) - Used when building  functions
+- [Dev.to](https://dev.to/radualexandrub/how-to-add-like-unlike-button-to-your-django-blog-5gkg) - Used as inspiration when building like/unlike button.
+- [Django documentation](https://docs.djangoproject.com/en/4.0/) - Used throughout the project.
+- [geeksforgeeks](https://www.geeksforgeeks.org/class-based-generic-views-django-create-retrieve-update-delete/?ref=rp) - Used as inspiration when creating class based views.
+- [geeksforgeeks](https://www.geeksforgeeks.org/how-to-create-and-use-signals-in-django/) - Used as inspiration when creating django signals.
+- [Medium.com](https://medium.com/@nishalk25121999/how-to-make-a-like-button-using-django-ajax-d2db38e6d2f8) - Used as inspiration when building like button using AJAX.
+- [Stackoverflow, context data in template](https://stackoverflow.com/questions/61022964/how-do-i-access-the-context-data-in-the-template) - Used as inspiration when buidling BlogPostList/MyBlogPostList view.
+- [Stackoverflow, filter](https://stackoverflow.com/questions/739776/how-do-i-do-an-or-filter-in-a-django-query) - Used as inspiration when buidling search page.
+
+
 ### Content and media
+- [Bloommaker](https://www.bloomaker.com/blog/55-inspirational-flower-quotes) - Used for flower quote in header
+- [Pexels](https://www.pexels.com/sv-se/)
+
