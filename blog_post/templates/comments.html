@@ -1,16 +1,18 @@
 {% block content %}
 <h3 class="comments-header">Comments</h3>
 
-{% if comment.status == 'Approve' %}
+
 {% for comment in post.post_comments.all %}
+{% if comment.status == 'A' %}
 <div class="shadow-sm p-3 mb-5 bg-body rounded">
     <p><strong>{{comment.author}}</strong> | {{comment.created_on}} </p>
     <p>{{comment.content}}</p>
 </div>
+{% endif %}
 {% empty %}
     <p class="mb-10">This post has no comments</p>
 {% endfor %}
-{% endif %}
+
 
 
 {# Only users that are signed in can see comment form #}
