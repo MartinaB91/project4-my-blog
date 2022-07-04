@@ -72,24 +72,26 @@ When you visit My Garden you will first see a page with all the latest posts and
 - [Coolors](https://coolors.co/) - Used for choosing colors
 
 ## Features
-## Design 
-### Color scheme
-<img src="readme-images/color-scheme.PNG">
 
-- Green(#8aaa79): Used for edit buttons.
-- Dark red(#830a48 ): Used for delete buttons.
-- Secondary(Bootstrap): Used for all other buttons
-- Pink(#dc758f): Used for text in quotes, author name in blog posts and for some links. 
+In this section you will find out more about the different features this site contains.
+
+## Design 
+### Color-scheme
+- The colors chosen for the site is soft green, dark red, soft pink and grey. 
+- Edit buttons (#8aaa79), Delete buttons (#830a48), Text in quotes, author name in blog posts and for some links (#dc758f) and All other buttons (Bootstrap secondary)
+
+<img src="readme-images/color-scheme.PNG">
 
 ### Typography
 
+- The font used for H1 and H2 headers is Amatic SC with fallback cursive.
+
 <img src="readme-images/amatic-SC.PNG">
 
-- Amatic SC: Used for H1 and H2 headers
+- The font used for all other text is Lato with fallback sans-serif. 
 
 <img src="readme-images/lato.PNG">
 
-- Lato: Used for all other text
 ### Wireframes
 ### Flowcharts 
 ## Testing

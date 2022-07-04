@@ -281,6 +281,10 @@ video {
     margin-bottom: 4%;
 }
 
+.post-img {
+    height: 20rem;
+}
+
 .container {
     padding-left: 0%;
     padding-right: 0%;
@@ -415,10 +419,15 @@ video {
         margin-top: 3%;
     }
 
-/* Blog post detail page */
-#blog-post-detail-img {
-    height: 30rem;
-}
+    /* Blog post list */
+    .post-img {
+        height: 30rem;
+    }
+
+    /* Blog post detail page */
+    #blog-post-detail-img {
+        height: 30rem;
+    }
 
 
 }
@@ -432,6 +441,11 @@ video {
     #blog-post-detail-img {
         height: 35rem;
     }
+
+    /* Blog post list */
+    .post-img {
+    height: 35rem;
+}
 
 }
 
