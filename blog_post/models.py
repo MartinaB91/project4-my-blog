@@ -79,7 +79,7 @@ class Post(models.Model):
         ordering = ['-created_on']
 
     def __str__(self):
-        return f'{self.author}: {self.title}'
+        return f'{self.title}'
 
     def get_absolute_url(self):
         return reverse('index')
