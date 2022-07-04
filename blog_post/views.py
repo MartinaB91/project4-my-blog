@@ -56,7 +56,7 @@ class CreatePost(LoginRequiredMixin, generic.CreateView, SuccessMessageMixin):
 
     def post(self, request):
         if request.method == "POST":
-            form = PostForm(request.POST)
+            form = PostForm(request.POST, request.FILES)
             if form.is_valid():
                 new_post = form.save(commit=False)
                 new_post.author = self.request.user
