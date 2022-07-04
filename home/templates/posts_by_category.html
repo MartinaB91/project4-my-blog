@@ -6,6 +6,8 @@
     <h1 class="text-center mb-3">{{category.name}}</h1>
     {% for post in post_list %}
             {% include 'blog_post_list.html' %}
+    {% empty %}
+        <h2 class="text-center">This category has no posts yet</h2>
     {% endfor %}
 
 
