@@ -60,7 +60,6 @@ video {
     margin-bottom: 3%;
 }
 
-
 /* Styling for Navbar  */
 #textbox-search {
     box-shadow: none;
@@ -93,6 +92,11 @@ video {
     background-color: white;
 }
 
+#blog-post-detail-img {
+    height: 44rem;
+    object-fit: cover;
+}
+
 .blog-post-detail {
     margin-bottom: 5%;
     padding-top: 2%;
@@ -102,6 +106,12 @@ video {
 .post-author {
     color: #dc758f;
 
+}
+
+.post-img {
+    height: 45rem;
+    object-fit: cover;
+    
 }
 
 .btn-comment {
@@ -232,9 +242,6 @@ video {
     text-align: center;
 }
 
-    
-
-
 /* Media queries index page */
 /* For devices from 575px  and down */
 @media screen and (max-width: 575px) {
@@ -260,17 +267,13 @@ video {
 }
 
 /* Styling blog post list section */
-#blog-post-list-header {
-    margin-bottom: 3%;
-}
-
 .navbar .navbar-collapse {
     text-align: center;
 }
 
-/* Blog list page */
 #blog-post-list-header {
     font-size: 4rem;
+    margin-bottom: 3%;
 }
 
 .blog-post-list {
@@ -299,6 +302,11 @@ video {
 .post-status-header {
     font-size: 3rem;
     margin-left: 4%;
+}
+
+/* Blog post detail page */
+#blog-post-detail-img {
+    height: 20rem;
 }
 
 /* Settings page */
@@ -374,14 +382,19 @@ video {
         margin-top: -68%;
     }
 
+/* Blog post detail page */
+#blog-post-detail-img {
+    height: 30rem;
+}
+
 }
 
 /* Blog post list page */
-.blog-post-list {
+/* .blog-post-list {
     width: 100%;
-}
+} */
 
-/* For devices from 991px  and down to 767px */
+/* For devices from 991px  and down to 768px */
 @media screen and (max-width: 991px) and (min-width: 768px)  {
 /* General styling */
     #content-wrapper {
@@ -402,6 +415,11 @@ video {
         margin-top: 3%;
     }
 
+/* Blog post detail page */
+#blog-post-detail-img {
+    height: 30rem;
+}
+
 
 }
 
@@ -409,6 +427,10 @@ video {
 @media screen and (max-width: 1200px) and (min-width: 992px)  {
     #video-text-wrapper {
         margin-top: -50%;
+    }
+
+    #blog-post-detail-img {
+        height: 35rem;
     }
 
 }
