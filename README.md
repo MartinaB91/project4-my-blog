@@ -3,6 +3,14 @@
 My Garden is a blog portal where garden lovers can meet and share nice pictures and experiences with other garden lovers. Currently the site contains these categories dahlias, vegetables and fruits, geraniums and pelargoniums, fuchsias, roses and finally others. 
 When you visit My Garden you will first see a page with all the latest posts and from there you are free to explore the different categories so that you can find posts that you like. When you are ready to create your own blog you can sign up and then you can access your own blog page. 
 
+## Target Audience
+This website is meant to attract people who all have a common interest, gardens. 
+Visitors visit the site to read about topics that they find interesting, look at nice pictures, and maybe get some new ideas or tips to try in their own garden. 
+
+Bloggers that use the site likes to share their interest with others. Like Visitors they want to take part of other people’s publications. But they also want to create own blog posts and communicate with other Bloggers/showing their appreciation for others blog posts. 
+
+The main reason for Visitors/Bloggers to revisit the website is that it contains interesting content. But also, that the page is easy to use and navigate and has a design that makes their posts look nice. 
+
 ## UX
 ### User stories
 [#3](https://github.com/MartinaB91/project4-my-blog/issues/3) Epic: Sign in with username
@@ -64,6 +72,7 @@ When you visit My Garden you will first see a page with all the latest posts and
 - [Cloudinary](https://cloudinary.com/) - Used for storing pictures
 
 ### Other tools
+- [Diagrams.net](https://app.diagrams.net/) - Used for creating database scheme
 - [Gunicorn (20.1.0)](https://gunicorn.org/)
 - [Pyscopg2 (2.9.3)](https://pypi.org/project/psycopg2/) - Used for connect PostgreSQL to Python 
 - [Heroku](https://id.heroku.com/login) - Used to deploy app
@@ -71,9 +80,82 @@ When you visit My Garden you will first see a page with all the latest posts and
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Used for debugging
 - [Coolors](https://coolors.co/) - Used for choosing colors
 
+## Page Access Overview
+- There are three different roles with different access, visitor, blogger and admin. The administrator has access to admin page but can also be a blogger and because of this access all sites and functions. 
+
+|Page              | Visitor | Blogger| 
+|------------------|---------|--------|
+|Home              | Yes     | Yes    |
+|Blog post detail  | Yes	 | Yes    |
+|Posts by category | Yes     | Yes    |
+|Create Post       | No      | Yes    |
+|Update Post       | No      | Yes    |
+|Delete Post       | No      | Yes    |
+|My blog           | No      | Yes    |
+|Settings          | No      | Yes    |
+|Search Results    | Yes     | Yes    |
+
+
 ## Features
 
 In this section you will find out more about the different features this site contains.
+
+### Navbar
+-	As a non-authenticated user, the navbar contains “My Garden” and “Home” which both links to home page, a search icon that when expand shown a search field and a “Sign Up” button leading to a sign in form. 
+-	 As an authenticated user the navbar contains the same content as above but the “Sign Up” button will instead display “Sign Out”. The navbar will also contain a dropdown menu named “My Blog” holding links to pages “My Blog”, “Create Post” and “Settings”.
+
+### Footer
+-	As non-authenticated user, the footer contains links to “Home” page and “Admin” login. 
+-	As an authenticated user the footer also contains a link to “My Blog” page. 
+
+### Blog post
+-	All blog posts are sorted on order of creation, the latest post is displayed first. 
+-	Every blog post contains a title which on published posts is a link to blog post detail, the author, date of creation, category, picture, body, and number of comments and likes. 
+-	When a user likes a post the heart icon will be solid pink. 
+
+### Comment field 
+
+-	The comment section contains all approved comments and a field for the user to leave a comment. To view this section the user needs to click the comment icon and the comment section will expand. 
+-	Every comment contains an author, date of creation. Posts that don’t have any comments displays the text: “This post has no comments”
+-	If the user is authenticated, they are free to leave a comment else the user will be told to sign in before leaving a comment. Before a new comment is displayed it must be approved by Admin. 
+-	When a user has left a comment the text: “Thank you! Your comment will soon be reviewed” will be shown. 
+
+### Home 
+The Home page contains three sections and looks the same for both authenticated and non-authenticated users. 
+-	The first section, the video section contains a video, header and a flower quote. This is the first thing you see when you enter the page and is intended to make the site more welcoming. 
+-	The second section, the latest post section displays the four latest posts created, if the Visitor/Blogger want to view more posts they can do so by using the pagination. 
+-	The third section, the category section contains all active categories the Visitor/Blogger can choose to visit/publish in. 
+
+### Blog post detail 
+-	When clicking the post title, the user will be redirect to the blog post detail page. This page contains a single blog post, here the picture is larger, and the post is more in focus. 
+
+### Posts by category
+-	When a user selects a category, they will be redirected to a page containing all published posts in that category. 
+
+### Create Post
+This page is only for authenticated users. This page contains a form for creating a post. 
+-	The Blogger can add a title, category, some content, one picture, and a meta description to make it easier for a search engine to find it. 
+
+### Update Post
+This page is only for authenticated users.
+-	At this page the Blogger can update all parts of their post. When a post is updated, the user will be redirected to home page. 
+
+### Delete post
+This page is only for authenticated users.
+-	When a Blogger click delete on a post they will be redirected to the delete post page and asked to confirm deletion.  When the post is deleted the user will be redirected to home page. 
+
+### My blog 
+This page is only for authenticated users
+-	All Bloggers have a page called “My page”. On this page the Blogger will find all posts they have written. Both published and unpublished. This makes it possible for the user to follow if the post has been published or if its waiting on approval. 
+
+### Settings
+This page is only for Authenticated users
+-	On this page the user can choose to leave more information about themselves. Settings page contains fields for first name, last name, email, and profile image. 
+In the future this information could be used to highlight the user on the home page so that other users can choose to view posts from a specific author. 
+-	This page also contains a link to the page were the Bloggers can change password. 
+
+### Search Results
+-	To search the user needs to expand the search icon in the navbar and enter what they are searching for. They will then be redirected to the search result page and the result is displayed in two fields, one for posts and one for categories. If no result is found the following text is displayed: “No posts found... Please try again” and “No categories found... Please try again”.
 
 ## Design 
 ### Color-scheme
@@ -92,8 +174,10 @@ In this section you will find out more about the different features this site co
 
 <img src="readme-images/lato.PNG">
 
-### Wireframes
-### Flowcharts 
+### Wireframes 
+### Database Scheme
+<img src="readme-images/db-scheme-project4-img.png">
+
 ## Testing
 ## Deployment
 
