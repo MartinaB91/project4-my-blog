@@ -51,6 +51,7 @@
 
         let btn = $(this).children().first();
         let span = $(this).siblings('span').first(); // The span has the like-icon
+      
         $.ajax({
             method: "POST",
             url: $(this).attr('name'),
