@@ -26,11 +26,13 @@ class BlogPostList(ListView):
 
     def get_queryset(self):
         all_published_posts = Post.objects.filter(published=1).order_by('-created_on')
-
-        for post in all_published_posts:
-            post.liked = False
-            if post.likes.filter(id=self.request.user.profile.id).exists():
-                post.liked = True
+        # Inspiration from:
+        # https://stackoverflow.com/questions/610883/how-to-know-if-an-object-has-an-attribute-in-python
+        if hasattr(self.request.user, 'profile'):
+            for post in all_published_posts:
+                post.liked = False
+                if post.likes.filter(id=self.request.user.profile.id).exists():
+                    post.liked = True
 
         queryset = all_published_posts 
 
@@ -49,10 +51,11 @@ class CategoryPostList(generic.ListView):
         category = get_object_or_404(Category, slug=slug)
         all_published_posts = Post.objects.filter(published=1, category=category).order_by('-created_on')
 
-        for post in all_published_posts:
-            post.liked = False
-            if post.likes.filter(id=self.request.user.profile.id).exists():
-                post.liked = True
+        if hasattr(self.request.user, 'profile'):
+            for post in all_published_posts:
+                post.liked = False
+                if post.likes.filter(id=self.request.user.profile.id).exists():
+                    post.liked = True
 
         context = {
             'post_list': all_published_posts,
