@@ -29,30 +29,30 @@ class BlogPostList(ListView):
 
         for post in all_published_posts:
             post.liked = False
-            if post.likes.filter(id=self.request.user.id).exists():
+            if post.likes.filter(id=self.request.user.profile.id).exists():
                 post.liked = True
 
         queryset = all_published_posts 
 
         return queryset
         
-def like_post_home(request, slug):
-    user = request.user
-    if request.method == 'POST':
-        post_id = request.POST.get('post_id')
-        post_obj = get_object_or_404(Post, id=post_id)
+# def like_post_home(request, slug):
+#     user = request.user
+#     if request.method == 'POST':
+#         post_id = request.POST.get('post_id')
+#         post_obj = get_object_or_404(Post, id=post_id)
 
-        if post_obj.likes.filter(id=request.user.id).exists():
-            post_obj.likes.remove(user.id)
-            post_obj.number_of_likes -= 1
-            post_obj.save()
+#         if post_obj.likes.filter(id=request.user.id).exists():
+#             post_obj.likes.remove(user.id)
+#             post_obj.number_of_likes -= 1
+#             post_obj.save()
 
-        else:
-            post_obj.likes.add(user.id)
-            post_obj.number_of_likes += 1
-            post_obj.save()
+#         else:
+#             post_obj.likes.add(user.id)
+#             post_obj.number_of_likes += 1
+#             post_obj.save()
 
-    return HttpResponse(post_obj.number_of_likes)
+#     return HttpResponse(post_obj.number_of_likes)
 
 class CategoryPostList(generic.ListView):
     """
@@ -68,7 +68,7 @@ class CategoryPostList(generic.ListView):
 
         for post in all_published_posts:
             post.liked = False
-            if post.likes.filter(id=self.request.user.id).exists():
+            if post.likes.filter(id=self.request.user.profile.id).exists():
                 post.liked = True
 
         context = {

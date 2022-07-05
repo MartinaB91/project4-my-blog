@@ -18,7 +18,7 @@ class BlogPostDetail(generic.DetailView):
         post = get_object_or_404(queryset, slug=slug)
 
         liked = False
-        if post.likes.filter(id=request.user.id).exists():
+        if post.likes.filter(id=request.user.profile.id).exists():
             liked = True
 
         context = {
@@ -36,13 +36,13 @@ def like_post(request, slug):
     if request.method == 'POST':
         post_obj = get_object_or_404(Post, id=request.POST.get('post_id'))
 
-        if post_obj.likes.filter(id=request.user.id).exists():
-            post_obj.likes.remove(request.user.id)
+        if post_obj.likes.filter(id=request.user.profile.id).exists():
+            post_obj.likes.remove(request.user.profile)
             post_obj.number_of_likes -= 1
             post_obj.save()
 
         else:
-            post_obj.likes.add(request.user.id)
+            post_obj.likes.add(request.user.profile)
             post_obj.number_of_likes += 1
             post_obj.save()
 

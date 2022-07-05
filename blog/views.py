@@ -35,7 +35,7 @@ class MyBlogPostList(ListView):
 
         for post in all_published_posts:
             post.liked = False
-            if post.likes.filter(id=self.request.user.id).exists():
+            if post.likes.filter(id=self.request.user.profile.id).exists():
                 post.liked = True
 
         queryset = all_published_posts 
