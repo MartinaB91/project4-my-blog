@@ -113,10 +113,12 @@ The main reason for Visitors/Bloggers to revisit the website is that it contains
 - [Cloudinary](https://cloudinary.com/) - Used for storing pictures
 
 ### Other tools
+- [Black (22.6.0)](https://pypi.org/project/black/) - Used for formatting python files
 - [Diagrams.net](https://app.diagrams.net/) - Used for creating database scheme
 - [Gunicorn (20.1.0)](https://gunicorn.org/)
 - [Pyscopg2 (2.9.3)](https://pypi.org/project/psycopg2/) - Used for connect PostgreSQL to Python 
 - [Heroku](https://id.heroku.com/login) - Used to deploy app
+- [Invisionapp](https://www.invisionapp.com/home) - Used for wireframes
 - [GitHub Issues](https://github.com/features/issues) - Used for project planning 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Used for debugging
 - [Coolors](https://coolors.co/) - Used for choosing colors
@@ -233,7 +235,7 @@ The following epics were planed but cut off due to the time frame. In the future
 - [#2](https://github.com/MartinaB91/project4-my-blog/issues/2) Epic: Connecting users to the bloggers social medias
 
 Other improvements: 
-- Build automatic tests before building code to prevent finding bug when the project is close to code stop (TDD).
+- Build automatic tests before building code to prevent finding bugs late in the development process (TDD).
 - Add functionality for respond to a comment.
 - Blog app could be named myblog for better overwiev. 
 
