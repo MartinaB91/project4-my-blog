@@ -11,6 +11,46 @@ Bloggers that use the site likes to share their interest with others. Like Visit
 
 The main reason for Visitors/Bloggers to revisit the website is that it contains interesting content. But also, that the page is easy to use and navigate and has a design that makes their posts look nice. 
 
+## Table of contents
+- [UX](#design)
+    - [User stories](#user-stories)
+- [Technologies used](#technologies-used)
+    - [Languages](#languages)
+    - [Frameworks and libraries](#frameworks-and-libraries)
+    - [Databases](#databases)
+    - [Storage](#storage)
+    - [Other tools](#other-tools)
+- [Page Access Overview](#page-access-overview)
+- [Features](#features)
+    - [Navbar](#navbar)
+    - [Footer](#footer)
+    - [Blog post](#blog-post)
+    - [Comment field](#comment-field)
+    - [Home](#home)
+    - [Blog post detail](#blog-post-detail)
+    - [Posts by category](#posts-by-category)
+    - [Create Post](#create-post)
+    - [Update Post](#update-post)
+    - [Delete Post](#delete-post)
+    - [My blog](#my-blog)
+    - [Settings](#settings)
+    - [Search Results](#search-results)
+- [Design](#design)
+    - [Color-scheme](#color-scheme)
+    - [Typography](#typography)
+    - [Wireframes](#wireframes)
+    - [Database Scheme](#database-scheme)
+- [Testing](#testing)
+- [Bugs corrections and improvements](#bugs-corrections-and-improvements)
+    - [Solved bugs](#solved-bugs)
+    - [Future improvements](#future-improvements)
+- [Deployment](#deployment)
+    - [](#)
+- [Credits](#credits)
+    - [Code](#code)
+    - [Content and media](#content-and-media)
+
+
 ## UX
 ### User stories
 [#3](https://github.com/MartinaB91/project4-my-blog/issues/3) Epic: Sign in with username
@@ -179,6 +219,23 @@ In the future this information could be used to highlight the user on the home p
 <img src="readme-images/db-scheme-project4-img.png">
 
 ## Testing
+## Bugs corrections and improvements
+
+### Solved bugs
+- [#43](https://github.com/MartinaB91/project4-my-blog/issues/43) Like-btn don't "checked"
+- [#44](https://github.com/MartinaB91/project4-my-blog/issues/44) Can't update img on post as Blogger
+- [#50](https://github.com/MartinaB91/project4-my-blog/issues/50) Page not loading when user not signed 
+
+### Future improvements
+The following epics were planed but cut off due to the time frame. In the future this could be added:
+- [#1](https://github.com/MartinaB91/project4-my-blog/issues/1) Epic: Advertise popular blog content
+- [#2](https://github.com/MartinaB91/project4-my-blog/issues/2) Epic: Connecting users to the bloggers social medias
+
+Other improvements: 
+- Build automatic tests before building code to prevent finding bug when the project is close to code stop (TDD).
+- Add functionality for respond to a comment.
+- Blog app could be named myblog for better overwiev. 
+
 ## Deployment
 
 ## Credits
