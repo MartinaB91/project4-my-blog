@@ -4,6 +4,5 @@ from . import views
 
 
 urlpatterns = [
-    path('<pk>/', views.SettingsView.as_view(), name='settings'),
-    
+    path("<pk>/", views.SettingsView.as_view(), name="settings"),
 ]

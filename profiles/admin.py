@@ -8,26 +8,26 @@ class ProfileAdmin(admin.ModelAdmin):
     This class is used for controlling what the Admin can see,
     filter, edit and search for in admin profile list
     """
+
     model = Profile
 
     list_display = (
-        'user',
-        'first_name',
-        'last_name',
-        'email',
+        "user",
+        "first_name",
+        "last_name",
+        "email",
     )
 
     list_filter = (
-        'user',
-        'first_name',
-        'last_name',
+        "user",
+        "first_name",
+        "last_name",
     )
 
-    list_display_links = ('user',)
+    list_display_links = ("user",)
 
     search_fields = (
-        'user',
-        'first_name',
-        'last_name',
+        "user",
+        "first_name",
+        "last_name",
     )
-

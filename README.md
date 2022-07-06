@@ -45,7 +45,8 @@ The main reason for Visitors/Bloggers to revisit the website is that it contains
     - [Solved bugs](#solved-bugs)
     - [Future improvements](#future-improvements)
 - [Deployment](#deployment)
-    - [](#)
+    - [Local deployment](#local-deployment)
+    - [Heroku deployment](#heroku-deployment)
 - [Credits](#credits)
     - [Code](#code)
     - [Content and media](#content-and-media)
@@ -237,6 +238,8 @@ Other improvements:
 - Blog app could be named myblog for better overwiev. 
 
 ## Deployment
+### Local deployment
+### Heroku deployment
 
 ## Credits
 ### Code
