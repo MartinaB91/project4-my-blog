@@ -16,14 +16,15 @@ class BlogPostDetail(generic.DetailView):
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(published=1).order_by('-created_on')
         post = get_object_or_404(queryset, slug=slug)
-
+        
         liked = False
-        if post.likes.filter(id=request.user.profile.id).exists():
-            liked = True
+        if hasattr(self.request.user, 'profile'):
+            if post.likes.filter(id=request.user.profile.id).exists():
+                liked = True
 
         context = {
             'post': post,
-            # 'liked': liked,
+            'liked': liked,
         }
 
         return render(
