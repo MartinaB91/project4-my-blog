@@ -12,7 +12,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 
 class BlogPostDetail(generic.DetailView):
-    template_name = 'blog_post.html'
+    template_name = 'blog_post_detail.html'
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(published=1).order_by('-created_on')
         post = get_object_or_404(queryset, slug=slug)
@@ -23,12 +23,12 @@ class BlogPostDetail(generic.DetailView):
 
         context = {
             'post': post,
-            'liked': liked,
+            # 'liked': liked,
         }
 
         return render(
             request,
-            "blog_post.html",
+            "blog_post_detail.html",
             context,
         )
 
