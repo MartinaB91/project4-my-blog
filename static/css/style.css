@@ -43,8 +43,8 @@ video {
     position: absolute;
     margin-top: -32%;
     margin-left: 3%;
-
 }
+
 .video-header {
     font-size: 10rem;
 }
@@ -245,6 +245,7 @@ video {
     text-align: center;
 }
 
+
 /* Media queries index page */
 /* For devices from 575px  and down */
 @media screen and (max-width: 575px) {
@@ -402,17 +403,18 @@ video {
         margin-top: -68%;
     }
 
-/* Blog post detail page */
-#blog-post-detail-img {
-    height: 30rem;
-}
+    /* Blog post detail page */
+    #blog-post-detail-img {
+        height: 30rem;
+    }
+
+    /* Blog post list page */ 
+    .blog-post-list {
+        width: 100%;
+    }
 
 }
 
-/* Blog post list page */
-/* .blog-post-list {
-    width: 100%;
-} */
 
 /* For devices from 991px  and down to 768px */
 @media screen and (max-width: 991px) and (min-width: 768px)  {
@@ -444,6 +446,10 @@ video {
         height: 30rem;
     }
 
+    .blog-post-list {
+        width: 100%;
+    }
+
     /* Blog post detail page */
     #blog-post-detail-img {
         height: 30rem;
@@ -465,6 +471,16 @@ video {
     .post-img {
     height: 35rem;
 }
+
+}
+
+/* For devices from 1201px  and up */
+@media screen and (min-width: 1201px)  {
+/* Styling video section */
+    #video-text-wrapper {
+        margin-top: -40%;
+        margin-left: 3%;
+    }
 
 }
 
