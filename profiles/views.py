@@ -1,9 +1,8 @@
-from django.shortcuts import render
 from .models import Profile
 from django.views.generic import UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import SettingsForm
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
 

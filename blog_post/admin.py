@@ -3,6 +3,7 @@ from .models import Category, Post, Comment
 
 admin.site.site_header = "My Garden Administration"
 
+
 # Inspiration from:
 # https://realpython.com/python-django-blog/#step-2-create-the-django-blog-admin
 @admin.register(Post)

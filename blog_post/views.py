@@ -1,6 +1,5 @@
-from datetime import datetime
 from django.shortcuts import render, get_object_or_404, redirect
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse_lazy
 from django.http import HttpResponse
 from django.views.generic import (
     DetailView,
@@ -11,7 +10,7 @@ from django.views.generic import (
     DeleteView,
 )
 from django.views import generic
-from .models import Post, Like, Comment
+from .models import Post, Comment
 from .forms import PostForm, CommentForm, UpdateForm
 from django.template.defaultfilters import slugify
 from django.contrib.messages.views import SuccessMessageMixin
