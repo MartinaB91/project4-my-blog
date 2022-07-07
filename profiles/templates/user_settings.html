@@ -1,37 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
-
 {% block content %}
-
 {# alert messages section #}
 {% if messages %}
 <div>
-    {% for message in messages %}
-    <div class="alert alert-success" role="alert">
-        <p class="text-center">{{ message }}</p>
-    </div>
-    {% endfor %}
+   {% for message in messages %}
+   <div class="alert alert-success" role="alert">
+      <p class="text-center">{{ message }}</p>
+   </div>
+   {% endfor %}
 </div>
 {% endif %}
-
 {# User settings section #}
 <div class="row justify-content-center">
-    <div class="col-lg-8 col-md-12 col-sm-12">
-        <div id="settings-wrapper">
-            <h1 class="settings-header">Settings</h1>
-
-
-            <form method="POST">
-                {% csrf_token %}
-                {{ form |crispy}}
-                <div class="d-grid d-lg-block mb-2">
-                <button class="btn btn-edit mb-2 mt-3" type="submit">Save Settings</button>
-                </div>
-            </form>
-            <a href="{% url 'account_change_password' %}">Change Password?</a>
-
-        </div>
-    </div>
+   <div class="col-lg-8 col-md-12 col-sm-12">
+      <div id="settings-wrapper">
+         <h1 class="settings-header">Settings</h1>
+         <form method="POST">
+            {% csrf_token %}
+            {{ form |crispy}}
+            <div class="d-grid d-lg-block mb-2">
+               <button class="btn btn-edit mb-2 mt-3" type="submit">Save Settings</button>
+            </div>
+         </form>
+         <a href="{% url 'account_change_password' %}">Change Password?</a>
+      </div>
+   </div>
 </div>
 {% endblock %}
