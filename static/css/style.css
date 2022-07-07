@@ -51,7 +51,7 @@ video {
 
 #text-friends {
     color: #dc758f;
-    font-weight: bold;
+    font-weight: bold%;
 }
 
 /* Styling blog post list section */
