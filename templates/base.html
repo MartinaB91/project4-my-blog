@@ -68,7 +68,7 @@
           </form>
           <ul>
             {% if request.user.is_authenticated %}
-              <a class="btn btn-secondary mt-2" href="{% url 'account_logout' %}">Sign Out</a>
+              <a class="btn btn-secondary mt-2" id="nav-logout-btn" href="{% url 'account_logout' %}">Sign Out</a>
             {% else %}
               <a class="btn btn-secondary mt-2" href="{% url 'account_login' %}">Sign Up</a>
             {% endif %}

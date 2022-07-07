@@ -254,6 +254,10 @@ video {
     margin-top: 2rem
 }
 
+#nav-logout-btn {
+    margin-right: 2rem;
+}
+
 /* Styling video section  */
 video {
     height: 20rem;
@@ -350,6 +354,11 @@ video {
 
 .delete-post-text {
     text-align: center;
+}
+
+/* Styling post by category page */
+.post-by-category-header {
+    font-size: 4rem;
 }
 
 /* Styling allauth template login */
