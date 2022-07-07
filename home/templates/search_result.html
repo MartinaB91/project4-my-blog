@@ -1,39 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
-
-
-
 {% block content %}
-
 <div class="row justify-content-center">
-    <div class="col-8">
-        {% if search %}
-        <h2 class="text-center mb-4"><strong>You searched for:</strong> <span class="link-text">{{search}}</span></h2> 
-        <h3 class="mb-4">Results</h3>
-            {% for post in posts %}
-                <span>{{post.created_on}}</span><span class="search-result-post-category"> | {{post.category}}</span>
-                <br>
-                <a class="search-result-post-title" href="{% url 'blog_post' post.slug %}">{{post.title}} </a>
-                <span> By:</span><span class="post-author search-result-post-author"> {{post.author}}</span>
-                <hr>
-            {% empty %}
-                <p>No posts found... Please try again</p>
-            {% endfor %}
-            {% for category in categories %}
-            <span>Category:</span>
-            <a href="{% url 'post_by_category' category.slug %}"><span class="search-result-category"> {{category.name}}</span></a>
-                <hr>
-            {% empty %}
-                <p>No categories found... Please try again</p>
-            {% endfor %}
-        {% else %}
-            <h3 class="text-center">What do you wan't to find? Please please click the search symbol and enter what your looking for.</h3>
-        {% endif %}
-
-    </div>
-  </div>
-
-
-
-
+   <div class="col-8">
+      {% if search %}
+      <h2 class="text-center mb-4"><strong>You searched for:</strong> <span class="link-text">{{search}}</span></h2>
+      <h3 class="mb-4">Results</h3>
+      {% for post in posts %}
+      <span>{{post.created_on}}</span><span class="search-result-post-category"> | {{post.category}}</span>
+      <br>
+      <a class="search-result-post-title" href="{% url 'blog_post' post.slug %}">{{post.title}} </a>
+      <span> By:</span><span class="post-author search-result-post-author"> {{post.author}}</span>
+      <hr>
+      {% empty %}
+      <p>No posts found... Please try again</p>
+      {% endfor %}
+      {% for category in categories %}
+      <span>Category:</span>
+      <a href="{% url 'post_by_category' category.slug %}"><span class="search-result-category"> {{category.name}}</span></a>
+      <hr>
+      {% empty %}
+      <p>No categories found... Please try again</p>
+      {% endfor %}
+      {% else %}
+      <h3 class="text-center">What do you wan't to find? Please please click the search symbol and enter what your looking for.</h3>
+      {% endif %}
+   </div>
+</div>
 {% endblock %}

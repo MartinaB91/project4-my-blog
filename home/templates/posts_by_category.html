@@ -1,15 +1,12 @@
-
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
-    <h1 class="text-center mb-3">{{category.name}}</h1>
-    {% for post in post_list %}
-            {% include 'blog_post_list.html' %}
-    {% empty %}
-        <p class="text-center">This category has no posts yet</p>
-    {% endfor %}
-
+<h1 class="text-center mb-3">{{category.name}}</h1>
+{% for post in post_list %}
+    {% include 'blog_post_list.html' %}
+{% empty %}
+<p class="text-center">This category has no posts yet</p>
+{% endfor %}
 
 
     <script>
