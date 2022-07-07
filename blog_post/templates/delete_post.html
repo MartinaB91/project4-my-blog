@@ -1,17 +1,15 @@
 {% extends 'base.html' %}
-
 {% block content %}
 <div class="row justify-content-center">
-    <div class="col-lg-8 col-md-10 col-sm-12">
-        <h1 class="delete-post-header">Delete Blogpost</h1>
-
-        <form method="POST">
-            {% csrf_token %}
-            <p class="delete-post-text">Do you wan't to delete <strong><span class="delete-post-title">{{post.title}}</span> ?</strong></p>
-            <div class="d-grid d-lg-block m-4">
-                <button class="btn btn-delete" type="submit">Delete Post</button>
-            </div>
-        </form>
-    </div>
+   <div class="col-lg-8 col-md-10 col-sm-12">
+      <h1 class="delete-post-header">Delete Blogpost</h1>
+      <form method="POST">
+         {% csrf_token %}
+         <p class="delete-post-text">Do you wan't to delete <strong><span class="delete-post-title">{{post.title}}</span> ?</strong></p>
+         <div class="d-grid d-lg-block m-4">
+            <button class="btn btn-delete" type="submit">Delete Post</button>
+         </div>
+      </form>
+   </div>
 </div>
 {% endblock %}
