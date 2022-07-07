@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from .views import page_not_found
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,3 +25,5 @@ urlpatterns = [
     path('blogpost/', include('blog_post.urls')),
     path('settings/', include('profiles.urls')),
 ]
+
+handler404 = "myblog.views.page_not_found"
