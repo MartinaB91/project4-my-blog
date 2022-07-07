@@ -218,6 +218,12 @@ In the future this information could be used to highlight the user on the home p
 <img src="readme-images/lato.PNG">
 
 ### Wireframes 
+- [**Phone**](readme-images/wireframe_phone.PNG)
+- [**Tablet**: Home and Posts by category page](readme-images/wireframe_tablet_1.PNG)
+- [**Tablet**: My blog and Blog post detail page](readme-images/wireframe_tablet_2.PNG)
+- [**Desktop**: Home page](readme-images/wireframe_desktop_1.PNG)
+- [**Desktop**: Posts by category, My blog and blog post detail page](readme-images/wireframe_desktop_1.PNG)
+
 ### Database Scheme
 <img src="readme-images/db-scheme-project4-img.png">
 
