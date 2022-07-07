@@ -114,14 +114,15 @@ The main reason for Visitors/Bloggers to revisit the website is that it contains
 
 ### Other tools
 - [Black (22.6.0)](https://pypi.org/project/black/) - Used for formatting python files
-- [Diagrams.net](https://app.diagrams.net/) - Used for creating database scheme
-- [Gunicorn (20.1.0)](https://gunicorn.org/)
-- [Pyscopg2 (2.9.3)](https://pypi.org/project/psycopg2/) - Used for connect PostgreSQL to Python 
-- [Heroku](https://id.heroku.com/login) - Used to deploy app
-- [Invisionapp](https://www.invisionapp.com/home) - Used for wireframes
-- [GitHub Issues](https://github.com/features/issues) - Used for project planning 
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Used for debugging
 - [Coolors](https://coolors.co/) - Used for choosing colors
+- [Diagrams.net](https://app.diagrams.net/) - Used for creating database scheme
+- [Freeformatter](https://www.freeformatter.com/) - Used for formatting HTML
+- [GitHub Issues](https://github.com/features/issues) - Used for project planning 
+- [Gunicorn (20.1.0)](https://gunicorn.org/)
+- [Heroku](https://id.heroku.com/login) - Used to deploy app
+- [Invisionapp](https://www.invisionapp.com/home) - Used for wireframes
+- [Pyscopg2 (2.9.3)](https://pypi.org/project/psycopg2/) - Used for connect PostgreSQL to Python 
 
 ## Page Access Overview
 - There are three different roles with different access, visitor, blogger and admin. The administrator has access to admin page but can also be a blogger and because of this access all sites and functions. 
@@ -259,6 +260,7 @@ Other improvements:
 - [Medium.com](https://medium.com/@nishalk25121999/how-to-make-a-like-button-using-django-ajax-d2db38e6d2f8) - Used as inspiration when building like button using AJAX.
 - [Stackoverflow, context data in template](https://stackoverflow.com/questions/61022964/how-do-i-access-the-context-data-in-the-template) - Used as inspiration when buidling BlogPostList/MyBlogPostList view.
 - [Stackoverflow, filter](https://stackoverflow.com/questions/739776/how-do-i-do-an-or-filter-in-a-django-query) - Used as inspiration when buidling search page.
+- [Youtube, Codemy](https://www.youtube.com/watch?v=wY_BNsxCEi4) - Used as inspiration when building pagination
 
 
 ### Content and media
