@@ -1,0 +1,11 @@
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div id="error-text-wrapper">
+        <h1 class="text-center">Error 404.</h1>
+        <p class="text-center">The page you are looking for dosen't exist. Go back to home <a
+                href="{% url 'index' %}">Home</a> </p>
+    </div>
+</div>
+{% endblock %}
