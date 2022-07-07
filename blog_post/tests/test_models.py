@@ -3,12 +3,33 @@ from blog_post.models import Category, Post
 from profiles.tests.test_models import create_test_user, create_test_profile
 from datetime import date
 
+
 def create_test_category(test_name, test_slug):
     category = Category.objects.create(
     name = test_name,
     slug = test_slug,
     )
     return category
+
+# Creates four categories and checks number of categories is as expected
+@pytest.mark.django_db
+def test_create_multiple_category():
+    category_one = create_test_category('Cat One', 'cat-one')
+    category_two = create_test_category('Cat Two', 'cat-two')
+    category_three = create_test_category('Cat Three', 'cat-three')
+    category_four = create_test_category('Cat Four', 'cat-four')
+
+    assert Category.objects.all().count() == 4
+
+# Test create and remove a category
+@pytest.mark.django_db
+def test_delete_category():
+    category_to_delete = create_test_category('Del ete', 'del-ete')
+    assert Category.objects.all().count() == 1
+    category_to_delete.delete()
+    assert Category.objects.all().count() == 0
+
+
 
 def get_test_post():
     user = create_test_user('AstridLindgren')
