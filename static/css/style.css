@@ -254,7 +254,7 @@ video {
     margin-top: 2rem
 }
 
-#nav-logout-btn {
+#nav-logout-login-btn {
     margin-right: 2rem;
 }
 
@@ -389,6 +389,10 @@ video {
         margin-top: 2rem
     }
 
+    #nav-logout-login-btn {
+        margin-right: 2rem;
+    }
+
 /* Styling video section  */
     video {
         height: 33rem;
@@ -417,6 +421,10 @@ video {
         margin-top: 2rem
     }
 
+    #nav-logout-login-btn {
+        margin-right: 2rem;
+    }
+
 /* Video section */
     video {
         height: 35rem;
@@ -440,7 +448,6 @@ video {
     #blog-post-detail-img {
         height: 30rem;
     }
-
 
 }
 
