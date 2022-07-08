@@ -457,6 +457,7 @@ video {
 
 }
 
+
 /* For devices from 1200px  and down to 992px */
 @media screen and (max-width: 1200px) and (min-width: 992px)  {
     #video-text-wrapper {
@@ -480,8 +481,7 @@ video {
     #video-text-wrapper {
         margin-top: -40%;
         margin-left: 3%;
-    }
-
+    } 
 }
 
 /* For removing navbar toggler icon border */

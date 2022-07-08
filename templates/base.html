@@ -68,11 +68,11 @@
           </form>
           <ul>
             {% if request.user.is_authenticated %}
-            <div class="d-grid d-lg-block m-4">
+            <div class="d-grid d-lg-block">
               <a class="btn btn-secondary mt-2" id="nav-logout-login-btn" href="{% url 'account_logout' %}">Sign Out</a>
             </div>
             {% else %}
-            <div class="d-grid d-lg-block m-4">
+            <div class="d-grid d-lg-block">
               <a class="btn btn-secondary mt-2" id="nav-logout-login-btn" href="{% url 'account_login' %}">Sign Up</a>
             </div>
             {% endif %}
