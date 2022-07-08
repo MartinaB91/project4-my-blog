@@ -48,9 +48,19 @@ During the development process, unit testing has been done to check if functiona
 | Tests for Epic [#5](https://github.com/MartinaB91/project4-my-blog/issues/5) Implement functionality for comment and like||
 | ----------- | ----------- |
 |**Test name** |**Test id:** |
-|| [#77](https://github.com/MartinaB91/project4-my-blog/issues/77) |
+|Test: View comment section Blogger| [#77](https://github.com/MartinaB91/project4-my-blog/issues/77) |
+|Test: Leave a comment Blogger| [#78](https://github.com/MartinaB91/project4-my-blog/issues/78) |
+|Test: Like post Blogger| [#79](https://github.com/MartinaB91/project4-my-blog/issues/79) |
+|Test: View unhandled comments Admin[#80](https://github.com/MartinaB91/project4-my-blog/issues/80) |
+|Test: Approve/deny comments Admin [#81](https://github.com/MartinaB91/project4-my-blog/issues/81) |
 
-| Tests for Epic [#46](https://github.com/MartinaB91/project4-my-blog/issues/46) View Bloggers personal posts & post status
+
+|Test for Epic [#46](https://github.com/MartinaB91/project4-my-blog/issues/46) View Bloggers personal posts & post status||
+| ----------- | ----------- |
+|**Test name** |**Test id:** |
+|Test: View my posts Blogger [#82](https://github.com/MartinaB91/project4-my-blog/issues/82) |
+|Test: View published/not published posts Blogger [#83](https://github.com/MartinaB91/project4-my-blog/issues/83) |
+
 
 
 
