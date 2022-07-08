@@ -26,12 +26,9 @@ def test_user_create():
     test_user = create_test_user("AdaLovelace")
     assert test_user.username == "AdaLovelace"
 
-# @pytest.mark.django_db
-# def test_profile_create():
-#     test_profile = create_test_profile('MartinaB', 'Martina', 'Bjorre')
-#     # assert test_profile.username == 'MartinaB'
-#     assert test_profile.first_name == 'Martina'
-#     assert test_profile.last_name == 'Bjorre'
+
+
+
 
    
 
