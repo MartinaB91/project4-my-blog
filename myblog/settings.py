@@ -34,13 +34,13 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = development
 
 
-# TODO: When submitting only have one allowed host. development: localhost deployed: heroku
+# TODO: When submitting only have one allowed host.
+# development: localhost deployed: heroku
 if development:
     ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost']
 else:
     ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost']
 
-# TODO: Search information about why this dosen't work 'https://*' but this do: 'https://*.io'
 CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*.io']
 
 # Application definition
@@ -128,7 +128,7 @@ if development:
 else:
     print('Using postgres')
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))   
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 
 
@@ -181,8 +181,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # For solving error connection refused.
-# Solution from: https://stackoverflow.com/questions/57405472/connectionrefusederror-at-accounts-register
+# Solution from:
+# https://stackoverflow.com/questions/57405472/connectionrefusederror-at-accounts-register
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_EMAIL_VERIFICATION = "none"
-
-
