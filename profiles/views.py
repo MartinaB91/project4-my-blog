@@ -32,5 +32,6 @@ class SettingsView(LoginRequiredMixin, UpdateView, SuccessMessageMixin):
         return context
 
     def get_success_url(self):
-        messages.success(self.request, "You settings has been updated successfully!")
+        messages.success(self.request, "You settings has'\
+            ' been updated successfully!")
         return reverse_lazy("settings", kwargs={"pk": self.object.id})

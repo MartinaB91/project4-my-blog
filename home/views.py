@@ -1,8 +1,7 @@
-from django.shortcuts import render, get_object_or_404, reverse, redirect
-from django.views.generic import ListView, DetailView, View
-from blog_post.models import Post, Category, User
+from django.shortcuts import render, get_object_or_404
+from django.views.generic import ListView, View
+from blog_post.models import Post, Category
 from django.views import generic
-from django.http import HttpResponse
 from django.db.models import Q
 
 
@@ -25,7 +24,8 @@ class BlogPostList(ListView):
         return context
 
     def get_queryset(self):
-        all_published_posts = Post.objects.filter(published=1).order_by("-created_on")
+        all_published_posts = Post.objects.filter(
+            published=1).order_by("-created_on")
         # Inspiration from:
         # https://stackoverflow.com/questions/610883/how-to-know-if-an-object-has-an-attribute-in-python
         if hasattr(self.request.user, "profile"):
@@ -76,7 +76,8 @@ class SearchResult(View):
     def get(self, request):
         if request.method == "GET":
             search = request.GET["search"]
-            # Filter on if post title,content or author contains text from search box
+            # Filter on if post title,content or author
+            # contains text from search box
             posts = Post.objects.filter(
                 Q(title__contains=search, published=1)
                 | Q(content__contains=search, published=1)

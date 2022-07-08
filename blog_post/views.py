@@ -3,13 +3,10 @@ from django.urls import reverse_lazy
 from django.http import HttpResponse
 from django.views.generic import (
     DetailView,
-    ListView,
-    View,
     CreateView,
     UpdateView,
     DeleteView,
 )
-from django.views import generic
 from .models import Post, Comment
 from .forms import PostForm, CommentForm, UpdateForm
 from django.template.defaultfilters import slugify
@@ -18,7 +15,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 
 
-class BlogPostDetail(generic.DetailView):
+class BlogPostDetail(DetailView):
     template_name = "blog_post_detail.html"
 
     def get(self, request, slug, *args, **kwargs):
@@ -59,7 +56,7 @@ def like_post(request, slug):
     return HttpResponse(post_obj.number_of_likes)
 
 
-class CreatePost(LoginRequiredMixin, generic.CreateView, SuccessMessageMixin):
+class CreatePost(LoginRequiredMixin, CreateView, SuccessMessageMixin):
     model = Post
     form_class = PostForm
     template_name = "create_post.html"
@@ -74,13 +71,14 @@ class CreatePost(LoginRequiredMixin, generic.CreateView, SuccessMessageMixin):
                 new_post.save()
                 messages.success(
                     self.request,
-                    "Your post has been successfully created and will be published after review!",
+                    "Your post has been successfully created'\
+                        ' and will be published after review!",
                 )
         form = PostForm()
         return redirect("create_post")
 
 
-class CreateComment(generic.CreateView):
+class CreateComment(CreateView):
     model = Comment
     form_class = CommentForm
     template_name = "comments.html"
@@ -102,7 +100,7 @@ class CreateComment(generic.CreateView):
         return HttpResponse("Comment saved")
 
 
-class UpdatePost(LoginRequiredMixin, generic.UpdateView, SuccessMessageMixin):
+class UpdatePost(LoginRequiredMixin, UpdateView, SuccessMessageMixin):
     model = Post
     form_class = UpdateForm
     template_name = "update_post.html"
@@ -114,7 +112,7 @@ class UpdatePost(LoginRequiredMixin, generic.UpdateView, SuccessMessageMixin):
         return reverse_lazy("index")
 
 
-class DeletePost(LoginRequiredMixin, generic.DeleteView, SuccessMessageMixin):
+class DeletePost(LoginRequiredMixin, DeleteView, SuccessMessageMixin):
     model = Post
     template_name = "delete_post.html"
 
