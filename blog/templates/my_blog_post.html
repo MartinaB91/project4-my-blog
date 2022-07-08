@@ -11,9 +11,13 @@
          {% endif %}
          </span>
          <span class="text-center">
+            {% if post.published == 1 %}
             <a href="{% url 'blog_post' post.slug %}" class="blog-post-header">
                <h1 class="display-3 text-capitalize blog-post-header">{{post.title}}</h1>
             </a>
+            {% else %}
+               <h1 class="display-3 text-capitalize blog-post-header">{{post.title}}</h1>
+            {% endif %}
          </span>
       </div>
       <div class="row">
