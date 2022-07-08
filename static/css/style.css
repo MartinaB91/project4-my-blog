@@ -188,7 +188,7 @@ video {
     font-size: 3rem;
   }
 
-  /* Styling create post  */
+/* Styling create post  */
   .create-post-header {
     text-align: center;
   }
@@ -245,10 +245,144 @@ video {
     text-align: center;
 }
 
+/* Media queries index page */
+/* For devices from 360px  and down */
+@media screen and (max-width: 360px)  {
+/* General styling */
+#content-wrapper {
+    margin-top: 2rem
+}
+
+#nav-logout-login-btn {
+    margin-right: 2rem;
+}
+
+/* Styling video section  */
+video {
+    height: 20rem;
+}
+
+#video-text-wrapper  {
+    margin-top: -70%;
+    }
+
+.video-header {
+    font-size: 5rem;
+}
+
+/* Styling blog post list section */
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+#blog-post-list-header {
+    font-size: 4rem;
+    margin-bottom: 3%;
+}
+
+.blog-post-list {
+    width: 100%;
+    margin-bottom: 4%;
+}
+
+.post-img {
+    height: 20rem;
+}
+
+.container {
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+/* category section */
+#category-header {
+    font-size: 4rem;
+}
+
+.suggest-category-text {
+    margin-top: 5%;
+}
+
+.my-posts-header {
+    font-size: 4rem;
+}
+
+.post-status-header {
+    font-size: 3rem;
+    margin-left: 4%;
+}
+
+/* Blog post detail page */
+#blog-post-detail-img {
+    height: 20rem;
+}
+
+/* Settings page */
+#settings-wrapper {
+    padding: 2%;
+}
+
+.settings-header {
+    font-size: 4rem;
+}
+
+/* Create post page */
+.create-post-header {
+    font-size: 4rem;
+}
+
+.create-post-wrapper {
+    padding: 2%;
+}
+
+/* Styling update post */
+.edit-header {
+    font-size: 4rem;
+}
+
+.update-post-wrapper {
+    padding: 2%;
+}
+
+/* Styling delete post page */
+.delete-post-header {
+    font-size: 4rem;
+}
+
+.delete-post-text {
+    text-align: center;
+}
+
+/* Styling post by category page */
+.post-by-category-header {
+    font-size: 4rem;
+}
+
+/* Styling allauth template login */
+#login-wrapper {
+    padding: 2%;
+}
+
+/* Styling allauth template signup */
+#signup-wrapper {
+    padding: 2%;
+}
+
+#login-header, #signup-header, #password-reset-header, #password-change-header #password-reset-done-header {
+    font-size: 4rem;
+}
+
+#reset-password-wrapper, #password-change-wrapper {
+    padding: 2%;
+}
+
+}
+
+}
 
 /* Media queries index page */
 /* For devices from 575px  and down */
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 575px) and (min-width: 359px){
 
 /* General styling */
 #content-wrapper {
@@ -265,9 +399,7 @@ video {
 }
 
 #video-text-wrapper {
-    position: absolute;
     margin-top: -55%;
-    margin-left: 3%;
 }
 
 .video-header {
@@ -475,14 +607,31 @@ video {
 
 }
 
-/* For devices from 1201px  and up */
-@media screen and (min-width: 1201px)  {
+/* For devices from 1201px  and up to 1400px */
+@media screen and (min-width: 1201px) and (max-width: 1400px)  {
 /* Styling video section */
     #video-text-wrapper {
         margin-top: -40%;
-        margin-left: 3%;
     } 
 }
+
+/* For devices from 1401px  and up to 1600px */
+@media screen and (min-width: 1401px) and (max-width: 1600px)  {
+    /* Styling video section */
+        #video-text-wrapper {
+            margin-top: -35%;
+        } 
+    }
+
+
+/* For devices from 1601px  and up */
+@media screen and (min-width: 1601px)  {
+    /* Styling video section */
+        #video-text-wrapper {
+            margin-top: -30%;
+            margin-left: 3%;
+        } 
+    }
 
 /* For removing navbar toggler icon border */
 /* From: https://stackoverflow.com/questions/50668594/remove-border-color-for-navbar-toggler-hamburger-icon-in-bootstrap-using-css */
