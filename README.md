@@ -147,6 +147,7 @@ In this section you will find out more about the different features this site co
 ### Navbar
 -	As a non-authenticated user, the navbar contains “My Garden” and “Home” which both links to home page, a search icon that when expand shown a search field and a “Sign Up” button leading to a sign in form. 
 -	 As an authenticated user the navbar contains the same content as above but the “Sign Up” button will instead display “Sign Out”. The navbar will also contain a dropdown menu named “My Blog” holding links to pages “My Blog”, “Create Post” and “Settings”.
+- As a Admin the navbar contains the same content as above but will also contain a link to My Garden administration. 
 
 ### Footer
 -	As non-authenticated user, the footer contains links to “Home” page and “Admin” login. 
@@ -235,6 +236,7 @@ In the future this information could be used to highlight the user on the home p
 - [#43](https://github.com/MartinaB91/project4-my-blog/issues/43) Like-btn don't "checked"
 - [#44](https://github.com/MartinaB91/project4-my-blog/issues/44) Can't update img on post as Blogger
 - [#50](https://github.com/MartinaB91/project4-my-blog/issues/50) Page not loading when user not signed 
+- [#84](https://github.com/MartinaB91/project4-my-blog/issues/84) Pagination on "My Blog" not working
 
 ### Future improvements
 The following epics were planed but cut off due to the time frame. In the future this could be added:
