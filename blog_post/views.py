@@ -71,8 +71,8 @@ class CreatePost(LoginRequiredMixin, CreateView, SuccessMessageMixin):
                 new_post.save()
                 messages.success(
                     self.request,
-                    "Your post has been successfully created'\
-                        ' and will be published after review!",
+                    "Your post has been successfully created\
+                        and will be published after review!",
                 )
         form = PostForm()
         return redirect("create_post")
