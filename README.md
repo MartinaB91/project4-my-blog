@@ -84,7 +84,7 @@ The main reason for Visitors/Bloggers to revisit the website is that it contains
 -   [#18](https://github.com/MartinaB91/project4-my-blog/issues/18) As a **Admin** I want to **approve or disapprove comments** so that I can **control the content of my blog**.
 -   [#16](https://github.com/MartinaB91/project4-my-blog/issues/16) As a **Blogger/Visitor** I want to **view comments on each post** so that I can **follow other people’s opinions**.
 
-[#46]() Epic: View Bloggers personal posts & post status
+[#46](https://github.com/MartinaB91/project4-my-blog/issues/46) Epic: View Bloggers personal posts & post status
 -   [#47](https://github.com/MartinaB91/project4-my-blog/issues/47) As a **Blogger** I want to **view all posts I have created** so that I can **quickly  find, update or follow user interaction on my posts**.
 - [#48](https://github.com/MartinaB91/project4-my-blog/issues/48) As a **Blogger** I want to **see if my post is published or not** so that I can **know if the Admin has approved my post**
 
@@ -296,3 +296,5 @@ Before deployment to production be sure to remember to set “Config Vars” DEB
 - [Bloommaker](https://www.bloomaker.com/blog/55-inspirational-flower-quotes) - Used for flower quote in header
 - [Pexels](https://www.pexels.com/sv-se/)
 
+### Test
+- [Praktisk Mjukvarutestning](https://www.adlibris.com/se/bok/praktisk-mjukvarutestning-9789144117775?gclid=EAIaIQobChMIiLDghYbp-AIVQIODBx2IEAbBEAAYASAAEgJAxfD_BwE)
