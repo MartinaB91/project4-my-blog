@@ -21,13 +21,14 @@ class MyBlogPostList(ListView):
         return context
 
     def get_queryset(self):
-        all_published_posts = Post.objects.order_by("-created_on")
+        all_published_posts = Post.objects.filter(
+            author=self.request.user).order_by("-created_on")
 
         for post in all_published_posts:
             post.liked = False
             if post.likes.filter(id=self.request.user.profile.id).exists():
                 post.liked = True
-
+    
         queryset = all_published_posts
 
         return queryset
