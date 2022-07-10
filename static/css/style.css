@@ -188,6 +188,11 @@ video {
     font-size: 3rem;
   }
 
+  .post-img-blog {
+    height: 30rem;
+    object-fit: cover;
+  }
+
 /* Styling create post  */
   .create-post-header {
     text-align: center;
@@ -370,6 +375,11 @@ video {
     font-size: 4rem;
 }
 
+/* Styling my blog page post */
+.post-img-blog {
+    height: 20rem;
+  }
+
 /* Styling allauth template login */
 #login-wrapper {
     padding: 2%;
@@ -499,6 +509,11 @@ video {
     text-align: center;
 }
 
+/* Styling my blog page post */
+.post-img-blog {
+    height: 20rem;
+  }
+
 /* Styling post by category page */
 .post-by-category-header {
     font-size: 4rem;
@@ -601,6 +616,11 @@ video {
     #blog-post-detail-img {
         height: 30rem;
     }
+
+    /* Styling my blog page post */
+    .post-img-blog {
+        height: 20rem;
+     }
 
 }
 

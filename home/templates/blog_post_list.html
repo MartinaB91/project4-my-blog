@@ -25,7 +25,7 @@
    </div>
    <div>
       {% if 'default_image' in post.post_img.url %}
-      <img src="../../static/media/temporary_default.jpeg" class=" post-img bg-body rounded" alt="..." width="100%" >
+      <img src="../../static/media/temporary_default.jpeg" class="post-img bg-body rounded" alt="..." width="100%" >
       {% else %}
       <img class="post-img bg-body rounded" src=" {{ post.post_img.url }}" width="100%">
       {% endif %}
