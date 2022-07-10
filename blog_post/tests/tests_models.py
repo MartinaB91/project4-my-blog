@@ -40,7 +40,7 @@ class TestCategory(TestCase):
         assert category.category_img == 'default_image' # If no img is added
 
 
-class TestPost(TestCase):
+class TestPost(TestCase): 
     def setup():
         @pytest.fixture
         def get_test_post():
