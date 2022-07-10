@@ -17,6 +17,10 @@ class MyBlogPostList(ListView):
     def get_context_data(self, *args, **kwargs):
         context = super(MyBlogPostList, self).get_context_data(**kwargs)
         context["category"] = Category.objects.all()
+        context["has_not_published_posts"] = Post.objects.filter(
+            published=0).exists()
+        context["has_published_posts"] = Post.objects.filter(
+            published=1).exists()
 
         return context
 
