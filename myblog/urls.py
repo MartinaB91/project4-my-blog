@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
-from .views import page_not_found
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,3 +30,5 @@ urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 handler404 = "myblog.views.page_not_found"
+handler500 = "myblog.views.internal_server_error"
+
