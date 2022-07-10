@@ -241,6 +241,12 @@ video {
     text-align: center;
 }
 
+/* Styling 404 page */
+#error-wrapper {
+    margin-top: 10vh;
+}
+
+
 /* Allauth templates styling */
 #login-header, #signup-header, #password-reset-header, #password-change-header, #password-reset-done-header {
     text-align: center;
@@ -356,6 +362,11 @@ video {
 
 /* Styling post by category page */
 .post-by-category-header {
+    font-size: 4rem;
+}
+
+/* Styling 404 page */
+#error-header {
     font-size: 4rem;
 }
 
@@ -490,6 +501,11 @@ video {
 
 /* Styling post by category page */
 .post-by-category-header {
+    font-size: 4rem;
+}
+
+/* Styling 404 page */
+#error-header {
     font-size: 4rem;
 }
 

@@ -14,6 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path, include
 from .views import page_not_found
 
@@ -24,6 +26,8 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('blogpost/', include('blog_post.urls')),
     path('settings/', include('profiles.urls')),
-]
+ ] 
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 
 handler404 = "myblog.views.page_not_found"
