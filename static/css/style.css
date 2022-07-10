@@ -220,6 +220,7 @@ video {
 /* Styling search page */
 .search-result-post-title {
     font-size: 1.5rem;
+    font-family: 'Amatic SC', cursive;
 }
 
 .search-result-post-category {
@@ -374,8 +375,6 @@ video {
 
 #reset-password-wrapper, #password-change-wrapper {
     padding: 2%;
-}
-
 }
 
 }
