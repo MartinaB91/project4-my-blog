@@ -34,7 +34,7 @@ class TestProfileUtils():
     """
     Used for creating a new profile 
     """
-    def create_test_profile(username, test_first_name, test_last_name):#, test_img, test_email):
+    def create_test_profile(username, test_first_name, test_last_name):
         user = TestUserUtils.create_test_user(username)
         profile = Profile.objects.create(
             user = user,
@@ -52,7 +52,10 @@ class TestPostUtils():
         Creates a new post 
         """
         user = TestUserUtils.create_test_user('RonjaRovardotter')
-        category = TestCategoryUtils.create_test_category('Flower Power', 'flower-power')
+        category = TestCategoryUtils.create_test_category(
+            'Flower Power',
+            'flower-power'
+            )
         post = Post.objects.create(
             title= 'Flower is nice',
             slug= 'flower-is-nice',
