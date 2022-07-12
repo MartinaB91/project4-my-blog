@@ -109,7 +109,7 @@ class UpdatePost(LoginRequiredMixin, UpdateView, SuccessMessageMixin):
     def get_success_url(self):
         messageString = "Your post has been updated!"
         messages.success(self.request, messageString)
-        return reverse_lazy("index")
+        return reverse_lazy("my_blog")
 
 
 class DeletePost(LoginRequiredMixin, DeleteView, SuccessMessageMixin):

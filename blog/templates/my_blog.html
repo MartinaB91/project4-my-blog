@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
+{# alert messages section #}
+{% if messages %}
+<div>
+   {% for message in messages %}
+   <div class="alert alert-success" role="alert">
+      <p class="text-center">{{ message }}</p>
+   </div>
+   {% endfor %}
+</div>
+{% endif %}
 <h1 class="my-posts-header mb-3">My Posts</h1>
 {# Not published posts section #}
 <div class="row g-2">
