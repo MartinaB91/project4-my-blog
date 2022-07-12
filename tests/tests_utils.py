@@ -18,6 +18,17 @@ class TestUserUtils():
         )
         return user
 
+    # Inspiration from:
+    # https://pytest-django.readthedocs.io/en/latest/helpers.html#client-django-test-client
+    def get_forced_login_test_user(client, django_user_model):
+        username = "TestUser"
+        password = "resUtseT"
+        user = django_user_model.objects.create_user(
+            username=username, password=password
+            )
+        client.force_login(user)
+        return user  # Returns a user that is signed-in
+
 
 class TestProfileUtils():
     """
@@ -67,3 +78,4 @@ class TestCategoryUtils():
         slug = test_slug,
             )
         return category
+

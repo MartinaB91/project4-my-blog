@@ -8,24 +8,13 @@ from blog.views import MyBlogPostList
 from datetime import date
 from blog_post.tests.tests_models import TestCategory
 from django.test import RequestFactory
-
-
-# Inspiration from:
-# https://pytest-django.readthedocs.io/en/latest/helpers.html#client-django-test-client
-def get_forced_login_test_user(client, django_user_model):
-    username = "TestUser"
-    password = "resUtseT"
-    user = django_user_model.objects.create_user(
-        username=username, password=password
-        )
-    client.force_login(user)
-    return user  # Returns a user that is signed-in
+from tests.tests_utils import TestUserUtils
 
 
 # Tests that my blog list view return expected status code
 @pytest.mark.django_db
 def test_my_blog_list_view_response(client, django_user_model):
-    get_forced_login_test_user(client, django_user_model)
+    TestUserUtils.get_forced_login_test_user(client, django_user_model)
     url = reverse('my_blog')
     response = client.get(url)
     assert response.status_code == 200
