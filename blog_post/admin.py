@@ -73,20 +73,17 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = (
         "blog_post",
         "content",
-        "status",
         "author",
         "created_on",
     )
 
     list_filter = (
-        "status",
         "author",
         "created_on",
     )
 
     list_editable = (
         "content",
-        "status",
     )
     search_fields = (
         "author",

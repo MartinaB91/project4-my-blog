@@ -88,20 +88,6 @@ class Comment(models.Model):
     Class used for blog comments.
     """
 
-    APPROVED_CHOICES = [
-        (
-            "U",
-            "Unhandled",
-        ),
-        (
-            "A",
-            "Approve",
-        ),
-        (
-            "D",
-            "Deny",
-        ),
-    ]
     author = models.ForeignKey(
         Profile,
         on_delete=models.CASCADE,
@@ -116,11 +102,6 @@ class Comment(models.Model):
     )
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.CharField(
-        max_length=9,
-        default="Unhandled",
-        choices=APPROVED_CHOICES,
-    )
 
     class Meta:
         """
