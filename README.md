@@ -104,6 +104,7 @@ The main reason for Visitors/Bloggers to revisit the website is that it contains
 - [JQuery](https://jquery.com/) - Used for making user interaction more lively 
 - [Font Awesome](https://fontawesome.com/) - Used for adding icons to website
 - [Google Fonts](https://fonts.google.com/) - Used for fonts
+- [Pytest (7.1.2)](https://pypi.org/project/pytest/) and [Pytest-django (4.5.2)](https://pytest-django.readthedocs.io/en/latest/) - Used for testing Python
 
 ### Databases
 - [SQLite](https://www.sqlite.org/index.html) - Used as development database 
@@ -300,3 +301,4 @@ Before deployment to production be sure to remember to set “Config Vars” DEB
 
 ### Test
 - [Praktisk Mjukvarutestning](https://www.adlibris.com/se/bok/praktisk-mjukvarutestning-9789144117775?gclid=EAIaIQobChMIiLDghYbp-AIVQIODBx2IEAbBEAAYASAAEgJAxfD_BwE)
+- [Pytest-django Documentation](https://pytest-django.readthedocs.io/en/latest/) - Used as guide when writing tests
