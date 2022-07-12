@@ -39,7 +39,6 @@
    </article>
    <div class="comment-and-like-section">
       <div class="row">
-         <hr>
          <div class="col-9 col-md-10 col-lg-10">
             <p class="text-end">{{post.post_comments.count}}
                <button class="btn btn-comments" type="button"><i class="far fa-comment-alt"></i></button>
@@ -60,7 +59,6 @@
             <button class="btn btn-like-not-signed-in" id="btn-like"><i id="btn-i" class="far fa-heart btn-icon"></i></button>
             {% endif %} 
          </div>
-         <hr>
       </div>
       <div id="comments-wrapper" class="collapse">
          {% include 'comments.html'%}
