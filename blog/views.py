@@ -32,7 +32,7 @@ class MyBlogPostList(ListView):
             post.liked = False
             if post.likes.filter(id=self.request.user.profile.id).exists():
                 post.liked = True
-    
+
         queryset = all_published_posts
 
         return queryset
