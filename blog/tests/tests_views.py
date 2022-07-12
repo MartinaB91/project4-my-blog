@@ -24,7 +24,7 @@ def get_forced_login_test_user(client, django_user_model):
 
 # Tests that my blog list view return expected status code
 @pytest.mark.django_db
-def test_my_blog_list_view(client, django_user_model):
+def test_my_blog_list_view_response(client, django_user_model):
     get_forced_login_test_user(client, django_user_model)
     url = reverse('my_blog')
     response = client.get(url)
