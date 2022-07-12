@@ -57,7 +57,7 @@
                value="{{post.id}}"><i id="btn-i" class="far fa-heart btn-icon"></i></button>
             {% endif %}
             {% else %}
-            <button class="btn" id="btn-like" onclick="alertMsgVisitorLikes()"><i id="btn-i" class="far fa-heart btn-icon"></i></button>
+            <button class="btn btn-like-not-signed-in" id="btn-like"><i id="btn-i" class="far fa-heart btn-icon"></i></button>
             {% endif %} 
          </div>
          <hr>
@@ -71,11 +71,6 @@
 {# Handling likes without page refresh #}
 {% block scripts %}
 <script>
-// Temporary alert if user tries to like before signed in
-function alertMsgVisitorLikes() {
-  alert("You need to sign in before you can like this post!");
-}
-
     $('.btn_likes').click(function (e) {
         // Prevent execution of click for every button in class
         e.stopPropagation();

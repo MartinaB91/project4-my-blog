@@ -1,5 +1,8 @@
 // When user click search button, search field will be displayed.
 $(document).ready(function(){
+    $(".btn-like-not-signed-in").click(function(){
+    alert('You need to sign in to like posts');
+    });
   
     $("#btn-search").click(function(){
       
