@@ -15,6 +15,7 @@ class TestCategory(TestCase):
 
         assert Category.objects.all().count() == 4
 
+
     # Test create and remove a category 
     @pytest.mark.django_db
     def test_delete_category(self):
@@ -22,6 +23,7 @@ class TestCategory(TestCase):
         assert Category.objects.all().count() == 1
         category_to_delete.delete()
         assert Category.objects.all().count() == 0
+
 
     # Create a category
     @pytest.mark.django_db
@@ -53,6 +55,7 @@ class TestPost(TestCase):
                 )
             return post
 
+
     # Test when a new post is created, but not published.
     @pytest.mark.django_db
     def test_post_create(self):
@@ -82,7 +85,8 @@ class TestPost(TestCase):
         assert post.likes.count() == 0
         assert post.number_of_likes == '0'
         assert post.liked == False
-        assert post.post_img == 'default_image' # If no img is added
+        assert post.post_img == 'default_image'  # If no img is added
+
 
 
 
