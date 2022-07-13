@@ -1,9 +1,8 @@
 import pytest
-from blog_post.models import Category, Post, Comment
-from tests.tests_utils import TestUserUtils
+from blog_post.models import Category, Post, Comment, Like
+from tests.tests_utils import TestUserUtils, TestCategoryUtils, TestLikeUtils, TestPostUtils
 from datetime import date
 from django.test import TestCase 
-from tests.tests_utils import TestCategoryUtils
 
 class TestCategory(TestCase):
     # Creates four categories and checks number of categories is as expected
@@ -37,7 +36,7 @@ class TestPost(TestCase):
     def setup():
         @pytest.fixture
         def get_test_post():
-            user = TestUserUtils.create_test_user('RonjaRovardotter')
+            user = TestUserUtils.create_test_user('RonjaRovardotter', 'passw00rd')
             category = TestCategoryUtils.create_test_category('Flower Power', 'flower-power')
             post = Post.objects.create(
                 title= 'Flower is nice',
@@ -57,7 +56,7 @@ class TestPost(TestCase):
     # Test when a new post is created, but not published.
     @pytest.mark.django_db
     def test_post_create(self):
-        user = TestUserUtils.create_test_user('PippiLongstockings')
+        user = TestUserUtils.create_test_user('PippiLongstockings', 'passw00rd')
         category = TestCategoryUtils.create_test_category('Flower Power', 'flower-power')
         post = Post.objects.create(
             title= 'Flower',
@@ -84,6 +83,9 @@ class TestPost(TestCase):
         assert post.number_of_likes == '0'
         assert post.liked == False
         assert post.post_img == 'default_image' # If no img is added
+
+
+
 
 
 

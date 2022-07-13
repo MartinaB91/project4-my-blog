@@ -3,7 +3,7 @@ Help methods for tests
 """
 
 from django.contrib.auth.models import User
-from blog_post.models import Category, Post
+from blog_post.models import Category, Post, Like
 from profiles.models import Profile
 from datetime import date
 
@@ -12,46 +12,44 @@ class TestUserUtils():
     """
     Used for creating a new user
     """
-    def create_test_user(test_username):
+    def create_test_user(username, password):
         user = User.objects.create(
-        username = test_username,
+        username = username,
+        password=password
         )
         return user
 
     # Inspiration from:
     # https://pytest-django.readthedocs.io/en/latest/helpers.html#client-django-test-client
-    def get_forced_login_test_user(client, django_user_model):
-        username = "TestUser"
-        password = "resUtseT"
-        user = django_user_model.objects.create_user(
-            username=username, password=password
-            )
+    def get_forced_login_test_user(client):
+        user = TestUserUtils.create_test_user("TestUser", "test123!!!!!")
         client.force_login(user)
         return user  # Returns a user that is signed-in
 
 
 class TestProfileUtils():
     """
-    Used for creating a new profile 
+    Method used for creating a new profile 
     """
-    def create_test_profile(username, test_first_name, test_last_name):
-        user = TestUserUtils.create_test_user(username)
+    def create_test_profile(username, test_first_name, test_last_name, password):
+        user = TestUserUtils.create_test_user(username, password)
         profile = Profile.objects.create(
             user = user,
             first_name = test_first_name,
             last_name = test_last_name,
-            # profile_image = test_img,
-            # email = test_email,
         )
         return profile
 
 
 class TestPostUtils():
+    """
+    Creates a new post
+    """
     def get_test_post():
         """
         Creates a new post 
         """
-        user = TestUserUtils.create_test_user('RonjaRovardotter')
+        user = TestUserUtils.create_test_user('RonjaRovardotter', 'passw000rd')
         category = TestCategoryUtils.create_test_category(
             'Flower Power',
             'flower-power'
@@ -66,7 +64,6 @@ class TestPostUtils():
             updated_on= date.today(),
             content= 'I really like my flowers',
             published= 0,
-            # published_date = date.today(),
             post_img = 'default-image',
             )
         return post
@@ -74,11 +71,16 @@ class TestPostUtils():
 class TestCategoryUtils():
     def create_test_category(test_name, test_slug): 
         """
-        Used for creating a new category
+        Method used for creating a new category
         """
         category = Category.objects.create(
         name = test_name,
         slug = test_slug,
             )
         return category
+
+class TestLikeUtils():
+    def create_like_on_post(author_profile, blog_post):
+        like = Like.objects.create(author=author_profile, blog_post=blog_post
+        )
 
