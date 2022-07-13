@@ -2,7 +2,6 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, View
 from blog_post.models import Post, Category
 from django.views import generic
-from django.db.models import Q
 
 
 class BlogPostList(ListView):
@@ -26,6 +25,7 @@ class BlogPostList(ListView):
     def get_queryset(self):
         all_published_posts = Post.objects.filter(
             published=1).order_by("-created_on")
+
         # Inspiration from:
         # https://stackoverflow.com/questions/610883/how-to-know-if-an-object-has-an-attribute-in-python
         if hasattr(self.request.user, "profile"):
@@ -33,7 +33,7 @@ class BlogPostList(ListView):
                 post.liked = False
                 if post.likes.filter(id=self.request.user.profile.id).exists():
                     post.liked = True
-
+            
         queryset = all_published_posts
 
         return queryset
