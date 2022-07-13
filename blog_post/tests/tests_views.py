@@ -49,6 +49,12 @@ def test_blog_post_detail_context(client):
     assert response.context['post'] == post
     assert response.context['liked'] is False
 
-
-
-
+def test_like_post_function(client):
+    """
+    Tests like function. 
+    """
+    post = TestPostUtils.get_test_post()
+    assert post.liked is False # when a post is created liked by default is false
+    url = reverse("post_likes", args=[post.slug])
+    response = client.get(url, follow=True)
+    assert post.liked is True # When a post is liked its true
