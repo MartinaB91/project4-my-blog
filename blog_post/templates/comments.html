@@ -33,7 +33,6 @@
         e.stopPropagation();
         e.stopImmediatePropagation();
         let textBoxContent = $(this).children().first().children().first(); // Get comment texarea 
-        let thisIsThis = this;
 
         $.ajax({
             method: 'POST',
