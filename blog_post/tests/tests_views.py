@@ -42,7 +42,6 @@ def test_delete_post_view_response(client):
 @pytest.mark.django_db
 def test_blog_post_detail_context(client):
     post = TestPostUtils.get_test_post()
-    # response = client.get(reverse('blog_post', args=[post.slug]))
     url = reverse("blog_post", args=[post.slug])
     response = client.get(url, follow=True)
 
