@@ -15,7 +15,7 @@ def test_blog_post_detail_url():
     Tests blog post detail url 
     """
     url = reverse('blog_post', args=['slug'])
-    assert resolve(url).func.view_class ==  BlogPostDetail
+    assert resolve(url).func.view_class == BlogPostDetail
 
     
 def test_like_post_url():
