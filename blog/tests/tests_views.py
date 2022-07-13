@@ -8,7 +8,6 @@ from blog.views import MyBlogPostList
 from datetime import date
 from django.test import RequestFactory
 from tests.tests_utils import TestUserUtils, TestCategoryUtils
-from django.test import TestCase
 
 
 @pytest.mark.django_db
