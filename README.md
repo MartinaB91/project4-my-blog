@@ -80,10 +80,7 @@ The main reason for Visitors/Bloggers to revisit the website is that it contains
 [#5](https://github.com/MartinaB91/project4-my-blog/issues/5) Epic: Implement functionality for comment and like
 -   [#21](https://github.com/MartinaB91/project4-my-blog/issues/21) As a **Blogger** I want to **comment on posts** so that I can **can interact with the publisher and other readers**.
 -   [#20](https://github.com/MartinaB91/project4-my-blog/issues/20) As a **Blogger** I want to **like/unlike posts** so that I can **show my appreciation**.
--   [#12](https://github.com/MartinaB91/project4-my-blog/issues/12) As a **Admin** I want to **view all unhandled comments** so that I can **see which status a comment has**.
--   [#18](https://github.com/MartinaB91/project4-my-blog/issues/18) As a **Admin** I want to **approve or disapprove comments** so that I can **control the content of my blog**.
 -   [#16](https://github.com/MartinaB91/project4-my-blog/issues/16) As a **Blogger/Visitor** I want to **view comments on each post** so that I can **follow other people’s opinions**.
-
 [#46](https://github.com/MartinaB91/project4-my-blog/issues/46) Epic: View Bloggers personal posts & post status
 -   [#47](https://github.com/MartinaB91/project4-my-blog/issues/47) As a **Blogger** I want to **view all posts I have created** so that I can **quickly  find, update or follow user interaction on my posts**.
 - [#48](https://github.com/MartinaB91/project4-my-blog/issues/48) As a **Blogger** I want to **see if my post is published or not** so that I can **know if the Admin has approved my post**
