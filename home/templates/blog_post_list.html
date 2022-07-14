@@ -23,11 +23,11 @@
          <p class="text-center text-lg-start text-md-center text-sm-center fw-bold"><span class="m-2">{{post.category}}</span></p>
       </div>
    </div>
-   <div>
+   <div class="text-center">
       {% if 'default_image' in post.post_img.url %}
-      <img src="../../static/media/temporary_default.jpeg" class="post-img bg-body rounded" alt="..." width="100%" >
+      <img src="../../static/media/temporary_default.jpeg" class="post-img bg-body rounded" alt="Default picture smiling emojis">
       {% else %}
-      <img class="post-img bg-body rounded" src=" {{ post.post_img.url }}" width="100%">
+      <img class="post-img bg-body rounded" src=" {{ post.post_img.url }}">
       {% endif %}
    </div>
    <article id="blog-post-body">

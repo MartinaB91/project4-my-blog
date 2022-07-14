@@ -97,6 +97,7 @@ video {
 
 #blog-post-detail-img {
     height: 44rem;
+    width: 90%;
     object-fit: cover;
 }
 
@@ -113,7 +114,9 @@ video {
 
 .post-img {
     height: 45rem;
+    width: 90%;
     object-fit: cover;
+
     
 }
 
@@ -190,6 +193,7 @@ video {
 
   .post-img-blog {
     height: 30rem;
+    width: 100%;
     object-fit: cover;
   }
 
@@ -378,7 +382,9 @@ video {
 /* Styling my blog page post */
 .post-img-blog {
     height: 20rem;
+
   }
+
 
 /* Styling allauth template login */
 #login-wrapper {
@@ -575,6 +581,11 @@ video {
         width: 100%;
     }
 
+
+    .post-img {
+        height: 30rem;
+    }
+
 }
 
 
@@ -627,8 +638,14 @@ video {
 
 /* For devices from 1200px  and down to 992px */
 @media screen and (max-width: 1200px) and (min-width: 992px)  {
+    /* General styling */
     #video-text-wrapper {
         margin-top: -50%;
+    }
+
+    /* Styling blog post detail */
+    .blog-post-detail {
+        width: 80%;
     }
 
     #blog-post-detail-img {
@@ -637,7 +654,7 @@ video {
 
     /* Blog post list */
     .post-img {
-    height: 35rem;
+    height: 30rem;
 }
 
 }
@@ -648,15 +665,24 @@ video {
     #video-text-wrapper {
         margin-top: -40%;
     } 
+
+    .post-img {
+        height: 35rem;
+    }
 }
 
 /* For devices from 1401px  and up to 1600px */
 @media screen and (min-width: 1401px) and (max-width: 1600px)  {
     /* Styling video section */
-        #video-text-wrapper {
-            margin-top: -35%;
-        } 
+    #video-text-wrapper {
+        margin-top: -35%;
+    } 
+
+    /* Styling blog post detail */
+    .blog-post-detail {
+        width: 80%;
     }
+}
 
 
 /* For devices from 1601px  and up */
@@ -666,7 +692,12 @@ video {
             margin-top: -30%;
             margin-left: 3%;
         } 
+
+    /* Styling blog post detail */
+    .blog-post-detail {
+        width: 80%;
     }
+}
 
 /* For removing navbar toggler icon border */
 /* From: https://stackoverflow.com/questions/50668594/remove-border-color-for-navbar-toggler-hamburger-icon-in-bootstrap-using-css */
