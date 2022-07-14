@@ -17,7 +17,8 @@ if os.path.exists('env.py'):
     import env
 
 
-development = os.environ('DEVELOPMENT', False)
+# Development always False since production test and deploy started
+development = False
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
