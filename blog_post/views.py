@@ -75,7 +75,7 @@ class CreatePost(LoginRequiredMixin, CreateView, SuccessMessageMixin):
                         and will be published after review!",
                 )
         form = PostForm()
-        return redirect("create_post")
+        return redirect("my_blog")
 
 
 class CreateComment(CreateView):
@@ -118,4 +118,4 @@ class DeletePost(LoginRequiredMixin, DeleteView, SuccessMessageMixin):
 
     def get_success_url(self):
         messages.success(self.request, "Your post has been deleted!")
-        return reverse_lazy("index")
+        return reverse_lazy("my_blog")
