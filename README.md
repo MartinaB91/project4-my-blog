@@ -228,7 +228,7 @@ In the future this information could be used to highlight the user on the home p
 - The navbar is placed right below the video. This placement is choosen because it creates some contrast between the large video header and the main content. 
 
 ### Wireframes 
-- [**Phone**](readme-images/wireframe_phone.PNG)
+- [**Phone**: All pages](documentation/wireframes/wireframe_phone.PNG)
 - [**Tablet**: Home and Posts by category page](documentation/wireframes/wireframe_tablet_1.PNG)
 - [**Tablet**: My blog and Blog post detail page](documentation/wireframes/wireframe_tablet_2.PNG)
 - [**Desktop**: Home page](documentation/wireframes/wireframe_desktop_1.PNG)
