@@ -124,6 +124,7 @@ The main reason for Visitors/Bloggers to revisit the website is that it contains
 - [Heroku](https://id.heroku.com/login) - Used to deploy app
 - [Invisionapp](https://www.invisionapp.com/home) - Used for wireframes
 - [Pyscopg2 (2.9.3)](https://pypi.org/project/psycopg2/) - Used for connect PostgreSQL to Python 
+- [Dreampuf](https://dreampuf.github.io/GraphvizOnline/) - Used for generating pretty database schema from dot-file
 
 ## Page Access Overview
 - There are three different roles with different access, visitor, blogger and admin. The administrator has access to admin page but can also be a blogger and because of this access all sites and functions. 
@@ -146,7 +147,7 @@ The main reason for Visitors/Bloggers to revisit the website is that it contains
 In this section you will find out more about the different features this site contains.
 
 ### Navbar
--	As a non-authenticated user, the navbar contains “My Garden” and “Home” which both links to home page, a search icon that when expand shown a search field and a “Sign Up” button leading to a sign in form. 
+-	As a non-authenticated user, the navbar contains “My Garden” and “Home” which both links to home page, a search icon that when expand shown a search field and a “Sign In” button leading to a sign in form. 
 -	 As an authenticated user the navbar contains the same content as above but the “Sign Up” button will instead display “Sign Out”. The navbar will also contain a dropdown menu named “My Blog” holding links to pages “My Blog”, “Create Post” and “Settings”.
 - As a Admin the navbar contains the same content as above but will also contain a link to My Garden administration. 
 
@@ -176,7 +177,7 @@ The Home page contains three sections and looks the same for both authenticated 
 -	When clicking the post title, the user will be redirect to the blog post detail page. This page contains a single blog post, here the picture is larger, and the post is more in focus. 
 
 ### Posts by category
--	When a user selects a category, they will be redirected to a page containing all published posts in that category. 
+-	When a user selects a category, they will be redirected to a page containing all published posts in that category. This is to make it easy for the user to find more content they like. 
 
 ### Create Post
 This page is only for authenticated users. This page contains a form for creating a post. 
@@ -193,6 +194,8 @@ This page is only for authenticated users.
 ### My blog 
 This page is only for authenticated users
 -	All Bloggers have a page called “My page”. On this page the Blogger will find all posts they have written. Both published and unpublished. This makes it possible for the user to follow if the post has been published or if its waiting on approval. 
+- The posts are on this page collapsed and only showing title, author, time of creation and category. To view full post the user can click "Show More" and to go back to collapsed "Close". If the blogger has many posts this design makes it more compact and easier to get oversight. 
+- If the Blogger doesn't have any posts, there is a placeholder text with a link to were the user can create a post. 
 
 ### Settings
 This page is only for Authenticated users
@@ -208,27 +211,31 @@ In the future this information could be used to highlight the user on the home p
 - The colors chosen for the site is soft green, dark red, soft pink and grey. 
 - Edit buttons (#8aaa79), Delete buttons (#830a48), Text in quotes, author name in blog posts and for some links (#dc758f) and All other buttons (Bootstrap secondary)
 
-<img src="readme-images/color-scheme.PNG">
+<img src="documentation/other-readme-images/color-scheme.PNG">
 
 ### Typography
 
 - The font used for H1 and H2 headers is Amatic SC with fallback cursive.
 
-<img src="readme-images/amatic-SC.PNG">
+<img src="documentation/other-readme-images/amatic-SC.PNG">
 
 - The font used for all other text is Lato with fallback sans-serif. 
 
-<img src="readme-images/lato.PNG">
+<img src="documentation/other-readme-images/lato.PNG">
+
+### Navbar
+
+- The navbar is placed right below the video. This placement is choosen because it creates some contrast between the large video header and the main content. 
 
 ### Wireframes 
 - [**Phone**](readme-images/wireframe_phone.PNG)
-- [**Tablet**: Home and Posts by category page](readme-images/wireframe_tablet_1.PNG)
-- [**Tablet**: My blog and Blog post detail page](readme-images/wireframe_tablet_2.PNG)
-- [**Desktop**: Home page](readme-images/wireframe_desktop_1.PNG)
-- [**Desktop**: Posts by category, My blog and blog post detail page](readme-images/wireframe_desktop_1.PNG)
+- [**Tablet**: Home and Posts by category page](documentation/wireframes/wireframe_tablet_1.PNG)
+- [**Tablet**: My blog and Blog post detail page](documentation/wireframes/wireframe_tablet_2.PNG)
+- [**Desktop**: Home page](documentation/wireframes/wireframe_desktop_1.PNG)
+- [**Desktop**: Posts by category, My blog and blog post detail page](documentation/wireframes/wireframe_desktop_1.PNG)
 
 ### Database Scheme
-<img src="readme-images/db-scheme-project4-img.png">
+<img src="documentation/database/db_image.svg">
 
 ## Testing
 ## Bugs corrections and improvements
@@ -247,7 +254,8 @@ The following epics were planed but cut off due to the time frame. In the future
 Other improvements: 
 - Build automatic tests before building code to prevent finding bugs late in the development process (TDD).
 - Add functionality for respond to a comment.
-- Blog app could be named myblog for better overwiev. 
+- Blog app could be named myblog for a more meaningful name. 
+- The intended purpose of the Blog app was to create a personal blog page that other users could see, simliar to the category page. The intended additional features was the epics above. For now, this app is quite unused. 
 
 ## Deployment
 ### Local deployment
@@ -269,7 +277,7 @@ This project is deployed to Heroku. Below the steps taken to deploy is described
 5.	To find your Config Vars, go to “Settings” in the navbar and scroll down to section Config Vars and click “Reveal Config Vars”. 
 Add following Config Vars:
 
-<img src="readme-images/config_vars.PNG">
+<img src="documentation/other-readme-images/config_vars.PNG">
 
 5.	Scroll to section Buildpacks, click “Add Bulidpack” select python and click “Save changes”.
 6.	Click “Add Bulidpack” again and select nodejs and click “Save changes”.
