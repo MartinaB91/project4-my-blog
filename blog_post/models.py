@@ -112,20 +112,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"{self.author}: {self.blog_post}"
-
-
-class Like(models.Model):
-    """
-    Class used for blog likes
-    """
-
-    author = models.ForeignKey(
-        Profile,
-        on_delete=models.CASCADE,
-        related_name="likes_author",
-    )
-    blog_post = models.ForeignKey(
-        Post,
-        on_delete=models.CASCADE,
-        related_name="post_likes",
-    )
