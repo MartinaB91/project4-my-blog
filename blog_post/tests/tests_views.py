@@ -41,6 +41,8 @@ def test_delete_post_view_response(client):
 
 @pytest.mark.django_db
 def test_blog_post_detail_context(client):
+    TestUserUtils.get_forced_login_test_user(client)
+
     post = TestPostUtils.get_test_post()
     url = reverse("blog_post", args=[post.slug])
     response = client.get(url, follow=True)
@@ -49,12 +51,3 @@ def test_blog_post_detail_context(client):
     assert response.context['post'] == post
     assert response.context['liked'] is False
 
-def test_like_post_function(client):
-    """
-    Tests like function. 
-    """
-    post = TestPostUtils.get_test_post()
-    assert post.liked is False # when a post is created liked by default is false
-    url = reverse("post_likes", args=[post.slug])
-    response = client.get(url, follow=True)
-    assert post.liked is True # When a post is liked its true

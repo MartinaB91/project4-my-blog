@@ -1,6 +1,6 @@
 import pytest
-from blog_post.models import Category, Post, Comment, Like
-from tests.tests_utils import TestUserUtils, TestCategoryUtils, TestLikeUtils, TestPostUtils
+from blog_post.models import Category, Post, Comment
+from tests.tests_utils import TestUserUtils, TestCategoryUtils, TestPostUtils
 from datetime import date
 from django.test import TestCase 
 

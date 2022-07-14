@@ -3,7 +3,7 @@ Help methods for tests
 """
 
 from django.contrib.auth.models import User
-from blog_post.models import Category, Post, Like
+from blog_post.models import Category, Post
 from profiles.models import Profile
 from datetime import date
 
@@ -78,9 +78,4 @@ class TestCategoryUtils():
         slug = test_slug,
             )
         return category
-
-class TestLikeUtils():
-    def create_like_on_post(author_profile, blog_post):
-        like = Like.objects.create(author=author_profile, blog_post=blog_post
-        )
 
