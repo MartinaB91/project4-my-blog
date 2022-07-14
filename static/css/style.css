@@ -213,8 +213,10 @@ video {
 
 /* Styling delete post */
 .delete-post-title {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    font-family: 'Amatic SC', cursive;
     color: #dc758f;
+    font-weight: bold;
 }
 
 .delete-post-header {
