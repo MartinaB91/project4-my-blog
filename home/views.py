@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, View
 from blog_post.models import Post, Category
 from django.views import generic
+from django.db.models import Q
 
 
 class BlogPostList(ListView):
