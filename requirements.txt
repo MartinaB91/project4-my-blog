@@ -9,6 +9,7 @@ dj3-cloudinary-storage==0.0.6
 Django==4.0.4
 django-allauth==0.50.0
 django-crispy-forms==1.14.0
+django-extensions==3.2.0
 django-messages==0.6.0
 gunicorn==20.1.0
 iniconfig==1.1.1
