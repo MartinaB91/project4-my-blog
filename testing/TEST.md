@@ -153,5 +153,11 @@ CSS has been validated using [W3C](https://validator.w3.org/) without errors or 
 All Javascript code has been validated using [JSHint](https://jshint.com/) without errors or warnings.
 
 ### Python
+GitPod PROBLEMS reports following errors when 'objects' is used "Class 'Category' has no 'objects' member", this is an error that is safe to ignore according to Google and student channel. 
+    
+In settings.py there are a few line too long warnings for the urls. For example "'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',"
+Any changes to make this line shorter with linebreaks would make the less readable. Therefore they were ignored. 
+
+All Python code has been validated according to PEP8 using [PEP8 Online](http://pep8online.com/) without any warnings except from line too long mentioned above. 
 
 

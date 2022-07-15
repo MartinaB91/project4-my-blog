@@ -1,10 +1,10 @@
-from .models import Profile
-from django.views.generic import UpdateView
-from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import SettingsForm
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
+from django.views.generic import UpdateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .forms import SettingsForm
+from .models import Profile
 
 
 class SettingsView(LoginRequiredMixin, UpdateView, SuccessMessageMixin):

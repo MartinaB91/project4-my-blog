@@ -1,5 +1,5 @@
-from .models import Profile
 from django import forms
+from .models import Profile
 
 
 class SettingsForm(forms.ModelForm):
