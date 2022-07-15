@@ -3,43 +3,45 @@
 {# alert messages section #}
 {% if messages %}
 <div>
-   {% for message in messages %}
-   <div class="alert alert-success" role="alert">
-      <p class="text-center">{{ message }}</p>
-   </div>
-   {% endfor %}
+    {% for message in messages %}
+    <div class="alert alert-success" role="alert">
+        <p class="text-center">{{ message }}</p>
+    </div>
+    {% endfor %}
 </div>
 {% endif %}
 <h1 class="my-posts-header mb-3">My Posts</h1>
 {# Not published posts section #}
 <div class="row g-2">
-   <h2 class="post-status-header">Not Published</h2>
-   {% if has_not_published_posts %}
-   {% for post in object_list %}
-       {% if user.is_authenticated and user == post.author %}
-           {% if post.published == 0%}
-               {% include 'my_blog_post.html' %}
-           {% endif %}
-       {% endif %}
-   {% endfor %}
-   {% else %}
-    <p class="p-2">You have no posts waiting on approval. Create a post <a class="link-text" href="{% url 'create_post' %}">here</a></p>
-   {% endif %}
+    <h2 class="post-status-header">Not Published</h2>
+    {% if has_not_published_posts %}
+    {% for post in object_list %}
+    {% if user.is_authenticated and user == post.author %}
+    {% if post.published == 0%}
+    {% include 'my_blog_post.html' %}
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+    {% else %}
+    <p class="p-2">You have no posts waiting on approval. Create a post <a class="link-text"
+            href="{% url 'create_post' %}">here</a></p>
+    {% endif %}
 </div>
 {# Published posts section #}
 <div class="row g-2">
-   <h2 class="post-status-header">Published</h2>
-   {% if has_published_posts %}
-   {% for post in object_list %}
-       {% if user.is_authenticated and user == post.author %}
-           {% if post.published == 1 %}
-               {% include 'my_blog_post.html' %}
-           {% endif %}
-       {% endif %}
-   {% endfor %}
-   {% else %}
-      <p class="p-2">You have no published posts. Create a post <a class="link-text" href="{% url 'create_post' %}">here</a></p>
-   {% endif %}
+    <h2 class="post-status-header">Published</h2>
+    {% if has_published_posts %}
+    {% for post in object_list %}
+    {% if user.is_authenticated and user == post.author %}
+    {% if post.published == 1 %}
+    {% include 'my_blog_post.html' %}
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+    {% else %}
+    <p class="p-2">You have no published posts. Create a post <a class="link-text"
+            href="{% url 'create_post' %}">here</a></p>
+    {% endif %}
 </div>
 {% include 'pagination.html' %}
 

@@ -4,51 +4,50 @@
    <article class="mx-auto shadow-sm p-3 mb-5 bg-body rounded">
       <div class="row">
          <span class="text-end mb-2">
-         {# Only the author can change or delete post #}
-         {% if user.is_authenticated and user == post.author %}
-         <a href="{% url 'update_post' post.slug %}" class="btn btn-edit">Edit</a>
-         <a href="{% url 'delete_post' post.slug %}" class="btn btn-delete">Delete</a>
-         {% endif %}
-         </span>
-         <span class="text-center">
-            {% if post.published == 1 %}
-            <a href="{% url 'blog_post' post.slug %}" class="blog-post-header">
-               <h1 class="display-3 text-capitalize blog-post-header">{{post.title}}</h1>
-            </a>
-            {% else %}
-               <h1 class="display-3 text-capitalize blog-post-header">{{post.title}}</h1>
+            {# Only the author can change or delete post #}
+            {% if user.is_authenticated and user == post.author %}
+            <a href="{% url 'update_post' post.slug %}" class="btn btn-edit">Edit</a>
+            <a href="{% url 'delete_post' post.slug %}" class="btn btn-delete">Delete</a>
             {% endif %}
          </span>
+         {% if post.published == 1 %}
+         <h2 class="display-3 text-capitalize blog-post-header text-center"><a
+               href="{% url 'blog_post' post.slug %}">{{post.title}} </a></h2>
+         {% else %}
+         <h2 class="display-3 text-capitalize blog-post-header text-center">{{post.title}}</h2>
+         {% endif %}
       </div>
       <div class="row">
          <div class="col-lg-7 col-md-12 col-sm-12 g-0">
-            <p class="text-center text-lg-end"><span class="fw-bold post-author m-2">{{post.author}}</span>| {{post.created_on}} |</p>
+            <p class="text-center text-lg-end"><span class="fw-bold post-author m-2">{{post.author}}</span>|
+               {{post.created_on}} |</p>
          </div>
          {# On small and medium screens category is displayed on new row #}
          <div class="col-lg-5 col-md-12 col-sm-12 g-0">
             {# Align text left on large/medium screens #}
-            <p class="text-center text-lg-start text-md-center text-sm-center fw-bold"><span class="m-2">{{post.category}}</span></p>
+            <p class="text-center text-lg-start text-md-center text-sm-center fw-bold"><span
+                  class="m-2">{{post.category}}</span></p>
          </div>
       </div>
       <details class="post-details">
          <summary class="post-detail-summary mb-2">Show More</summary>
          <div>
             {% if 'default_image' in post.post_img.url %}
-            <img src="../../static/media/temporary_default.webp" class="bg-body rounded post-img-blog" alt="Default image for blog post smiling emojis">
+            <img src="../../static/media/temporary_default.webp" class="bg-body rounded post-img-blog"
+               alt="Default image for blog post smiling emojis">
             {% else %}
             <img class="bg-body rounded post-img-blog" src=" {{ post.post_img.url }}" alt="Blog post image">
             {% endif %}
          </div>
-         <article id="blog-post-body">
-            <div class="row">
-               <p class="blog-post-content"> {{post.content | linebreaks}} </p>
-            </div>
-         </article>
+         <div class="row">
+            <div class="blog-post-content"> {{post.content | linebreaks}} </div>
+         </div>
          <div class="comment-and-like-section">
             <div class="row">
                <div class="col-9 col-md-10 col-lg-10">
                   <p class="text-end">{{post.post_comments.count}}
-                     <button class="btn btn-comments" type="button" aria-label="Show comment section"><i class="far fa-comment-alt"></i></button>
+                     <button class="btn btn-comments" type="button" aria-label="Show comment section"><i
+                           class="far fa-comment-alt"></i></button>
                   </p>
                </div>
                {% csrf_token %}
@@ -56,23 +55,25 @@
                   <span>{{post.number_of_likes}}</span>
                   {% if request.user.is_authenticated %}
                   {% if post.liked %}
-                  <button class="btn btn_likes" id="btn-like" name="{% url 'post_likes' post.slug %}"
-                     type="submit" value="{{post.id}}" aria-label="Unlike the post"><i id="btn-i" class="fas fa-heart btn-icon"></i></button>
+                  <button class="btn btn_likes" name="{% url 'post_likes' post.slug %}" type="submit"
+                     value="{{post.id}}" aria-label="Unlike the post"><i
+                        class="fas fa-heart btn-icon btn-i"></i></button>
                   {% else %}
-                  <button class="btn btn_likes" id="btn-like" name="{% url 'post_likes' post.slug %}"
-                     type="submit" value="{{post.id}}" aria-label="Like the post"><i id="btn-i" class="far fa-heart btn-icon"></i></button>
+                  <button class="btn btn_likes" name="{% url 'post_likes' post.slug %}" type="submit"
+                     value="{{post.id}}" aria-label="Like the post"><i class="far fa-heart btn-icon btn-i"></i></button>
                   {% endif %}
                   {% else %}
-                  <button class="btn" id="btn-like" onclick="alertMsgVisitorLikes()" aria-label="Sign in before like the post"><i id="btn-i"
-                     class="far fa-heart btn-icon"></i></button>
+                  <button class="btn" onclick="alertMsgVisitorLikes()" aria-label="Sign in before like the post"><i
+                        class="far fa-heart btn-icon btn-i"></i></button>
                   {% endif %}
                </div>
             </div>
-            <div id="comments-wrapper" class="collapse">
+            <div class="comments-wrapper collapse">
                {% include 'comments.html'%}
             </div>
          </div>
+      </details>
    </article>
 </div>
-</details>
+
 {% endblock %}
