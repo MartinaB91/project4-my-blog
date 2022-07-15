@@ -13,7 +13,7 @@ body {
 }
 
 a {
-    text-decoration: none; 
+    text-decoration: none;
     text-align: center;
     color: black;
 }
@@ -67,7 +67,7 @@ video {
     box-shadow: none;
 }
 
-#btn-search  {
+#btn-search {
     box-shadow: none;
 }
 
@@ -76,7 +76,7 @@ video {
 }
 
 .nav-link {
-    color:black;
+    color: black;
     font-weight: bold;
 }
 
@@ -106,6 +106,7 @@ video {
     padding-left: 5%;
     padding-right: 5%;
 }
+
 .post-author {
     color: #dc758f;
 
@@ -138,11 +139,12 @@ video {
 .comments-header {
     font-weight: bold;
 }
+
 /* Styling category section */
 #category-header {
     text-align: center;
     margin-bottom: 3%;
-    
+
 }
 
 .category-wrapper {
@@ -170,35 +172,36 @@ video {
 .link-text {
     color: #dc758f;
 }
+
 /* Styling settings page */
 .post-detail-summary {
     list-style: none;
-  }
+}
 
 
-  /* Styling my blog post page */
-  .my-posts-header {
+/* Styling my blog post page */
+.my-posts-header {
     text-align: center;
-  }
+}
 
-  .post-detail-summary {
+.post-detail-summary {
     font-weight: bold;
-  }
+}
 
-  .post-status-header {
+.post-status-header {
     font-size: 3rem;
-  }
+}
 
-  .post-img-blog {
+.post-img-blog {
     height: 30rem;
     width: 100%;
     object-fit: cover;
-  }
+}
 
 /* Styling create post  */
-  .create-post-header {
+.create-post-header {
     text-align: center;
-  }
+}
 
 /* Styling update post */
 .post-author {
@@ -257,303 +260,19 @@ video {
 
 
 /* Allauth templates styling */
-#login-header, #signup-header, #password-reset-header, #password-change-header, #password-reset-done-header {
+#login-header,
+#signup-header,
+#password-reset-header,
+#password-change-header,
+#password-reset-done-header {
     text-align: center;
 }
 
 /* Media queries index page */
 /* For devices from 360px  and down */
-@media screen and (max-width: 360px)  {
-/* General styling */
-#content-wrapper {
-    margin-top: 2rem;
-}
+@media screen and (max-width: 360px) {
 
-#nav-logout-login-btn {
-    margin-right: 2rem;
-}
-
-/* Styling video section  */
-video {
-    height: 20rem;
-}
-
-#video-text-wrapper  {
-    margin-top: -70%;
-    }
-
-.video-header {
-    font-size: 5rem;
-}
-
-/* Styling blog post list section */
-.navbar .navbar-collapse {
-    text-align: center;
-}
-
-#blog-post-list-header {
-    font-size: 4rem;
-    margin-bottom: 3%;
-}
-
-.blog-post-list {
-    width: 100%;
-    margin-bottom: 4%;
-}
-
-.post-img {
-    height: 20rem;
-}
-
-.container-fluid {
-    padding-left: 0%;
-    padding-right: 0%;
-}
-
-/* category section */
-#category-header {
-    font-size: 4rem;
-}
-
-.suggest-category-text {
-    margin-top: 5%;
-}
-
-.my-posts-header {
-    font-size: 4rem;
-}
-
-.post-status-header {
-    font-size: 3rem;
-    padding-left: 4%;
-}
-
-/* Blog post detail page */
-#blog-post-detail-img {
-    height: 20rem;
-}
-
-/* Settings page */
-#settings-wrapper {
-    padding: 2%;
-}
-
-.settings-header {
-    font-size: 4rem;
-}
-
-/* Create post page */
-.create-post-header {
-    font-size: 4rem;
-}
-
-.create-post-wrapper {
-    padding: 2%;
-}
-
-/* Styling update post */
-.edit-header {
-    font-size: 4rem;
-}
-
-.update-post-wrapper {
-    padding: 2%;
-}
-
-/* Styling delete post page */
-.delete-post-header {
-    font-size: 4rem;
-}
-
-.delete-post-text {
-    text-align: center;
-}
-
-/* Styling post by category page */
-.post-by-category-header {
-    font-size: 4rem;
-}
-
-/* Styling 404 page */
-#error-header {
-    font-size: 4rem;
-}
-
-/* Styling my blog page post */
-.post-img-blog {
-    height: 20rem;
-
-  }
-
-
-/* Styling allauth template login */
-#login-wrapper {
-    padding: 2%;
-}
-
-/* Styling allauth template signup */
-#signup-wrapper {
-    padding: 2%;
-}
-
-#login-header, #signup-header, #password-reset-header, #password-change-header #password-reset-done-header {
-    font-size: 4rem;
-}
-
-#reset-password-wrapper, #password-change-wrapper {
-    padding: 2%;
-}
-
-}
-
-/* Media queries index page */
-/* For devices from 575px  and down */
-@media screen and (max-width: 575px) and (min-width: 359px){
-
-/* General styling */
-#content-wrapper {
-    margin-top: 2rem;
-}
-
-#nav-logout-login-btn {
-    margin-right: 2rem;
-}
-
-/* Styling video section  */
-video {
-    height: 20rem;
-}
-
-#video-text-wrapper {
-    margin-top: -55%;
-}
-
-.video-header {
-    font-size: 5rem;
-}
-
-/* Styling blog post list section */
-.navbar .navbar-collapse {
-    text-align: center;
-}
-
-#blog-post-list-header {
-    font-size: 4rem;
-    margin-bottom: 3%;
-}
-
-.blog-post-list {
-    width: 100%;
-    margin-bottom: 4%;
-}
-
-.post-img {
-    height: 20rem;
-}
-
-.container-fluid {
-    padding-left: 0%;
-    padding-right: 0%;
-}
-
-/* category section */
-#category-header {
-    font-size: 4rem;
-}
-
-.suggest-category-text {
-    margin-top: 5%;
-}
-
-.my-posts-header {
-    font-size: 4rem;
-}
-
-.post-status-header {
-    font-size: 3rem;
-    padding-left: 4%;
-}
-
-/* Blog post detail page */
-#blog-post-detail-img {
-    height: 20rem;
-}
-
-/* Settings page */
-#settings-wrapper {
-    padding: 2%;
-}
-
-.settings-header {
-    font-size: 4rem;
-}
-
-/* Create post page */
-.create-post-header {
-    font-size: 4rem;
-}
-
-.create-post-wrapper {
-    padding: 2%;
-}
-
-/* Styling update post */
-.edit-header {
-    font-size: 4rem;
-}
-
-.update-post-wrapper {
-    padding: 2%;
-}
-
-/* Styling delete post page */
-.delete-post-header {
-    font-size: 4rem;
-}
-
-.delete-post-text {
-    text-align: center;
-}
-
-/* Styling my blog page post */
-.post-img-blog {
-    height: 20rem;
-  }
-
-/* Styling post by category page */
-.post-by-category-header {
-    font-size: 4rem;
-}
-
-/* Styling 404 page */
-#error-header {
-    font-size: 4rem;
-}
-
-/* Styling allauth template login */
-#login-wrapper {
-    padding: 2%;
-}
-
-/* Styling allauth template signup */
-#signup-wrapper {
-    padding: 2%;
-}
-
-#login-header, #signup-header, #password-reset-header, #password-change-header #password-reset-done-header {
-    font-size: 4rem;
-}
-
-#reset-password-wrapper, #password-change-wrapper {
-    padding: 2%;
-}
-
-}
-
-/* Media queries index page */
-/* For devices from 767px  and down to 575px */
-@media screen and (max-width: 767px) and (min-width: 576px)  {
-/* General styling */
+    /* General styling */
     #content-wrapper {
         margin-top: 2rem;
     }
@@ -562,11 +281,309 @@ video {
         margin-right: 2rem;
     }
 
-/* Styling video section  */
+    /* Styling video section  */
+    video {
+        height: 20rem;
+    }
+
+    #video-text-wrapper {
+        margin-top: -70%;
+    }
+
+    .video-header {
+        font-size: 5rem;
+    }
+
+    /* Styling blog post list section */
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+
+    #blog-post-list-header {
+        font-size: 4rem;
+        margin-bottom: 3%;
+    }
+
+    .blog-post-list {
+        width: 100%;
+        margin-bottom: 4%;
+    }
+
+    .post-img {
+        height: 20rem;
+    }
+
+    .container-fluid {
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+
+    /* category section */
+    #category-header {
+        font-size: 4rem;
+    }
+
+    .suggest-category-text {
+        margin-top: 5%;
+    }
+
+    .my-posts-header {
+        font-size: 4rem;
+    }
+
+    .post-status-header {
+        font-size: 3rem;
+        padding-left: 4%;
+    }
+
+    /* Blog post detail page */
+    #blog-post-detail-img {
+        height: 20rem;
+    }
+
+    /* Settings page */
+    #settings-wrapper {
+        padding: 2%;
+    }
+
+    .settings-header {
+        font-size: 4rem;
+    }
+
+    /* Create post page */
+    .create-post-header {
+        font-size: 4rem;
+    }
+
+    .create-post-wrapper {
+        padding: 2%;
+    }
+
+    /* Styling update post */
+    .edit-header {
+        font-size: 4rem;
+    }
+
+    .update-post-wrapper {
+        padding: 2%;
+    }
+
+    /* Styling delete post page */
+    .delete-post-header {
+        font-size: 4rem;
+    }
+
+    .delete-post-text {
+        text-align: center;
+    }
+
+    /* Styling post by category page */
+    .post-by-category-header {
+        font-size: 4rem;
+    }
+
+    /* Styling 404 page */
+    #error-header {
+        font-size: 4rem;
+    }
+
+    /* Styling my blog page post */
+    .post-img-blog {
+        height: 20rem;
+
+    }
+
+
+    /* Styling allauth template login */
+    #login-wrapper {
+        padding: 2%;
+    }
+
+    /* Styling allauth template signup */
+    #signup-wrapper {
+        padding: 2%;
+    }
+
+    #login-header,
+    #signup-header,
+    #password-reset-header,
+    #password-change-header #password-reset-done-header {
+        font-size: 4rem;
+    }
+
+    #reset-password-wrapper,
+    #password-change-wrapper {
+        padding: 2%;
+    }
+
+}
+
+/* Media queries index page */
+/* For devices from 575px  and down */
+@media screen and (max-width: 575px) and (min-width: 359px) {
+
+    /* General styling */
+    #content-wrapper {
+        margin-top: 2rem;
+    }
+
+    #nav-logout-login-btn {
+        margin-right: 2rem;
+    }
+
+    /* Styling video section  */
+    video {
+        height: 20rem;
+    }
+
+    #video-text-wrapper {
+        margin-top: -55%;
+    }
+
+    .video-header {
+        font-size: 5rem;
+    }
+
+    /* Styling blog post list section */
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+
+    #blog-post-list-header {
+        font-size: 4rem;
+        margin-bottom: 3%;
+    }
+
+    .blog-post-list {
+        width: 100%;
+        margin-bottom: 4%;
+    }
+
+    .post-img {
+        height: 20rem;
+    }
+
+    .container-fluid {
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+
+    /* category section */
+    #category-header {
+        font-size: 4rem;
+    }
+
+    .suggest-category-text {
+        margin-top: 5%;
+    }
+
+    .my-posts-header {
+        font-size: 4rem;
+    }
+
+    .post-status-header {
+        font-size: 3rem;
+        padding-left: 4%;
+    }
+
+    /* Blog post detail page */
+    #blog-post-detail-img {
+        height: 20rem;
+    }
+
+    /* Settings page */
+    #settings-wrapper {
+        padding: 2%;
+    }
+
+    .settings-header {
+        font-size: 4rem;
+    }
+
+    /* Create post page */
+    .create-post-header {
+        font-size: 4rem;
+    }
+
+    .create-post-wrapper {
+        padding: 2%;
+    }
+
+    /* Styling update post */
+    .edit-header {
+        font-size: 4rem;
+    }
+
+    .update-post-wrapper {
+        padding: 2%;
+    }
+
+    /* Styling delete post page */
+    .delete-post-header {
+        font-size: 4rem;
+    }
+
+    .delete-post-text {
+        text-align: center;
+    }
+
+    /* Styling my blog page post */
+    .post-img-blog {
+        height: 20rem;
+    }
+
+    /* Styling post by category page */
+    .post-by-category-header {
+        font-size: 4rem;
+    }
+
+    /* Styling 404 page */
+    #error-header {
+        font-size: 4rem;
+    }
+
+    /* Styling allauth template login */
+    #login-wrapper {
+        padding: 2%;
+    }
+
+    /* Styling allauth template signup */
+    #signup-wrapper {
+        padding: 2%;
+    }
+
+    #login-header,
+    #signup-header,
+    #password-reset-header,
+    #password-change-header #password-reset-done-header {
+        font-size: 4rem;
+    }
+
+    #reset-password-wrapper,
+    #password-change-wrapper {
+        padding: 2%;
+    }
+
+}
+
+/* Media queries index page */
+/* For devices from 767px  and down to 575px */
+@media screen and (max-width: 767px) and (min-width: 576px) {
+
+    /* General styling */
+    #content-wrapper {
+        margin-top: 2rem;
+    }
+
+    #nav-logout-login-btn {
+        margin-right: 2rem;
+    }
+
+    /* Styling video section  */
     video {
         height: 33rem;
     }
-    
+
     #video-text-wrapper {
         margin-top: -68%;
     }
@@ -576,11 +593,10 @@ video {
         height: 30rem;
     }
 
-    /* Blog post list page */ 
+    /* Blog post list page */
     .blog-post-list {
         width: 100%;
     }
-
 
     .post-img {
         height: 30rem;
@@ -595,8 +611,9 @@ video {
 
 
 /* For devices from 991px  and down to 768px */
-@media screen and (max-width: 991px) and (min-width: 768px)  {
-/* General styling */
+@media screen and (max-width: 991px) and (min-width: 768px) {
+
+    /* General styling */
     #content-wrapper {
         margin-top: 2rem;
     }
@@ -605,16 +622,16 @@ video {
         margin-right: 2rem;
     }
 
-/* Video section */
+    /* Video section */
     video {
         height: 35rem;
     }
-    
+
     #video-text-wrapper {
         margin-top: -62%;
     }
 
-/* Category section */
+    /* Category section */
     .suggest-category-text {
         margin-top: 3%;
     }
@@ -636,13 +653,14 @@ video {
     /* Styling my blog page post */
     .post-img-blog {
         height: 20rem;
-     }
+    }
 
 }
 
 
 /* For devices from 1200px  and down to 992px */
-@media screen and (max-width: 1200px) and (min-width: 992px)  {
+@media screen and (max-width: 1200px) and (min-width: 992px) {
+
     /* General styling */
     #video-text-wrapper {
         margin-top: -50%;
@@ -659,17 +677,18 @@ video {
 
     /* Blog post list */
     .post-img {
-    height: 30rem;
-}
+        height: 30rem;
+    }
 
 }
 
 /* For devices from 1201px  and up to 1400px */
-@media screen and (min-width: 1201px) and (max-width: 1400px)  {
-/* Styling video section */
+@media screen and (min-width: 1201px) and (max-width: 1400px) {
+
+    /* Styling video section */
     #video-text-wrapper {
         margin-top: -40%;
-    } 
+    }
 
     .post-img {
         height: 35rem;
@@ -677,11 +696,12 @@ video {
 }
 
 /* For devices from 1401px  and up to 1600px */
-@media screen and (min-width: 1401px) and (max-width: 1600px)  {
+@media screen and (min-width: 1401px) and (max-width: 1600px) {
+
     /* Styling video section */
     #video-text-wrapper {
         margin-top: -35%;
-    } 
+    }
 
     /* Styling blog post detail */
     .blog-post-detail {
@@ -691,12 +711,13 @@ video {
 
 
 /* For devices from 1601px  and up */
-@media screen and (min-width: 1601px)  {
+@media screen and (min-width: 1601px) {
+
     /* Styling video section */
-        #video-text-wrapper {
-            margin-top: -30%;
-            margin-left: 3%;
-        } 
+    #video-text-wrapper {
+        margin-top: -30%;
+        margin-left: 3%;
+    }
 
     /* Styling blog post detail */
     .blog-post-detail {
@@ -712,4 +733,3 @@ video {
     outline: 2px;
     box-shadow: none;
 }
-
