@@ -17,13 +17,15 @@
       {% endfor %}
       {% for category in categories %}
       <span>Category:</span>
-      <a href="{% url 'post_by_category' category.slug %}"><span class="search-result-category"> {{category.name}}</span></a>
+      <a href="{% url 'post_by_category' category.slug %}"><span class="search-result-category">
+            {{category.name}}</span></a>
       <hr>
       {% empty %}
       <p>No categories found... Please try again</p>
       {% endfor %}
       {% else %}
-      <h3 class="text-center">What do you wan't to find? Please please click the search symbol and enter what your looking for.</h3>
+      <h3 class="text-center">What do you wan't to find? Please please click the search symbol and enter what your
+         looking for.</h3>
       {% endif %}
    </div>
 </div>
