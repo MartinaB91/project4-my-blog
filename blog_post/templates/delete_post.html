@@ -5,7 +5,8 @@
       <h1 class="delete-post-header">Delete Blogpost</h1>
       <form method="POST">
          {% csrf_token %}
-         <p class="delete-post-text">Do you wan't to delete <strong><span class="delete-post-title">{{post.title}}</span> ?</strong></p>
+         <p class="delete-post-text">Do you wan't to delete <strong><span
+                  class="delete-post-title">{{post.title}}</span> ?</strong></p>
          <div class="d-grid d-lg-block">
             <button class="btn btn-delete" type="submit" aria-label="Delete the post">Delete Post</button>
          </div>

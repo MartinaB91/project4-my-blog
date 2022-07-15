@@ -3,13 +3,11 @@
 {% block content %}
 {# alert messages section #}
 {% if messages %}
-<div>
-   {% for message in messages %}
-   <div class="alert alert-success" role="alert">
-      <p class="text-center">{{ message }}</p>
-   </div>
-   {% endfor %}
+{% for message in messages %}
+<div class="alert alert-success" role="alert">
+   <p class="text-center">{{ message }}</p>
 </div>
+{% endfor %}
 {% endif %}
 <div class="row justify-content-center">
    <div class="col-lg-8 col-md-12 col-sm-12 ">
