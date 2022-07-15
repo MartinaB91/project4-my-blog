@@ -3,46 +3,45 @@
 {% block content %}
 <h1 class="text-center mb-3 post-by-category-header">{{category.name}}</h1>
 {% for post in post_list %}
-    {% include 'blog_post_list.html' %}
+{% include 'blog_post_list.html' %}
 {% empty %}
 <p class="text-center">This category has no posts yet</p>
 {% endfor %}
 
 
-    <script>
+<script>
+    $('.btn_likes').click(function (e) {
+        // Prevent execution of click for every button in class
+        e.stopPropagation();
+        e.stopImmediatePropagation();
 
-        $('.btn_likes').click(function (e) {
-            // Prevent execution of click for every button in class
-            e.stopPropagation();
-            e.stopImmediatePropagation();
-    
-            let btn = $(this).children().first();
-            let span = $(this).siblings('span').first(); // The span has the like-icon
-            $.ajax({
-                method: "POST",
-                url: $(this).attr('name'),
-                data: {
-                    'post_id': $(this).attr('value'),
-                    'csrfmiddlewaretoken': '{{ csrf_token }}'
-                },
-                success: function (response) {
-                    if (btn.hasClass('far')) {
-                        btn.removeClass('far');
-                        btn.addClass('fas');
-                        span.text(response);
-                    } else {
-                        btn.removeClass('fas');
-                        btn.addClass('far');
-                        span.text(response);
-                    }
-                },
-                error: function (rs) {
-                    alert(rs.responseText);
+        let btn = $(this).children().first();
+        let span = $(this).siblings('span').first(); // The span has the like-icon
+        $.ajax({
+            method: "POST",
+            url: $(this).attr('name'),
+            data: {
+                'post_id': $(this).attr('value'),
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+            },
+            success: function (response) {
+                if (btn.hasClass('far')) {
+                    btn.removeClass('far');
+                    btn.addClass('fas');
+                    span.text(response);
+                } else {
+                    btn.removeClass('fas');
+                    btn.addClass('far');
+                    span.text(response);
                 }
-    
-            });
-            return false;
-    
+            },
+            error: function (rs) {
+                alert(rs.responseText);
+            }
+
         });
-    </script>
+        return false;
+
+    });
+</script>
 {% endblock %}
