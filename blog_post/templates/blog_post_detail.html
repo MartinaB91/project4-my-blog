@@ -27,9 +27,9 @@
    </div>
    <div class="text-center">
       {% if 'default_image' in post.post_img.url %}
-      <img src="../../static/media/temporary_default.jpeg" id="blog-post-detail-img" class="bg-body rounded" alt="Default picture smiling emojis">
+      <img src="../../static/media/temporary_default.jpeg" id="blog-post-detail-img" class="bg-body rounded" alt="Default picture for blog post smiling emojis">
       {% else %}
-      <img id="blog-post-detail-img" class="bg-body rounded"  src=" {{ post.post_img.url }}">
+      <img id="blog-post-detail-img" class="bg-body rounded"  src=" {{ post.post_img.url }}" alt="Blog post image">
       {% endif %}
    </div>
    <article id="blog-post-body">

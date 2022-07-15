@@ -8,9 +8,9 @@
       <a href="{% url 'post_by_category' category.slug %}">
          <div class="card shadow p-3 mb-md-3 mb-lg-4 bg-body rounded">
             {% if 'default_image' in category.category_img.url %}
-            <img src="../../static/media/temporary_default.jpeg" class="bg-body rounded category-img" alt="default picture smiling emojis">
+            <img src="../../static/media/temporary_default.jpeg" class="bg-body rounded category-img" alt="default picture for category smiling emojis">
             {% else %}
-            <img src=" {{ category.category_img.url }}" class="category-img" width="100%">
+            <img src=" {{ category.category_img.url }}" class="category-img" width="100%" alt="Category image">
             {% endif %}
             <div class="card-img-overlay">
                <h1 class="card-title mt-5">{{category.name}}{{category.title}}</h1>
