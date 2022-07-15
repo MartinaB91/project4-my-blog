@@ -1,4 +1,7 @@
 # My Garden
+
+<img src="documentation/other-readme-images/multi_mockup.PNG">
+
 ## About
 My Garden is a blog portal where garden lovers can meet and share nice pictures and experiences with other garden lovers. Currently the site contains these categories dahlias, vegetables and fruits, geraniums and pelargoniums, fuchsias, roses and finally others. 
 When you visit My Garden you will first see a page with all the latest posts and from there you are free to explore the different categories so that you can find posts that you like. When you are ready to create your own blog you can sign up and then you can access your own blog page. 
@@ -122,6 +125,7 @@ The main reason for Visitors/Bloggers to revisit the website is that it contains
 - [Invisionapp](https://www.invisionapp.com/home) - Used for wireframes
 - [Pyscopg2 (2.9.3)](https://pypi.org/project/psycopg2/) - Used for connect PostgreSQL to Python 
 - [Dreampuf](https://dreampuf.github.io/GraphvizOnline/) - Used for generating pretty database schema from dot-file
+- [Techsini](https://techsini.com/multi-mockup/index.php) - Used for create multi responsive mockup image
 
 ## Page Access Overview
 - There are three different roles with different access, visitor, blogger and admin. The administrator has access to admin page but can also be a blogger and because of this access all sites and functions. 
@@ -307,3 +311,4 @@ Before deployment to production be sure to remember to set “Config Vars” DEB
 ### Test
 - [Praktisk Mjukvarutestning](https://www.adlibris.com/se/bok/praktisk-mjukvarutestning-9789144117775?gclid=EAIaIQobChMIiLDghYbp-AIVQIODBx2IEAbBEAAYASAAEgJAxfD_BwE)
 - [Pytest-django Documentation](https://pytest-django.readthedocs.io/en/latest/) - Used as guide when writing tests
+- [Responsivepx](https://www.responsivepx.com/)
