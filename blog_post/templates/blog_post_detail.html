@@ -69,6 +69,7 @@
 {# Handling likes without page refresh #}
 {% block scripts %}
 <script>
+   /* jshint esversion: 6 */
    $('.btn_likes').click(function (e) {
       // Prevent execution of click for every button in class
       e.stopPropagation();

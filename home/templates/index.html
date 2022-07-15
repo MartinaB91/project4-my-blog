@@ -42,6 +42,29 @@
 
 
 <script>
+    /* jshint esversion: 6 */
+    // Inspiration from: 
+    // https://dev.to/thepylot/how-to-send-django-form-with-ajax-4bpo
+    $(document).on('submit', '.comment-form', function (e) {
+        // Prevent execution of click for every button in class
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        let textBoxContent = $(this).children().first().children().first(); // Get comment texarea 
+
+        $.ajax({
+            method: 'POST',
+            url: $(this).attr('name'),
+            data: {
+                'content': textBoxContent.val(),
+                'csrfmiddlewaretoken': '{{ csrf_token }}',
+            },
+            success: function (response) {
+                textBoxContent.val('');
+                textBoxContent.attr("placeholder", "Thank you for your comment!");
+            }
+        });
+        return false;
+    });
     //Used for like post without page load. When post is liked
     // icon will be filled in. 
     $('.btn_likes').click(function (e) {
