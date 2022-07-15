@@ -99,7 +99,6 @@ On this page you can find documentation from the test process and find out the r
 |**Test id:**||**Bug id:**|**Comments**:|
 |[#54](https://github.com/MartinaB91/project4-my-blog/issues/54)||[#91](https://github.com/MartinaB91/project4-my-blog/issues/91) Minor||
 
-
 ### Usability testing
 
 ### Automatic tests

@@ -239,20 +239,15 @@ In the future this information could be used to highlight the user on the home p
 <img src="documentation/database/db_image.svg">
 
 ## Testing
-## Bugs corrections and improvements
 
-### Solved bugs
-- [#43](https://github.com/MartinaB91/project4-my-blog/issues/43) Like-btn don't "checked"
-- [#44](https://github.com/MartinaB91/project4-my-blog/issues/44) Can't update img on post as Blogger
-- [#50](https://github.com/MartinaB91/project4-my-blog/issues/50) Page not loading when user not signed 
-- [#84](https://github.com/MartinaB91/project4-my-blog/issues/84) Pagination on "My Blog" not working
+Read more about test and validation [here](/TEST.md)
 
-### Future improvements
+## Future improvements
+
 The following epics were planed but cut off due to the time frame. In the future this could be added:
 - [#1](https://github.com/MartinaB91/project4-my-blog/issues/1) Epic: Advertise popular blog content
 - [#2](https://github.com/MartinaB91/project4-my-blog/issues/2) Epic: Connecting users to the bloggers social medias
-
-Other improvements: 
+ 
 - Build automatic tests before building code to prevent finding bugs late in the development process (TDD).
 - Add functionality for respond to a comment.
 - Blog app could be named myblog for a more meaningful name. 
@@ -311,4 +306,5 @@ Before deployment to production be sure to remember to set “Config Vars” DEB
 ### Test
 - [Praktisk Mjukvarutestning](https://www.adlibris.com/se/bok/praktisk-mjukvarutestning-9789144117775?gclid=EAIaIQobChMIiLDghYbp-AIVQIODBx2IEAbBEAAYASAAEgJAxfD_BwE)
 - [Pytest-django Documentation](https://pytest-django.readthedocs.io/en/latest/) - Used as guide when writing tests
-- [Responsivepx](https://www.responsivepx.com/)
+- [Responsivepx](https://www.responsivepx.com/) - Used for test responsiveness
+- [W3C](https://validator.w3.org/) - Used for validating Html
