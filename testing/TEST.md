@@ -1,4 +1,16 @@
 # Test and validations
+
+## Table of contents
+- [Introduction ](#introduction)
+- [Test](#test)
+    - [Test cases](#test-cases)
+    - [Responsiveness tests](#responsiveness-tests)
+    - [Exploratory tests](#exploratory-tests)
+    - [Usability testing](#usability-testing)
+    - [Automatic tests](#automatic-tests)
+    - [Lighthouse reports](#lighthouse-reports)
+- [Validation](#validation)
+
 ## Introduction 
 During the development process, unit testing has been done to check if functionality is as expected. Same test has been executed again later on when new features has been added.
 
@@ -111,23 +123,23 @@ If there was more time to develop the site a first step would be to prevent user
 
 Since the above mentioned is not fixed or implemented it’s up to the administrator to not approve posts with to larges pictures uploaded. Not doing so will result in bad performance. 
 
-## Home page 
+#### Home page 
 
 <img src="/workspace/project4-my-blog/testing/lighthouse_reports/index_LH.PNG">
 
-## Blog post detail page 
+#### Blog post detail page 
 
 <img src="/workspace/project4-my-blog/testing/lighthouse_reports/blog_post_detail_LH.PNG">
 
-## Posts by category page
+#### Posts by category page
 
 <img src="/workspace/project4-my-blog/testing/lighthouse_reports/post_by_category_LH.PNG">
 
-## My blog page
+#### My blog page
 
 <img src="/workspace/project4-my-blog/testing/lighthouse_reports/my_blog_page_LH.PNG">
 
-## Others 
+#### Others 
 
 All form pages (create, update, delete, settings) have been tested using Lighthouse and received a score above 90% for all categories tested. 
 
