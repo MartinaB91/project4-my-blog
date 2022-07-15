@@ -7,12 +7,12 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
 )
-from .models import Post, Comment
-from .forms import PostForm, CommentForm, UpdateForm
 from django.template.defaultfilters import slugify
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
+from .models import Post, Comment
+from .forms import PostForm, CommentForm, UpdateForm
 
 
 class BlogPostDetail(DetailView):
@@ -107,8 +107,8 @@ class UpdatePost(LoginRequiredMixin, UpdateView, SuccessMessageMixin):
     success_message = "Your post has been succsessfully updated!"
 
     def get_success_url(self):
-        messageString = "Your post has been updated!"
-        messages.success(self.request, messageString)
+        message_string = "Your post has been updated!"
+        messages.success(self.request, message_string)
         return reverse_lazy("my_blog")
 
 

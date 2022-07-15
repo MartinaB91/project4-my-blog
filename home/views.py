@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, View
-from blog_post.models import Post, Category
 from django.views import generic
 from django.db.models import Q
+from blog_post.models import Post, Category
 
 
 class BlogPostList(ListView):
@@ -34,7 +34,7 @@ class BlogPostList(ListView):
                 post.liked = False
                 if post.likes.filter(id=self.request.user.profile.id).exists():
                     post.liked = True
-            
+
         queryset = all_published_posts
 
         return queryset
@@ -80,10 +80,10 @@ class SearchResult(View):
             # Filter on if post title,content or author
             # contains text from search box
             posts = Post.objects.filter(
-                Q(title__contains=search, published=1)
-                | Q(content__contains=search, published=1)
-                | Q(category__name__contains=search, published=1)
-                | Q(author__username__contains=search, published=1)
+                Q(title__contains=search, published=1) |
+                Q(content__contains=search, published=1) |
+                Q(category__name__contains=search, published=1) |
+                Q(author__username__contains=search, published=1)
             )
             # Filter on if categories contains text from search box
             categories = Category.objects.filter(Q(name__contains=search))

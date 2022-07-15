@@ -25,11 +25,8 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('blogpost/', include('blog_post.urls')),
     path('settings/', include('profiles.urls')),
- ] 
+ ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-#urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
 
 handler404 = "myblog.views.page_not_found"
 handler500 = "myblog.views.internal_server_error"
-
