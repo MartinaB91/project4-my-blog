@@ -2,24 +2,24 @@
 <h3 class="comments-header">Comments</h3>
 {% for comment in post.post_comments.all %}
 <div class="shadow-sm p-3 mb-3 bg-body rounded comment-section">
-   <p><strong>{{comment.author}}</strong> | {{comment.created_on}} </p>
-   <p>{{comment.content | linebreaks}}</p>
+    <p><strong>{{comment.author}}</strong> | {{comment.created_on}} </p>
+    <p>{{comment.content | linebreaks}}</p>
 </div>
 {% empty %}
 <p class="mb-10">This post has no comments</p>
 {% endfor %}
 {# Only users that are signed in can see comment form #}
 {% if request.user.is_authenticated %}
-<form id="comment-form" class="comment-form" name="{% url 'create_comment' post.slug %}">
-   <div class="row">
-      <textarea class="form-control" placeholder="Leave your comment here..." id="content" name="content"></textarea>
-      <div class="text-center d-grid d-lg-block mt-2">
-         <button class="btn btn-secondary btn-comment" aria-label="Leave a comment">Leave Comment</button>
-      </div>
-   </div>
-   {% else %}
-   <p class="text-center"><strong>Sign in to leave a comment</strong></p>
-   {% endif %}
+<form class="comment-form" name="{% url 'create_comment' post.slug %}">
+    <div class="row">
+        <textarea class="form-control content" placeholder="Leave your comment here..." name="content"></textarea>
+        <div class="text-center d-grid d-lg-block mt-2">
+            <button class="btn btn-secondary btn-comment" aria-label="Leave a comment">Leave Comment</button>
+        </div>
+    </div>
+    {% else %}
+    <p class="text-center"><strong>Sign in to leave a comment</strong></p>
+    {% endif %}
 </form>
 {% endblock %}
 

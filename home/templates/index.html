@@ -4,16 +4,17 @@
 {% block video %}
 {# Video header section #}
 <div class="video-wrapper">
-   <video autoplay loop muted poster="../../static/media/video_fallback.webp">
-      <source src="../../static/media/header_video.mp4" type="video/mp4"/>
-      <img id="" src="../../static/media/video_fallback.webp" alt="Fallback image when header not working. Apple tree flower"/>
-   </video>
-   <div id="video-text-wrapper">
-      <h1 class="video-header">My<br>Garden</h1>
-      <p class="h2 d-none d-md-block" id="flower-quote">“Flowers are like <span id="text-friends">friends</span> <br>
-         they bring color to your world.” - Unknown
-      </p>
-   </div>
+    <video autoplay loop muted poster="../../static/media/video_fallback.webp">
+        <source src="../../static/media/header_video.mp4" type="video/mp4" />
+        <img src="../../static/media/video_fallback.webp"
+            alt="Fallback image when header not working. Apple tree flower" />
+    </video>
+    <div id="video-text-wrapper">
+        <h1 class="video-header">My<br>Garden</h1>
+        <p class="h2 d-none d-md-block" id="flower-quote">“Flowers are like <span id="text-friends">friends</span> <br>
+            they bring color to your world.” - Unknown
+        </p>
+    </div>
 </div>
 {% endblock %}
 
@@ -21,11 +22,11 @@
 {# alert messages section #}
 {% if messages %}
 <div>
-   {% for message in messages %}
-   <div class="alert alert-success" role="alert">
-      <p class="text-center">{{ message }}</p>
-   </div>
-   {% endfor %}
+    {% for message in messages %}
+    <div class="alert alert-success" role="alert">
+        <p class="text-center">{{ message }}</p>
+    </div>
+    {% endfor %}
 </div>
 {% endif %}
 <h1 id="blog-post-list-header">Latest Posts</h1>
@@ -36,8 +37,9 @@
 {% include 'pagination.html' %}
 {# category section #}
 <div id="category-wrapper">
-   {% include 'categories.html' %}
+    {% include 'categories.html' %}
 </div>
+
 
 <script>
     //Used for like post without page load. When post is liked
@@ -49,7 +51,7 @@
 
         let btn = $(this).children().first();
         let span = $(this).siblings('span').first(); // The span has the like-icon
-      
+
         $.ajax({
             method: "POST",
             url: $(this).attr('name'),

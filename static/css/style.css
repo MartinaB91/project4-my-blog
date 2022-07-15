@@ -18,12 +18,12 @@ a {
     color: black;
 }
 
-#btn-i {
+.btn-i {
     color: #dc758f;
 }
 
 #content-wrapper {
-    margin-top: 5rem
+    margin-top: 5rem;
 }
 
 
@@ -115,8 +115,6 @@ video {
     height: 45rem;
     width: 90%;
     object-fit: cover;
-
-    
 }
 
 .btn-comment {
@@ -124,7 +122,7 @@ video {
 }
 
 .blog-post-content {
-    padding: 0% 3% 5% 3%;
+    padding: 3% 6% 5% 6%;
 }
 
 .btn-delete {
@@ -147,7 +145,7 @@ video {
     
 }
 
-#category-wrapper {
+.category-wrapper {
     height: auto;
     margin-bottom: 10%;
 }
@@ -166,6 +164,7 @@ video {
     opacity: 0.7;
     height: 22rem;
     object-fit: cover;
+    width: 100%;
 }
 
 .link-text {
@@ -267,7 +266,7 @@ video {
 @media screen and (max-width: 360px)  {
 /* General styling */
 #content-wrapper {
-    margin-top: 2rem
+    margin-top: 2rem;
 }
 
 #nav-logout-login-btn {
@@ -306,7 +305,7 @@ video {
     height: 20rem;
 }
 
-.container {
+.container-fluid {
     padding-left: 0%;
     padding-right: 0%;
 }
@@ -413,7 +412,7 @@ video {
 
 /* General styling */
 #content-wrapper {
-    margin-top: 2rem
+    margin-top: 2rem;
 }
 
 #nav-logout-login-btn {
@@ -452,7 +451,7 @@ video {
     height: 20rem;
 }
 
-.container {
+.container-fluid {
     padding-left: 0%;
     padding-right: 0%;
 }
@@ -556,7 +555,7 @@ video {
 @media screen and (max-width: 767px) and (min-width: 576px)  {
 /* General styling */
     #content-wrapper {
-        margin-top: 2rem
+        margin-top: 2rem;
     }
 
     #nav-logout-login-btn {
@@ -587,6 +586,11 @@ video {
         height: 30rem;
     }
 
+    /* category section */
+    .suggest-category-text {
+        margin-top: 5%;
+    }
+
 }
 
 
@@ -594,7 +598,7 @@ video {
 @media screen and (max-width: 991px) and (min-width: 768px)  {
 /* General styling */
     #content-wrapper {
-        margin-top: 2rem
+        margin-top: 2rem;
     }
 
     #nav-logout-login-btn {

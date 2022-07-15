@@ -2,17 +2,20 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="My Garden, blog portal for garden lovers">
-  <meta name="keywords" content="garden, garden blog, blog,  pelargoniums, geraniums, dahlias, zonartic, roses, vegetables, fruits, flowers ">
-  <meta name="author" content="Martina Björlin"/>
+  <meta name="keywords"
+    content="garden, garden blog, blog,  pelargoniums, geraniums, dahlias, zonartic, roses, vegetables, fruits, flowers ">
+  <meta name="author" content="Martina Björlin" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Lato:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Lato:wght@300&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -20,7 +23,7 @@
   </script>
   <script src="https://kit.fontawesome.com/757501675f.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  
+
   <script src="{% static 'js/base.js' %}"></script>
   <script src="{% static 'js/comments.js' %}"></script>
   <script src="{% static 'js/my_blog.js' %}"></script>
@@ -28,17 +31,18 @@
   <title>My Garden</title>
 </head>
 
-{% block video %}
-{% endblock %}
 
 <body class="bg-light">
+  {% block video %}
+  {% endblock %}
   <header>
     {# Navbar #}
     <nav class="navbar navbar-expand-lg navbar-white bg-white">
       <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'index' %}">My Garden</a>
-        <button class="navbar-toggler  navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler  navbar-light" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon navbar-light"></span>
         </button>
         <div class="collapse navbar-collapse text-sm-center" id="navbarSupportedContent">
@@ -69,18 +73,19 @@
             {% endif %}
           </ul>
           <form class="d-grid d-sm-inline d-lg-flex" id="search-form" method="GET" action="{% url 'search' %}">
-            <input class="form-control me-2 collapse" id="textbox-search" type="search" placeholder="Search" aria-label="Search" name="search">
+            <input class="form-control me-2 collapse" id="textbox-search" type="search" placeholder="Search"
+              aria-label="Search" name="search">
             <button class="btn pt-3" id="btn-search" type="button"><i class="fas fa-search"></i></button>
           </form>
           <ul>
             {% if request.user.is_authenticated %}
-            <div class="d-grid d-lg-block">
+            <li class="d-grid d-lg-block">
               <a class="btn btn-secondary mt-2" id="nav-logout-login-btn" href="{% url 'account_logout' %}">Sign Out</a>
-            </div>
+            </li>
             {% else %}
-            <div class="d-grid d-lg-block">
+            <li class="d-grid d-lg-block">
               <a class="btn btn-secondary mt-2" id="nav-logout-login-btn" href="{% url 'account_login' %}">Sign In</a>
-            </div>
+            </li>
             {% endif %}
           </ul>
         </div>
@@ -88,23 +93,24 @@
     </nav>
   </header>
 
-  <div id="content-wrapper" class="container">
+  <div id="content-wrapper" class="container-fluid">
     {% block content %}
 
     {% endblock %}
   </div>
 
 
+  {# Footer section #}
+  <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="{% url 'index' %}" class="nav-link px-2 text-muted">Home</a></li>
+      {% if request.user.is_authenticated %}
+      <li class="nav-item"><a href="{% url 'my_blog' %}" class="nav-link px-2 text-muted">My Blog</a></li>
+      {% endif %}
+      <li class="nav-item"><a href="{% url 'admin:index' %}" class="nav-link px-2 text-muted">Admin</a></li>
+    </ul>
+    <p class="text-center text-muted">© 2022 Martina Björlin</p>
+  </footer>
 </body>
-{# Footer section #}
-<footer class="py-3 my-4">
-  <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-    <li class="nav-item"><a href="{% url 'index' %}" class="nav-link px-2 text-muted">Home</a></li>
-    {% if request.user.is_authenticated %}
-    <li class="nav-item"><a href="{% url 'my_blog' %}" class="nav-link px-2 text-muted">My Blog</a></li>
-    {% endif %}
-    <li class="nav-item"><a href="{% url 'admin:index' %}" class="nav-link px-2 text-muted">Admin</a></li>
-  </ul>
-  <p class="text-center text-muted">© 2022 Martina Björlin</p>
-</footer>
+
 </html>
