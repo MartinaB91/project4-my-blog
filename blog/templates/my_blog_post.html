@@ -34,7 +34,7 @@
          <summary class="post-detail-summary mb-2">Show More</summary>
          <div>
             {% if 'default_image' in post.post_img.url %}
-            <img src="../../static/media/temporary_default.jpeg" class="bg-body rounded post-img-blog" alt="Default image for blog post smiling emojis">
+            <img src="../../static/media/temporary_default.webp" class="bg-body rounded post-img-blog" alt="Default image for blog post smiling emojis">
             {% else %}
             <img class="bg-body rounded post-img-blog" src=" {{ post.post_img.url }}" alt="Blog post image">
             {% endif %}
