@@ -103,6 +103,39 @@ The user was tasked to perform the following:
 
 ### Automatic tests
 
+### Lighthouse reports
+
+Since the purpose of the blog app is to showcase nice pictures, the performance is lower. During the validation process i manage to improve this significantly, when starting the video header was three times the size and images were already compressed but now are compressed in Webp-format. No more steps will be taken to improve this since this will go against the purpose of the site. 
+
+If there was more time to develop the site a first step would be to prevent users uploading to large images and in bad formats. A more user-friendly approach would be to include a third party tool to convert and compress pictures.  
+
+Since the above mentioned is not fixed or implemented it’s up to the administrator to not approve posts with to larges pictures uploaded. Not doing so will result in bad performance. 
+
+## Home page 
+
+<img src="/workspace/project4-my-blog/testing/index_LH.PNG">
+
+## Blog post detail page 
+
+<img src="/workspace/project4-my-blog/testing/blog_post_detail_LH.PNG">
+
+## Posts by category page
+
+<img src="/workspace/project4-my-blog/testing/post_by_category_LH.PNG">
+
+## My blog page
+
+<img src="/workspace/project4-my-blog/testing/my_blog_page_LH.PNG">
+
+## Others 
+
+All form pages (create, update, delete, settings) have been tested using Lighthouse and received a score above 90% for all categories tested. 
+
+### Solved bugs during development
+- [#43](https://github.com/MartinaB91/project4-my-blog/issues/43) Like-btn don't "checked"
+- [#44](https://github.com/MartinaB91/project4-my-blog/issues/44) Can't update img on post as Blogger
+- [#50](https://github.com/MartinaB91/project4-my-blog/issues/50) Page not loading when user not signed 
+- [#84](https://github.com/MartinaB91/project4-my-blog/issues/84) Pagination on "My Blog" not working
 
 
 ## Validation
