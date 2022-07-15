@@ -1,0 +1,11 @@
+# .coveragerc
+[report]
+show_missing = True
+omit =
+    blog/tests/*
+    blog_post/tests/*
+    home/tests/*
+    profiles/tests/*
+    blog_post/migrations/*
+    home/migrations/*
+    profiles/migrations/*

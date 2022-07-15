@@ -115,6 +115,30 @@ The user was tasked to perform the following:
 
 ### Automatic tests
 
+For running automatic tests pytest was used. 
+
+For code coverage this command was used "pytest --cov-config=.coveragerc. --cov=APPNAME --cov-report=html" and in the coveragerc-file test-files and migration-files were excluded. 
+
+The code coverage is quite low in some parts. This was expected since this testing was started to late in the development process. Therefore it was a bit neglected. 
+
+However extensive functional tests and exploratory test has been conducted so the test quality is high but more automatic tests would have been helpful during the development. 
+
+#### Blog
+
+<img src="/workspace/project4-my-blog/testing/coverage/coverage_blog.PNG">
+
+#### Blog post
+
+<img src="/workspace/project4-my-blog/testing/coverage/coverage_blog_post.PNG">
+
+#### Home
+
+<img src="/workspace/project4-my-blog/testing/coverage/coverage_home.PNG">
+
+#### Profiles 
+
+<img src="/workspace/project4-my-blog/testing/coverage/coverage_profiles.PNG">
+
 ### Lighthouse reports
 
 Since the purpose of the blog app is to showcase nice pictures, the performance is lower. During the validation process i manage to improve this significantly, when starting the video header was three times the size and images were already compressed but now are compressed in Webp-format. No more steps will be taken to improve this since this will go against the purpose of the site. 
