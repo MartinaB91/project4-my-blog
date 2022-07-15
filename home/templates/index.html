@@ -1,8 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block video %}
 {# Video header section #}
 <div class="video-wrapper">
-   <video autoplay loop muted poster="../../static/media/video_fallback.PNG">
+   <video autoplay loop muted poster="../../static/media/video_fallback.webp">
       <source src="../../static/media/header_video.mp4" type="video/mp4"/>
-      <img id="" src="../../static/media/video_fallback.PNG" alt="Fallback image when header not working. Apple tree flower"/>
+      <img id="" src="../../static/media/video_fallback.webp" alt="Fallback image when header not working. Apple tree flower"/>
    </video>
    <div id="video-text-wrapper">
       <h1 class="video-header">My<br>Garden</h1>
@@ -11,8 +15,8 @@
       </p>
    </div>
 </div>
-{% extends 'base.html' %}
-{% load static %}
+{% endblock %}
+
 {% block content %}
 {# alert messages section #}
 {% if messages %}
