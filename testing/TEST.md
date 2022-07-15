@@ -113,19 +113,19 @@ Since the above mentioned is not fixed or implemented it’s up to the administr
 
 ## Home page 
 
-<img src="/workspace/project4-my-blog/testing/index_LH.PNG">
+<img src="/workspace/project4-my-blog/testing/lighthouse_reports/index_LH.PNG">
 
 ## Blog post detail page 
 
-<img src="/workspace/project4-my-blog/testing/blog_post_detail_LH.PNG">
+<img src="/workspace/project4-my-blog/testing/lighthouse_reports/blog_post_detail_LH.PNG">
 
 ## Posts by category page
 
-<img src="/workspace/project4-my-blog/testing/post_by_category_LH.PNG">
+<img src="/workspace/project4-my-blog/testing/lighthouse_reports/post_by_category_LH.PNG">
 
 ## My blog page
 
-<img src="/workspace/project4-my-blog/testing/my_blog_page_LH.PNG">
+<img src="/workspace/project4-my-blog/testing/lighthouse_reports/my_blog_page_LH.PNG">
 
 ## Others 
 
@@ -147,4 +147,11 @@ All pages has been validated using [W3C](https://validator.w3.org/) without erro
 ### CSS
 
 CSS has been validated using [W3C](https://validator.w3.org/) without errors or warning. See results [here](/testing/validation/VALIDATION.md).
+
+### Javascript
+
+All Javascript code has been validated using [JSHint](https://jshint.com/) without errors or warnings.
+
+### Python
+
 
