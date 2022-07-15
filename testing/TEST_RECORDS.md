@@ -86,6 +86,20 @@ On this page you can find documentation from the test process and find out the r
 
 ### Responsiveness tests
 
+### Exploartory tests
+
+|Test Records 3  | |||
+|--------|------------------------------|-|-|
+|**Tester:**|Martina Björlin|||
+|**Date:**|2022-07-14|||
+|**Enviroment:**| Production (Heroku)|||
+|**Test Object:**| My Garden app|||
+|**Version:**|Heroku build ID cf82064c-b801-48fd-8d0c-8672aa8f73a6||||
+|**Goal**|Testing functionality on my blog page||||
+|**Test id:**||**Bug id:**|**Comments**:|
+|[#54](https://github.com/MartinaB91/project4-my-blog/issues/54)||[#91](https://github.com/MartinaB91/project4-my-blog/issues/91) Minor||
+
+
 ### Usability testing
 
 ### Automatic tests

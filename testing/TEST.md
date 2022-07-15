@@ -64,13 +64,26 @@ During the development process, unit testing has been done to check if functiona
 |Test: View my posts Blogger |[#82](https://github.com/MartinaB91/project4-my-blog/issues/82) |
 |Test: View published/not published posts Blogger |[#83](https://github.com/MartinaB91/project4-my-blog/issues/83) |
 
-
-
-
-
-
+Test results [here](/testing/TEST_RECORDS.md)
 
 ### Responsiveness tests
+
+Responsivness has been tested with help of [Responsivepx](https://www.responsivepx.com/) and [Chrome DevTools](https://developer.chrome.com/docs/devtools/). Following device sizes/breakpoints has been tested:
+
+Devtools has been used for testing devices from small phone(<360px) to large tablet (1024px). Responsivepx has been used more exploratory, by increasing and decreasing width and height to various sizes. 
+
+Tests has also been conducted on the following physical devices:
+- Samsung s10
+- Samsung s20
+- Samsung s20 Ultra 
+- Asus 17" Laptop
+- External screen 22"
+
+### Exploratory tests 
+
+Exploratory test has been done to try to find behaviour not covered in automatic testing and functional testing. Focus has be on those areas that often are used and were errors can do a lot of harm. I have also tried to use the app "wrong" to see what happens.
+
+Test results[here](/testing/TEST_RECORDS.md)
 
 ### Usability testing
 
