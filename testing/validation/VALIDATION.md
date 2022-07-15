@@ -37,4 +37,7 @@
 
 <img src="/workspace/project4-my-blog/testing/validation/html/update_html_valid.PNG">
 
+## CSS Validation
+
+<img src="/workspace/project4-my-blog/testing/validation/css/css_validering.PNG">
 

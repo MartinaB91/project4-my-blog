@@ -307,4 +307,4 @@ Before deployment to production be sure to remember to set “Config Vars” DEB
 - [Praktisk Mjukvarutestning](https://www.adlibris.com/se/bok/praktisk-mjukvarutestning-9789144117775?gclid=EAIaIQobChMIiLDghYbp-AIVQIODBx2IEAbBEAAYASAAEgJAxfD_BwE)
 - [Pytest-django Documentation](https://pytest-django.readthedocs.io/en/latest/) - Used as guide when writing tests
 - [Responsivepx](https://www.responsivepx.com/) - Used for test responsiveness
-- [W3C](https://validator.w3.org/) - Used for validating Html
+- [W3C](https://validator.w3.org/) - Used for validating Html and CSS

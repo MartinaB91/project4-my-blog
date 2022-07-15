@@ -142,4 +142,9 @@ All form pages (create, update, delete, settings) have been tested using Lightho
 
 ### Html
 
-All pages has been validated using [W3C](https://validator.w3.org/) without errors or warning. See results [here](/testing/validation/html/VALIDATION.md)
+All pages has been validated using [W3C](https://validator.w3.org/) without errors or warning. See results [here](/testing/validation/VALIDATION.md).
+
+### CSS
+
+CSS has been validated using [W3C](https://validator.w3.org/) without errors or warning. See results [here](/testing/validation/VALIDATION.md).
+
