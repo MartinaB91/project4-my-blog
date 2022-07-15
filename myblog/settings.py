@@ -34,13 +34,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development
 
-
-# TODO: When submitting only have one allowed host.
 # development: localhost deployed: heroku
 if development:
-    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost']
+    ALLOWED_HOSTS = ['localhost']
 else:
-    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost']
+    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
 
 CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*.io']
 
@@ -105,8 +103,6 @@ TEMPLATES = [
         },
     },
 ]
-
-
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
@@ -175,9 +171,6 @@ if development:
     STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 else:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-
-
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
