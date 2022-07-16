@@ -1,8 +1,9 @@
 from django.views.generic import ListView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from blog_post.models import Post, Category
 
 
-class MyBlogPostList(ListView):
+class MyBlogPostList(LoginRequiredMixin, ListView):
     """
     Used for showing  users posts on "my blog page".
     Both published and unpublished.
