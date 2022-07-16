@@ -78,7 +78,7 @@ class CreatePost(LoginRequiredMixin, CreateView, SuccessMessageMixin):
         return redirect("my_blog")
 
 
-class CreateComment(CreateView):
+class CreateComment(LoginRequiredMixin, CreateView):
     model = Comment
     form_class = CommentForm
     template_name = "comments.html"
