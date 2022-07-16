@@ -99,6 +99,25 @@ On this page you can find documentation from the test process and find out the r
 |**Test id:**||**Bug id:**|**Comments**:|
 |[#54](https://github.com/MartinaB91/project4-my-blog/issues/54)||[#91](https://github.com/MartinaB91/project4-my-blog/issues/91) Minor||
 
+|Test Records 4 | |||
+|--------|------------------------------|-|-|
+|**Tester:**|Martina Björlin|||
+|**Date:**|2022-07-16|||
+|**Enviroment:**| Local |||
+|**Test Object:**| My Garden app|||
+|**Version:**| Development ||||
+|**Goal**|Try to reach pages you don’t have access to as a Visitor(not signed-in)||||
+|**Test id:**|[#93](https://github.com/MartinaB91/project4-my-blog/issues/93)|||||
+|**Page:**|**Results**|**Bug id:**|**Comments**:|
+|/myblog/posts/|Fail|[#92](https://github.com/MartinaB91/project4-my-blog/issues/92)|Critical. Not authenticated users can reach the page |
+|/myblog/posts/|Pass|||
+|/settings/12/|Pass|||
+|/test-title-2/like/|Pass|||
+|/test-title-2/create_comment/|Fail|[#94](https://github.com/MartinaB91/project4-my-blog/issues/94)|High. The pages can't bee reach but it's unclear if possible that this can effect the page in some other way.|
+|/test-title-2/like/|Pass|||
+|/test-title-2/update_post/|Pass|||
+|/test-title-2/delete_post/|Pass|||
+
 ### Usability testing
 
 
