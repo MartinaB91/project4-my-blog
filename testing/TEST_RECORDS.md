@@ -88,7 +88,7 @@ On this page you can find documentation from the test process and find out the r
 
 ### Exploartory tests
 
-|Test Records 3  | |||
+|Test Record 3  | |||
 |--------|------------------------------|-|-|
 |**Tester:**|Martina Björlin|||
 |**Date:**|2022-07-14|||
@@ -99,7 +99,7 @@ On this page you can find documentation from the test process and find out the r
 |**Test id:**||**Bug id:**|**Comments**:|
 |[#54](https://github.com/MartinaB91/project4-my-blog/issues/54)||[#91](https://github.com/MartinaB91/project4-my-blog/issues/91) Minor||
 
-|Test Records 4 | |||
+|Test Record 4 | |||
 |--------|------------------------------|-|-|
 |**Tester:**|Martina Björlin|||
 |**Date:**|2022-07-16|||
@@ -110,13 +110,28 @@ On this page you can find documentation from the test process and find out the r
 |**Test id:**|[#93](https://github.com/MartinaB91/project4-my-blog/issues/93)|||||
 |**Page:**|**Results**|**Bug id:**|**Comments**:|
 |/myblog/posts/|Fail|[#92](https://github.com/MartinaB91/project4-my-blog/issues/92)|Critical. Not authenticated users can reach the page |
-|/myblog/posts/|Pass|||
 |/settings/12/|Pass|||
 |/test-title-2/like/|Pass|||
 |/test-title-2/create_comment/|Fail|[#94](https://github.com/MartinaB91/project4-my-blog/issues/94)|High. The pages can't bee reached but it's unclear if possible that this can effect the page in some other way.|
-|/test-title-2/like/|Pass|||
 |/test-title-2/update_post/|Pass|||
 |/test-title-2/delete_post/|Pass|||
+
+|Test Record 5 | |||
+|--------|------------------------------|-|-|
+|**Tester:**|Martina Björlin|||
+|**Date:**|2022-07-17|||
+|**Enviroment:**| Production (Heroku) |||
+|**Test Object:**| My Garden app|||
+|**Version:**| Heroku build ID 83bf2d05-4a20-4f3b-a905-e7e8e75803b5||||
+|**Goal**|Try to reach pages you don’t have access to as a Visitor(not signed-in) by using URLs in browser||||
+|**Test id:**|[#93](https://github.com/MartinaB91/project4-my-blog/issues/93)|||||
+|**Page:**|**Results**|**Bug id:**|**Comments**:|
+|/myblog/posts/| Pass |||
+|/settings/12/|Pass |||
+|/test-title-2/like/|Pass || 500 error. Probably because user is missing from request|
+|/test-title-2/create_comment/|Pass |||
+|/test-title-2/update_post/|Pass |||
+|/test-title-2/delete_post/|Pass |||
 
 ### Usability testing
 
