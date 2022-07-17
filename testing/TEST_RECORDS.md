@@ -1,7 +1,7 @@
 
 # Test record
 ## Introduction 
-On this page you can find documentation from the test process and find out the results. Any bugs found during testing will be categorized into four parts to give an indication of how much the bug will affect the system. These parts are critical, major, normal and minor.
+On this page you can find documentation from the test process and find out the results. Any bugs found during testing will be categorized into four parts to give an indication of how much the bug will affect the system. The categories are: critical, major, normal and minor.
 
 
 ### Test cases
@@ -106,14 +106,14 @@ On this page you can find documentation from the test process and find out the r
 |**Enviroment:**| Local |||
 |**Test Object:**| My Garden app|||
 |**Version:**| Development ||||
-|**Goal**|Try to reach pages you don’t have access to as a Visitor(not signed-in)||||
+|**Goal**|Try to reach pages you don’t have access to as a Visitor(not signed-in) by using URLs in browser||||
 |**Test id:**|[#93](https://github.com/MartinaB91/project4-my-blog/issues/93)|||||
 |**Page:**|**Results**|**Bug id:**|**Comments**:|
 |/myblog/posts/|Fail|[#92](https://github.com/MartinaB91/project4-my-blog/issues/92)|Critical. Not authenticated users can reach the page |
 |/myblog/posts/|Pass|||
 |/settings/12/|Pass|||
 |/test-title-2/like/|Pass|||
-|/test-title-2/create_comment/|Fail|[#94](https://github.com/MartinaB91/project4-my-blog/issues/94)|High. The pages can't bee reach but it's unclear if possible that this can effect the page in some other way.|
+|/test-title-2/create_comment/|Fail|[#94](https://github.com/MartinaB91/project4-my-blog/issues/94)|High. The pages can't bee reached but it's unclear if possible that this can effect the page in some other way.|
 |/test-title-2/like/|Pass|||
 |/test-title-2/update_post/|Pass|||
 |/test-title-2/delete_post/|Pass|||

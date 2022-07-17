@@ -80,7 +80,7 @@ Test results [here](/testing/TEST_RECORDS.md)
 
 ### Responsiveness tests
 
-Responsivness has been tested with help of [Responsivepx](https://www.responsivepx.com/) and [Chrome DevTools](https://developer.chrome.com/docs/devtools/). Following device sizes/breakpoints has been tested:
+Responsiveness has been tested with help of [Responsivepx](https://www.responsivepx.com/) and [Chrome DevTools](https://developer.chrome.com/docs/devtools/). 
 
 Devtools has been used for testing devices from small phone(<360px) to large tablet (1024px). Responsivepx has been used more exploratory, by increasing and decreasing width and height to various sizes. 
 
@@ -93,35 +93,35 @@ Tests has also been conducted on the following physical devices:
 
 ### Exploratory tests 
 
-Exploratory test has been done to try to find behaviour not covered in automatic testing and functional testing. Focus has be on those areas that often are used and were errors can do a lot of harm. I have also tried to use the app "wrong" to see what happens.
+Exploratory tests has been done to try to find behaviour not covered in automatic testing and functional testing. Focus has been on those areas that often are used and were errors can do a lot of harm. I have also tried to use the app "wrong" to see what happens.
 
-Test results[here](/testing/TEST_RECORDS.md)
+Test results [here](/testing/TEST_RECORDS.md)
 
 ### Usability testing
 
-In this test three independent users has been presented with some tasks to do in the blog portal. Through testing the person has been observed to see if any usability improvements can be found. The main focus on these tests is to see if the site is easy to navigate and operative. Which is important to get recurrent users. Before the test start the test user will be informed that this is not a test of how well they preform the tasks but a way to find improvements on the site. 
+In this test three independent users have been presented with some tasks to do in the blog portal. During the testing the person has been observed to see if any usability improvements can be found. The main focus on these tests is to see if the site is easy to navigate and operate. Which is important to get recurrent users. Before the test start, the test user will be informed that this is not a test of how well they perform the tasks but a way to find improvements on the site. 
 
 The user was tasked to perform the following:
-1.	Create a account.
+1.	Create an account.
 2.  Find all posts in category "Dahlias"
 3.	Create a blog post
-4.  Find the page were you can see all your blog posts
+4.  Find the page where you can see all your blog posts
 5.	Update the blog post you created
 6.  Leave a comment on a blog post
 7.  Like a blog post
 8.  Sign out from your account
 
-
+Test results [here](/testing/TEST_RECORDS.md)
 
 ### Automatic tests
 
 For running automatic tests pytest was used. 
 
-For code coverage this command was used "pytest --cov-config=.coveragerc. --cov=APPNAME --cov-report=html" and in the coveragerc-file test-files and migration-files were excluded. 
+For code coverage this command was used "pytest --cov-config=.coveragerc. --cov=APPNAME --cov-report=html" and in the coveragerc-file test-files and migration-files were excluded from the reports. 
 
-The code coverage is quite low in some parts. This was expected since this testing was started to late in the development process. Therefore it was a bit neglected. 
+The code coverage is quite low in some parts. This was expected since automated testing was started to late in the development process. Therefore, it was a bit neglected. 
 
-However extensive functional tests and exploratory test has been conducted so the test quality is high but more automatic tests would have been helpful during the development. 
+However extensive functional tests and exploratory tests has been conducted so the test quality is high but more automatic tests would have been helpful during the development. 
 
 #### Blog
 
@@ -141,7 +141,7 @@ However extensive functional tests and exploratory test has been conducted so th
 
 ### Lighthouse reports
 
-Since the purpose of the blog app is to showcase nice pictures, the performance is lower. During the validation process i manage to improve this significantly, when starting the video header was three times the size and images were already compressed but now are compressed in Webp-format. No more steps will be taken to improve this since this will go against the purpose of the site. 
+Since the purpose of the blog app is to showcase nice pictures, the performance is lower due to many pictures loading. During the validation process I managed to improve this significantly, when starting the video header was three times the size and images were already compressed but now are compressed in Webp-format. No more steps will be taken to improve this since this will go against the purpose of the site and the improved results are quite high. 
 
 If there was more time to develop the site a first step would be to prevent users uploading to large images and in bad formats. A more user-friendly approach would be to include a third party tool to convert and compress pictures.  
 
@@ -184,15 +184,15 @@ All pages has been validated using [W3C](https://validator.w3.org/) without erro
 
 CSS has been validated using [W3C](https://validator.w3.org/) without errors or warning. See results [here](/testing/validation/VALIDATION.md).
 
-### Javascript
+### JavaScript
 
-All Javascript code has been validated using [JSHint](https://jshint.com/) without errors or warnings.
+All JavaScript code has been validated using [JSHint](https://jshint.com/) without errors or warnings.
 
 ### Python
 GitPod PROBLEMS reports following errors when 'objects' is used "Class 'Category' has no 'objects' member", this is an error that is safe to ignore according to Google and student channel. 
     
-In settings.py there are a few line too long warnings for the urls. For example "'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',"
-Any changes to make this line shorter with linebreaks would make the less readable. Therefore they were ignored. 
+In settings.py there are a few line too long warnings for the URLs. For example "'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',"
+Any changes to make this line shorter with linebreaks would make it less readable. Therefore they were ignored. 
 
 All Python code has been validated according to PEP8 using [PEP8 Online](http://pep8online.com/) without any warnings except from line too long mentioned above. 
 
