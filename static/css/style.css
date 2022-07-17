@@ -96,7 +96,7 @@ video {
 
 #blog-post-detail-img {
     height: 44rem;
-    width: 90%;
+    width: 85%;
     object-fit: cover;
 }
 
@@ -113,8 +113,8 @@ video {
 }
 
 .post-img {
-    height: 45rem;
-    width: 90%;
+    height: 40rem;
+    width: 85%;
     object-fit: cover;
 }
 
@@ -167,6 +167,10 @@ video {
     height: 22rem;
     object-fit: cover;
     width: 100%;
+}
+
+.category-card-wrapper {
+    padding: 0% 1%;
 }
 
 .link-text {
@@ -311,6 +315,7 @@ video {
 
     .post-img {
         height: 20rem;
+        width: 100%;
     }
 
     .container-fluid {
@@ -327,6 +332,10 @@ video {
         margin-top: 5%;
     }
 
+    .category-card-wrapper {
+        padding: 1% 4%;
+    }
+
     .my-posts-header {
         font-size: 4rem;
     }
@@ -339,6 +348,7 @@ video {
     /* Blog post detail page */
     #blog-post-detail-img {
         height: 20rem;
+        width: 100%;
     }
 
     /* Settings page */
@@ -461,6 +471,7 @@ video {
 
     .post-img {
         height: 20rem;
+        width: 100%;
     }
 
     .container-fluid {
@@ -477,6 +488,11 @@ video {
         margin-top: 5%;
     }
 
+    .category-card-wrapper {
+        padding: 1% 4%;
+    }
+
+    /* Styling My blog page  */
     .my-posts-header {
         font-size: 4rem;
     }
@@ -486,9 +502,14 @@ video {
         padding-left: 4%;
     }
 
+    .post-img-blog {
+        height: 20rem;
+    }
+
     /* Blog post detail page */
     #blog-post-detail-img {
         height: 20rem;
+        width: 100%;
     }
 
     /* Settings page */
@@ -525,11 +546,6 @@ video {
 
     .delete-post-text {
         text-align: center;
-    }
-
-    /* Styling my blog page post */
-    .post-img-blog {
-        height: 20rem;
     }
 
     /* Styling post by category page */
