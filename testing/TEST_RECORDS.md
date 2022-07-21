@@ -135,6 +135,6 @@ On this page you can find documentation from the test process and find out the r
 
 ### Usability testing
 
-
+Usability tests was conducted. Unfortunately, no improvements were found. This is not because there are no possible improvements, but the test was group probably was to small. 
 
 
