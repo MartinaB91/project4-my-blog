@@ -35,6 +35,7 @@ video {
 
 .video-wrapper {
     position: relative;
+    line-height: 0;
 }
 
 #video-text-wrapper {
