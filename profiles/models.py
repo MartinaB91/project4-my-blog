@@ -14,7 +14,9 @@ class Profile(models.Model):
     )
     first_name = models.CharField(max_length=150)
     last_name = models.CharField(max_length=150)
-    profile_img = CloudinaryField("profile_image", default="default_image")
+    profile_img = CloudinaryField(
+        "Profile image", default="default_image"
+    )
     email = models.EmailField(blank=True, null=True, unique=True)
 
     def __str__(self):
