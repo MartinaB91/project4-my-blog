@@ -16,6 +16,9 @@ from .forms import PostForm, CommentForm, UpdateForm
 
 
 class BlogPostDetail(DetailView):
+    """
+    Used for showing a single published post on blog post detail page.
+    """
     template_name = "blog_post_detail.html"
 
     def get(self, request, slug, *args, **kwargs):
@@ -40,6 +43,9 @@ class BlogPostDetail(DetailView):
 
 
 def like_post(request, slug):
+    """
+    Used for liking a post on blog post detail page
+    """
     if request.method == "POST":
         post_obj = get_object_or_404(Post, id=request.POST.get("post_id"))
 
@@ -57,6 +63,9 @@ def like_post(request, slug):
 
 
 class CreatePost(LoginRequiredMixin, CreateView, SuccessMessageMixin):
+    """
+    Used for creating a post
+    """
     model = Post
     form_class = PostForm
     template_name = "create_post.html"
@@ -79,6 +88,9 @@ class CreatePost(LoginRequiredMixin, CreateView, SuccessMessageMixin):
 
 
 class CreateComment(LoginRequiredMixin, CreateView):
+    """
+    Used for creating a comment
+    """
     model = Comment
     form_class = CommentForm
     template_name = "comments.html"
@@ -101,6 +113,9 @@ class CreateComment(LoginRequiredMixin, CreateView):
 
 
 class UpdatePost(LoginRequiredMixin, UpdateView, SuccessMessageMixin):
+    """
+    Used for updating a post
+    """
     model = Post
     form_class = UpdateForm
     template_name = "update_post.html"
@@ -113,6 +128,9 @@ class UpdatePost(LoginRequiredMixin, UpdateView, SuccessMessageMixin):
 
 
 class DeletePost(LoginRequiredMixin, DeleteView, SuccessMessageMixin):
+    """
+    Used for deleting a post
+    """
     model = Post
     template_name = "delete_post.html"
 
