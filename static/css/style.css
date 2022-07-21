@@ -139,16 +139,10 @@ video {
     font-weight: bold;
 }
 
-.comments-hr {
-    margin-left: -1rem;
-    margin-right: -1rem;
-}
-
 /* Styling category section */
 #category-header {
     text-align: center;
     margin-bottom: 3%;
-
 }
 
 .category-wrapper {
