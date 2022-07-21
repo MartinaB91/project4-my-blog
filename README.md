@@ -149,31 +149,55 @@ In this section you will find out more about the different features this site co
 
 ### Navbar
 -	As a non-authenticated user, the navbar contains “My Garden” and “Home” which both links to home page, a search icon that when expand shown a search field and a “Sign In” button leading to a sign in form. 
+
+<img src="documentation/feature-images/navbar_non_authenticated_user.PNG" width="80%">
+
 -	 As an authenticated user the navbar contains the same content as above but the “Sign Up” button will instead display “Sign Out”. The navbar will also contain a dropdown menu named “My Blog” holding links to pages: “My Blog”, “Create Post” and “Settings”.
+
+<img src="documentation/feature-images/navbar_authenticated_user.PNG" width="80%">
+
 - As an Admin the navbar contains the same content as above but will also contain a link to My Garden administration. 
+
+<img src="documentation/feature-images/navbar_admin.PNG" width="80%">
 
 ### Footer
 -	As non-authenticated user, the footer contains links to “Home” page and “Admin” login. 
+
+<img src="documentation/feature-images/footer_non_authenticated_user.PNG" width="80%">
+
 -	As an authenticated user the footer also contains a link to “My Blog” page. 
+
+<img src="documentation/feature-images/footer_authenticated_user.PNG" width="80%">
 
 ### Blog post
 -	All blog posts are sorted on order of creation, the latest post is displayed first. 
 -	Every blog post contains a title which on published posts is a link to blog post detail, the author, date of creation, category, picture, body, and number of comments and likes. 
 -	When a user likes a post the heart icon will be solid pink. 
 
-- The possibility to add metadata tag is because this will make the post more searchable. Many smaller flower processors do not have their own websites so this feature would surely be appreciated since finding pictures and information of rare flowers can be quite hard. 
-
 ### Comment field 
 
--	The comment section contains all approved comments and a field for the user to leave a comment. To view this section the user needs to click the comment icon and the comment section will expand. 
+-	The comment section contains all comments and a field for the user to leave a comment. To view this section the user needs to click the comment icon and the comment section will expand. 
 -	Every comment contains an author, date of creation. Posts that don’t have any comments displays the text: “This post has no comments”
+
+<img src="documentation/feature-images/comment_authenticated_user.PNG" width="80%">
+
 -	If the user is authenticated, they are free to leave a comment else the user will be told to sign in before leaving a comment. 
+
+<img src="documentation/feature-images/comment_non_authenticated_user.PNG" width="80%">
 
 ### Home 
 The Home page contains three sections and looks the same for both authenticated and non-authenticated users. 
 -	The first section, the video section contains a video, header and a flower quote. This is the first thing you see when you enter the page and is intended to make the site more welcoming. 
+
+<img src="documentation/feature-images/video_header_feature.PNG" width="80%">
+
 -	The second section, the latest post section displays the four latest posts created, if the Visitor/Blogger want to view more posts they can do so by using the pagination. 
+
+<img src="documentation/feature-images/latest_posts_section.PNG" width="80%">
+
 -	The third section, the category section contains all active categories the Visitor/Blogger can choose to visit/publish in. 
+
+<img src="documentation/feature-images/categories_section.PNG" width="80%">
 
 ### Blog post detail 
 -	When clicking the post title, the user will be redirect to the blog post detail page. This page contains a single blog post, here the picture is larger, and the post is more in focus. 
@@ -185,6 +209,10 @@ The Home page contains three sections and looks the same for both authenticated 
 This page is only for authenticated users. This page contains a form for creating a post. 
 -	The Blogger can add a title, select a category, some content, a picture, and a meta description to make it easier for search engines to find it. 
 
+- The possibility to add metadata tag is because this will make the post more searchable. Many smaller flower processors do not have their own websites so this feature would surely be appreciated since finding pictures and information of rare flowers can be quite hard. 
+
+<img src="documentation/feature-images/create_post.PNG" width="80%">
+
 ### Update Post
 This page is only for authenticated users.
 -	At this page the Blogger can update all parts of their post. When a post is updated, the user will be redirected to the "My blog" page. 
@@ -193,11 +221,19 @@ This page is only for authenticated users.
 This page is only for authenticated users.
 -	When a Blogger click delete on a post, they will be redirected to the delete post page and asked to confirm deletion.  When the post is deleted, the user will be redirected to the "My blog" page. 
 
+<img src="documentation/feature-images/delete_post.PNG" width="80%">
+
 ### My blog 
 This page is only for authenticated users
 -	All Bloggers have a page called “My blog”. On this page the Blogger will find all posts they have written. Both published and not published. This makes it possible for the user to follow if the post has been published or if it is waiting on approval. 
-- The posts are on this page are collapsed and only show title, author, time of creation and category. To view full post the user can click "Show More" and to go back to collapsed "Close". If the blogger has many posts this design makes it more compact and easier to get oversight. 
 - If the Blogger doesn't have any posts, there is a placeholder text with a link to where the user can create a post. 
+
+<img src="documentation/feature-images/my_blog_page.PNG" width="80%">
+
+- The posts are on this page are collapsed and only show title, author, time of creation and category. To view full post the user can click "Show More" and to go back to collapsed "Close". If the blogger has many posts this design makes it more compact and easier to get oversight. 
+
+<img src="documentation/feature-images/my_blog_post_expand.PNG" width="80%">
+
 
 ### Settings
 This page is only for Authenticated users
@@ -205,8 +241,12 @@ This page is only for Authenticated users
 In the future this information could be used to highlight the user on the home page so that other users can choose to view posts from a specific author. 
 -	This page also contains a link to the page where the Bloggers can change password. 
 
+<img src="documentation/feature-images/settings_page.PNG" width="80%">
+
 ### Search Results
 -	To search, the user needs to expand the search icon in the navbar and enter what they are searching for. They will then be redirected to the search result page and the result is displayed in two fields, one for posts and one for categories. If no result is found the following text is displayed: “No posts found... Please try again” and “No categories found... Please try again”.
+
+<img src="documentation/feature-images/search_page.PNG" width="80%">
 
 ## Design 
 ### Color-scheme
