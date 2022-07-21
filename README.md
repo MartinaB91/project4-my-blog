@@ -281,7 +281,7 @@ In the future this information could be used to highlight the user on the home p
 
 ## Testing
 
-Read more about test and validation [here](/TEST.md)
+Read more about test and validation [here](/testing/TEST.md)
 
 ## Future improvements
 
